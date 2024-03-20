@@ -11,7 +11,7 @@ public class Alien {
     double width;
     double height;
 
-    Alien(GameView gameView) {
+    public Alien(GameView gameView) {
         this.gameView = gameView;
         size = 30;
         position = new Position(1100, 650);
@@ -22,7 +22,7 @@ public class Alien {
 
     @Override
     public String toString() {
-        return "UFO: " + position;
+        return "Alien: " + position;
     }
 
     public void updatePosition() {
@@ -30,8 +30,11 @@ public class Alien {
     }
 
     public void addToCanvas() {
+        gameView.addRectangleToCanvas(position.getX(), position.getY(), 160, 37, 0, true, Color.GREEN);
+        gameView.addRectangleToCanvas(position.getX(), position.getY(), 160, 37, 5, false, Color.WHITE);
         gameView.addTextToCanvas("Objekt 2",
                 position.getX(), position.getY(),
                 size, true, Color.BLUE, rotation);
+
     }
 }

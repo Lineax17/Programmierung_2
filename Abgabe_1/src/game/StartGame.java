@@ -5,5 +5,4 @@ public class StartGame {
         GameViewManager gameViewManager = new GameViewManager();
         gameViewManager.startGame();
     }
-
 }
