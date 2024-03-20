@@ -3,12 +3,16 @@ package game;
 import java.awt.*;
 
 public class GameViewManager extends GameView{
+    Ufo ufo;
+
     @Override
     public void initialize() {
+        ufo = new Ufo(this);
     }
 
     @Override
     public void gameLoop() {
-        addTextToCanvas("HALLO", 600, 300, 30, true, Color.WHITE, 0);
+        ufo.updatePosition();
+        ufo.addToCanvas();
     }
 }

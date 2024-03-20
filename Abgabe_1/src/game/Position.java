@@ -27,7 +27,7 @@ public class Position {
 
     @Override
     public String toString() {
-        return "Position (" + (int) Math.round(x) + "; " + (int) Math.round(y) + ")";
+        return "Position (" + (int) Math.round(x) + ", " + (int) Math.round(y) + ")";
     }
 
     public double getX() {
