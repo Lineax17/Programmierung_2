@@ -18,6 +18,7 @@ public class Ufo {
         rotation = 0;
         width = 150;
         height = 33;
+        speedInPixel = 5;
     }
 
     @Override
@@ -26,7 +27,7 @@ public class Ufo {
     }
 
     public void updatePosition() {
-        position.right();
+        position.right(speedInPixel);
         rotation = rotation + 1;
     }
 

@@ -18,6 +18,7 @@ public class Alien {
         rotation = 0;
         width = 150;
         height = 33;
+        speedInPixel = 2;
     }
 
     @Override
@@ -26,14 +27,14 @@ public class Alien {
     }
 
     public void updatePosition() {
-        position.left();
+        position.left(speedInPixel);
     }
 
     public void addToCanvas() {
-        gameView.addRectangleToCanvas(position.getX(), position.getY(), 160, 37, 0, true, Color.GREEN);
-        gameView.addRectangleToCanvas(position.getX(), position.getY(), 160, 37, 5, false, Color.WHITE);
+        gameView.addRectangleToCanvas(position.getX(), position.getY(), 150, 38, 0, true, Color.GREEN);
+        gameView.addRectangleToCanvas(position.getX(), position.getY(), 150, 38, 5, false, Color.WHITE);
         gameView.addTextToCanvas("Objekt 2",
-                position.getX() + 7, position.getY(),
+                position.getX() + 4, position.getY(),
                 size, true, Color.BLUE, rotation);
 
     }
