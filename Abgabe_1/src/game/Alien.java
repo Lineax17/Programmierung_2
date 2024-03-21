@@ -33,7 +33,7 @@ public class Alien {
         gameView.addRectangleToCanvas(position.getX(), position.getY(), 160, 37, 0, true, Color.GREEN);
         gameView.addRectangleToCanvas(position.getX(), position.getY(), 160, 37, 5, false, Color.WHITE);
         gameView.addTextToCanvas("Objekt 2",
-                position.getX(), position.getY(),
+                position.getX() + 7, position.getY(),
                 size, true, Color.BLUE, rotation);
 
     }
