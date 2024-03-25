@@ -19,46 +19,38 @@ public class Position {
 
     //left
     public void left() {
-        x = x - 1;
+        left(1);
     }
 
     public void left(double pixel) {
-        for (int i = 0; i < pixel; i++) {
-            left();
-        }
+        x = x - pixel;
     }
 
     //right
     public void right() {
-        x = x + 1;
+        right(1);
     }
 
     public void right(double pixel) {
-        for (int i = 0; i < pixel; i++) {
-            right();
-        }
+        x = x + pixel;
     }
 
     //up
     public void up() {
-        y = y - 1;
+        up(1);
     }
 
     public void up(double pixel) {
-        for (int i = 0; i < pixel; i++) {
-            up();
-        }
+        y = y - pixel;
     }
 
     //down
     public void down() {
-        y = y + 1;
+        down(1);
     }
 
     public void down(double pixel) {
-        for (int i = 0; i < pixel; i++) {
-            down();
-        }
+        y = y + pixel;
     }
 
     public void updateCoordinates(double x, double y) {
