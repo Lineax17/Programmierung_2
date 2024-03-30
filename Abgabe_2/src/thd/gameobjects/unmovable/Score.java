@@ -19,14 +19,14 @@ public class Score {
         width = 150;
         height = 33;
         size = 30;
-        position = new Position(GameView.WIDTH - width, -8);
+        position = new Position(GameView.WIDTH / 2, -8);
         rotation = 0;
 
     }
 
     @Override
     public String toString() {
-        return "Obstacle: " + position;
+        return "Score: " + position;
     }
 
     public void updatePosition() {
@@ -34,8 +34,8 @@ public class Score {
     }
 
     public void addToCanvas() {
-        gameView.addTextToCanvas("Objekt 3",
+        gameView.addTextToCanvas("000000",
                 position.getX(), position.getY(),
-                size, true, Color.YELLOW, rotation);
+                size, true, Color.WHITE, rotation);
     }
 }
