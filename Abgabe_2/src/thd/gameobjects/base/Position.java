@@ -3,7 +3,9 @@ package thd.gameobjects.base;
 import thd.game.utilities.GameView;
 
 /**
- * >>Bitte kommentieren, wie in der Aufgabenstellung beschrieben.<<
+ * Manages positon of gameobjects in {@link GameView} with a resolution of 1280 x 720 pixels.
+ *
+ * @see GameView
  */
 public class Position {
 

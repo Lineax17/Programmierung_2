@@ -5,20 +5,18 @@ import thd.gameobjects.movable.Gem;
 import thd.gameobjects.movable.Alien;
 import thd.gameobjects.unmovable.Score;
 
-public class GameManager {
-    Alien alien;
-    Gem gem;
-    Score obstacle;
-    GameView gameView;
+class GameManager {
+    private final Alien alien;
+    private final Gem gem;
+    private final Score obstacle;
 
     GameManager(GameView gameView) {
-        this.gameView = gameView;
         alien = new Alien(gameView);
         gem = new Gem(gameView);
         obstacle = new Score(gameView);
     }
 
-    public void gameLoopUpdate() {
+    void gameLoopUpdate() {
         alien.updatePosition();
         alien.addToCanvas();
         gem.updatePosition();
