@@ -27,7 +27,7 @@ public class Score {
         width = 150;
         height = 33;
         size = 30;
-        position = new Position(GameView.WIDTH / 2, -8);
+        position = new Position(GameView.WIDTH / 2 - 50, -8);
         rotation = 0;
 
     }
