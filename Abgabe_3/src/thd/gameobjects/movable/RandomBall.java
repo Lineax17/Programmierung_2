@@ -30,8 +30,6 @@ public class RandomBall {
 
     public void updatePosition() {
         if (position != targetPosition) {
-            position.left();
-            position.updateCoordinates(position.getX(), position.getY());
         }
     }
 
