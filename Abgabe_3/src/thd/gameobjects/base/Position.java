@@ -146,4 +146,42 @@ public class Position {
     public String toString() {
         return "Position (" + (int) Math.round(x) + ", " + (int) Math.round(y) + ")";
     }
+
+    /**
+     * Returns the distance between this position and another one.
+     *
+     * @param otherPosition The other Position.
+     * @return The direct distance between this Position and the other Position.
+     */
+    public double distance(Position otherPosition) {
+        return Math.sqrt(Math.pow(otherPosition.getX() - x, 2) + Math.pow(otherPosition.getY() - y, 2));
+    }
+
+    /**
+     * Moves towards the given position with the given speed.
+     *
+     * @param otherPosition Another position.
+     * @param speedInPixel Speed of movement in a single frame.
+     */
+    public void moveToPosition(Position otherPosition, double speedInPixel) {
+        double distance = distance(otherPosition);
+        if (distance <= speedInPixel) {
+            updateCoordinates(otherPosition);
+        } else {
+            right((otherPosition.x - x) / distance * speedInPixel);
+            down((otherPosition.y - y) / distance * speedInPixel);
+        }
+    }
+
+    /**
+     * Checks if this position is similar to the other position.
+     *
+     * @param otherPosition Another position.
+     * @return True if this position has the same x- and y-coordinates as the other position,
+    when both are rounded to <code>int</code>.
+     */
+    public boolean similarTo(Position otherPosition) {
+        return Math.round(x) == Math.round(otherPosition.x)
+                && Math.round(y) == Math.round(otherPosition.y);
+    }
 }
