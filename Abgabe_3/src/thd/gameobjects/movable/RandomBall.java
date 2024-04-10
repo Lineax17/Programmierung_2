@@ -31,13 +31,16 @@ public class RandomBall {
     }
 
     public void updatePosition() {
-        if (position.similarTo(this.targetPosition)) {
+        position.updateCoordinates(randomMovementPattern.startPosition());
+        if (!position.similarTo(targetPosition)) {
             position.moveToPosition(targetPosition, speedInPixel);
+        } else {
+            targetPosition.updateCoordinates(randomMovementPattern.nextTargetPosition());
         }
     }
 
     public void addToCanvas() {
         gameView.addOvalToCanvas(position.getX(), position.getY(), 50, 50, 2, true, Color.YELLOW);
-        gameView.addOvalToCanvas(1000, 500, 50, 50, 2, false, Color.WHITE);
+        gameView.addOvalToCanvas(targetPosition.getX(), targetPosition.getY(), 50, 50, 2, false, Color.WHITE);
     }
 }
