@@ -7,6 +7,7 @@ import thd.gameobjects.base.Position;
  * Describing a moving enemy that looks like an alien.
  */
 public class Alien {
+    private AlienMovementPattern alienMovementPattern;
     private final GameView gameView;
     private final Position position;
     private final double speedInPixel;
@@ -14,6 +15,7 @@ public class Alien {
     private final double size;
     private final double width;
     private final double height;
+    private boolean stop;
 
     /**
      * Initializes a new alien.
@@ -23,12 +25,14 @@ public class Alien {
      */
     public Alien(GameView gameView) {
         this.gameView = gameView;
+        this.alienMovementPattern = new AlienMovementPattern(this);
+        stop = false;
         size = 30;
-        position = new Position(0, GameView.HEIGHT / 2);
+        position = new Position(alienMovementPattern.startPosition());
         rotation = 0;
         width = 150;
         height = 33;
-        speedInPixel = 5;
+        speedInPixel = 2;
     }
 
     /**
@@ -47,8 +51,20 @@ public class Alien {
      * @see Position
      */
     public void updatePosition() {
-        position.right(speedInPixel);
-        rotation = rotation + 1;
+        if (stop) {
+            if (gameView.timer(500, this)) {
+                stop = false;
+            }
+        } else {
+            if (gameView.timer(8000, this)) {
+                stop = true;
+            }
+            position.moveToPosition(alienMovementPattern.nextTargetPosition(), speedInPixel);
+        }
+
+        if (position.getY() > 720) {
+            position.updateCoordinates(alienMovementPattern.startPosition());
+        }
     }
 
     /**
@@ -58,5 +74,9 @@ public class Alien {
      */
     public void addToCanvas() {
         gameView.addImageToCanvas("alien.png", position.getX(), position.getY(), 2.0, rotation);
+    }
+
+    Position getPosition() {
+        return position;
     }
 }

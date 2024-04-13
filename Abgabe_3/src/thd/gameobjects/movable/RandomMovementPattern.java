@@ -17,7 +17,7 @@ class RandomMovementPattern {
         return new Position(GameView.WIDTH / 2d, GameView.HEIGHT / 2d);
     }
 
-    Position nextTargetPosition() {
+    private Position nextTargetPosition() {
         return new Position(random.nextInt(GameView.WIDTH), random.nextInt(GameView.HEIGHT));
     }
 }

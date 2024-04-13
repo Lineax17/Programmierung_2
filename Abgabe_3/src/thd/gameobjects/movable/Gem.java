@@ -9,6 +9,7 @@ import thd.gameobjects.base.Position;
 public class Gem {
     private final GameView gameView;
     private final Position position;
+    private final GemMovementPattern gemMovementPattern;
     private final double speedInPixel;
     private final double rotation;
     private final double size;
@@ -24,7 +25,8 @@ public class Gem {
     public Gem(GameView gameView) {
         this.gameView = gameView;
         size = 30;
-        position = new Position(1100, 650);
+        gemMovementPattern = new GemMovementPattern(this);
+        position = new Position(gemMovementPattern.startPosition());
         rotation = 0;
         width = 150;
         height = 33;
@@ -48,8 +50,13 @@ public class Gem {
      * @see Position
      */
     public void updatePosition() {
-        position.left(speedInPixel);
+        position.updateCoordinates(gemMovementPattern.nextTargetPosition());
+
+        if (position.getY() > 720) {
+            position.updateCoordinates(gemMovementPattern.startPosition());
+        }
     }
+
 
     /**
      * Adds the object to the {@link GameView} canvas.
@@ -59,4 +66,10 @@ public class Gem {
     public void addToCanvas() {
         gameView.addImageToCanvas("gem.png", position.getX(), position.getY(), 2.0, rotation);
     }
+
+    Position getPosition() {
+        return position;
+    }
 }
+
+

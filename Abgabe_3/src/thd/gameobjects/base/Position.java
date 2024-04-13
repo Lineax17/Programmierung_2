@@ -178,7 +178,7 @@ public class Position {
      *
      * @param otherPosition Another position.
      * @return True if this position has the same x- and y-coordinates as the other position,
-    when both are rounded to <code>int</code>.
+     * when both are rounded to <code>int</code>.
      */
     public boolean similarTo(Position otherPosition) {
         return Math.round(x) == Math.round(otherPosition.x)
