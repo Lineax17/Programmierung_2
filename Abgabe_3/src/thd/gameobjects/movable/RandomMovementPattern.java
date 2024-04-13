@@ -12,8 +12,8 @@ class RandomMovementPattern {
     RandomMovementPattern() {
         random = new Random();
     }
-	
-	Position startPosition() {
+
+    Position startPosition() {
         return new Position(GameView.WIDTH / 2d, GameView.HEIGHT / 2d);
     }
 
