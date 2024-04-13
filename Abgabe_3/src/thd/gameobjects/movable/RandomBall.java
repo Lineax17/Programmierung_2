@@ -31,7 +31,6 @@ public class RandomBall {
     }
 
     public void updatePosition() {
-        position.updateCoordinates(randomMovementPattern.startPosition());
         if (!position.similarTo(targetPosition)) {
             position.moveToPosition(targetPosition, speedInPixel);
         } else {
