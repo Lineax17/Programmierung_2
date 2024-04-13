@@ -31,15 +31,29 @@ public class RandomBall {
     }
 
     public void updatePosition() {
-        if (!position.similarTo(targetPosition)) {
-            position.moveToPosition(targetPosition, speedInPixel);
+        boolean speedUp = gameView.timer(5000, this);
+        boolean stop = gameView.timer(8000, this);
+        if (!stop) {
+            if (!position.similarTo(targetPosition)) {
+                position.moveToPosition(targetPosition, speedInPixel);
+            } else {
+                targetPosition.updateCoordinates(randomMovementPattern.nextTargetPosition());
+            }
         } else {
-            targetPosition.updateCoordinates(randomMovementPattern.nextTargetPosition());
+            position.moveToPosition(position, speedInPixel);
         }
     }
 
     public void addToCanvas() {
-        gameView.addOvalToCanvas(position.getX(), position.getY(), 50, 50, 2, true, Color.YELLOW);
+        if (gameView.gameTimeInMilliseconds() >= 5000) {
+            gameView.addOvalToCanvas(position.getX(), position.getY(), 50, 50, 2, true, Color.RED);
+        } else {
+            gameView.addOvalToCanvas(position.getX(), position.getY(), 50, 50, 2, true, Color.YELLOW);
+        }
         gameView.addOvalToCanvas(targetPosition.getX(), targetPosition.getY(), 50, 50, 2, false, Color.WHITE);
+    }
+
+    public Position getPosition() {
+        return position;
     }
 }
