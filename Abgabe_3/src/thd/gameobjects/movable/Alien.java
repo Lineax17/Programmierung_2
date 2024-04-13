@@ -1,20 +1,12 @@
 package thd.gameobjects.movable;
 
 import thd.game.utilities.GameView;
-import thd.gameobjects.base.Position;
-
+import thd.gameobjects.base.GameObject;
 /**
  * Describing a moving enemy that looks like an alien.
  */
-public class Alien {
+public class Alien extends GameObject {
     private AlienMovementPattern alienMovementPattern;
-    private final GameView gameView;
-    private final Position position;
-    private final double speedInPixel;
-    private double rotation;
-    private final double size;
-    private final double width;
-    private final double height;
     private boolean stop;
 
     /**
@@ -24,15 +16,15 @@ public class Alien {
      * @see GameView
      */
     public Alien(GameView gameView) {
-        this.gameView = gameView;
+        super(gameView);
         this.alienMovementPattern = new AlienMovementPattern(this);
         stop = false;
-        size = 30;
-        position = new Position(alienMovementPattern.startPosition());
-        rotation = 0;
-        width = 150;
-        height = 33;
-        speedInPixel = 2;
+        super.size = 30;
+        position.updateCoordinates(alienMovementPattern.startPosition());
+        super.rotation = 0;
+        super.width = 150;
+        super.height = 33;
+        super.speedInPixel = 2;
     }
 
     /**
@@ -45,11 +37,7 @@ public class Alien {
         return "Alien: " + position;
     }
 
-    /**
-     * Adjusts the position of the game object using {@link Position}.
-     *
-     * @see Position
-     */
+    @Override
     public void updatePosition() {
         if (stop) {
             if (gameView.timer(500, this)) {
@@ -67,16 +55,8 @@ public class Alien {
         }
     }
 
-    /**
-     * Adds the object to the {@link GameView} canvas.
-     *
-     * @see GameView
-     */
+    @Override
     public void addToCanvas() {
         gameView.addImageToCanvas("alien.png", position.getX(), position.getY(), 2.0, rotation);
-    }
-
-    Position getPosition() {
-        return position;
     }
 }

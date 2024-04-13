@@ -1,20 +1,12 @@
 package thd.gameobjects.movable;
 
 import thd.game.utilities.GameView;
-import thd.gameobjects.base.Position;
-
+import thd.gameobjects.base.GameObject;
 /**
  * Describing a moving gameobject that increases the score when collected.
  */
-public class Gem {
-    private final GameView gameView;
-    private final Position position;
+public class Gem extends GameObject {
     private final GemMovementPattern gemMovementPattern;
-    private final double speedInPixel;
-    private final double rotation;
-    private final double size;
-    private final double width;
-    private final double height;
 
     /**
      * Initializes a new gem.
@@ -23,16 +15,14 @@ public class Gem {
      * @see GameView
      */
     public Gem(GameView gameView) {
-        this.gameView = gameView;
-        size = 30;
+        super(gameView);
+        super.size = 30;
         gemMovementPattern = new GemMovementPattern(this);
-        position = new Position(gemMovementPattern.startPosition());
-        rotation = 0;
-        width = 150;
-        height = 33;
-        speedInPixel = 2;
+        position.updateCoordinates(gemMovementPattern.startPosition());
+        super.width = 150;
+        super.height = 33;
+        super.speedInPixel = 1;
     }
-
 
     /**
      * Returns a string.
@@ -44,11 +34,7 @@ public class Gem {
         return "Gem: " + position;
     }
 
-    /**
-     * Adjusts the position of the game object using {@link Position}.
-     *
-     * @see Position
-     */
+    @Override
     public void updatePosition() {
         position.updateCoordinates(gemMovementPattern.nextTargetPosition());
 
@@ -58,17 +44,9 @@ public class Gem {
     }
 
 
-    /**
-     * Adds the object to the {@link GameView} canvas.
-     *
-     * @see GameView
-     */
+    @Override
     public void addToCanvas() {
         gameView.addImageToCanvas("gem.png", position.getX(), position.getY(), 2.0, rotation);
-    }
-
-    Position getPosition() {
-        return position;
     }
 }
 

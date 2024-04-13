@@ -1,22 +1,13 @@
 package thd.gameobjects.movable;
 
 import thd.game.utilities.GameView;
-import thd.gameobjects.base.Position;
-
+import thd.gameobjects.base.GameObject;
 import java.awt.*;
 
 /**
  * Describes a object looking like a ball, that is moving towards another ball.
  */
-public class FollowerBall {
-
-    private final GameView gameView;
-    private final Position position;
-    private final double speedInPixel;
-    private double rotation;
-    private final Position targetPosition;
-    private final double width;
-    private final double height;
+public class FollowerBall extends GameObject {
     private final RandomBall followMe;
 
     /**
@@ -26,13 +17,13 @@ public class FollowerBall {
      * @param followMe The other ball.
      */
     public FollowerBall(GameView gameView, RandomBall followMe) {
+        super(gameView);
         this.followMe = followMe;
-        this.gameView = gameView;
-        this.position = new Position(0, 0);
-        this.speedInPixel = 3;
-        this.targetPosition = new Position(followMe.getPosition());
-        this.width = 50;
-        this.height = 50;
+        position.updateCoordinates(0, 0);
+        super.speedInPixel = 3;
+        targetPosition.updateCoordinates(followMe.getPosition());
+        super.width = 50;
+        super.height = 50;
     }
 
     /**
@@ -45,11 +36,7 @@ public class FollowerBall {
         return "FollowerBall: " + position;
     }
 
-    /**
-     * Adjusts the position of the game object using {@link Position}.
-     *
-     * @see Position
-     */
+    @Override
     public void updatePosition() {
         targetPosition.updateCoordinates(followMe.getPosition());
         if (!position.similarTo(targetPosition)) {
@@ -57,11 +44,7 @@ public class FollowerBall {
         }
     }
 
-    /**
-     * Adds the object to the {@link GameView} canvas.
-     *
-     * @see GameView
-     */
+    @Override
     public void addToCanvas() {
         gameView.addOvalToCanvas(position.getX(), position.getY(), 50, 50, 2, true, Color.GREEN);
     }

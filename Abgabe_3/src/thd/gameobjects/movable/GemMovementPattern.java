@@ -1,15 +1,13 @@
 package thd.gameobjects.movable;
 
+import thd.gameobjects.base.MovementPattern;
 import thd.gameobjects.base.Position;
-
-import java.util.Random;
-
-class GemMovementPattern {
+class GemMovementPattern extends MovementPattern {
     private final Gem gem;
-    private final Random random;
     private boolean directionIsRight;
+
     protected GemMovementPattern(Gem gem) {
-        random = new Random();
+        super();
         this.gem = gem;
         direction();
     }
@@ -24,7 +22,8 @@ class GemMovementPattern {
         return directionIsRight;
     }
 
-    Position nextTargetPosition() {
+    @Override
+    protected Position nextTargetPosition(Position... referencePositions) {
         double x;
         if (directionIsRight) {
             x = gem.getPosition().getX() + 10;
@@ -35,7 +34,8 @@ class GemMovementPattern {
         return new Position(x, y);
     }
 
-    Position startPosition() {
+    @Override
+    protected Position startPosition(Position... referencePositions) {
         double min = 320;
         double max = 690;
         double x = random.nextDouble(max - min + 1) + min;

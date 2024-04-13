@@ -1,22 +1,14 @@
 package thd.gameobjects.movable;
 
 import thd.game.utilities.GameView;
-import thd.gameobjects.base.Position;
-
+import thd.gameobjects.base.GameObject;
 import java.awt.*;
 
 /**
  * Describes a object looking like a ball, that is moving towards a target.
  */
-public class RandomBall {
+public class RandomBall extends GameObject {
     private final QuadraticMovementPattern quadraticMovementPattern;
-    private final GameView gameView;
-    private final Position position;
-    private double speedInPixel;
-    private double rotation;
-    private final Position targetPosition;
-    private final double width;
-    private final double height;
     private final RandomMovementPattern randomMovementPattern;
     private boolean stop;
 
@@ -26,16 +18,14 @@ public class RandomBall {
      * @param gameView Instance of {@link GameView}.
      */
     public RandomBall(GameView gameView) {
+        super(gameView);
         this.quadraticMovementPattern = new QuadraticMovementPattern();
         this.randomMovementPattern = new RandomMovementPattern();
-        this.gameView = gameView;
-        this.position = new Position();
         position.updateCoordinates(new RandomMovementPattern().startPosition());
-        this.speedInPixel = 4;
-        this.targetPosition = new Position();
+        super.speedInPixel = 4;
         targetPosition.updateCoordinates(quadraticMovementPattern.nextTargetPosition());
-        this.width = 50;
-        this.height = 50;
+        super.width = 50;
+        super.height = 50;
         this.stop = false;
     }
 
@@ -49,11 +39,7 @@ public class RandomBall {
         return "RandomBall: " + position;
     }
 
-    /**
-     * Adjusts the position of the game object using {@link Position}.
-     *
-     * @see Position
-     */
+    @Override
     public void updatePosition() {
         if (gameView.timer(5000, this)) {
             speedInPixel++;
@@ -75,11 +61,7 @@ public class RandomBall {
         }
     }
 
-    /**
-     * Adds the object to the {@link GameView} canvas.
-     *
-     * @see GameView
-     */
+    @Override
     public void addToCanvas() {
         if (gameView.gameTimeInMilliseconds() >= 5000) {
             gameView.addOvalToCanvas(position.getX(), position.getY(), 50, 50, 2, true, Color.RED);
@@ -89,7 +71,5 @@ public class RandomBall {
         gameView.addOvalToCanvas(targetPosition.getX(), targetPosition.getY(), 50, 50, 2, false, Color.WHITE);
     }
 
-    Position getPosition() {
-        return position;
-    }
+
 }
