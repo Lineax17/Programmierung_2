@@ -54,22 +54,37 @@ public class XWing extends GameObject {
         }
     }
 
+    /**
+     * Allows the main object to move right.
+     */
     public void right() {
         position.right(speedInPixel);
     }
 
+    /**
+     * Allows the main object to move left.
+     */
     public void left() {
         position.left(speedInPixel);
     }
 
+    /**
+     * Allows the main object to move down.
+     */
     public void down() {
         position.down(speedInPixel);
     }
 
+    /**
+     * Allows the main object to move up.
+     */
     public void up() {
         position.up(speedInPixel);
     }
 
+    /**
+     * Allows the main object to fire a shot.
+     */
     public void shoot() {
         shotInProgress = true;
     }

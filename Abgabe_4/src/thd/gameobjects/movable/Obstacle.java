@@ -3,6 +3,9 @@ package thd.gameobjects.movable;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
+/**
+ * Describing a static gameobject that looks like a pyramid obstacle.
+ */
 public class Obstacle extends GameObject {
     private StaticRandomMovementPattern obstacleMovementPattern;
 

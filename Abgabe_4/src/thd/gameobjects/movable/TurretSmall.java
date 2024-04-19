@@ -3,6 +3,9 @@ package thd.gameobjects.movable;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
+/**
+ * Describing a static gameobject that looks like a turret.
+ */
 public class TurretSmall extends GameObject {
     private TurretMovementPattern turretSmallMovementPattern;
 

@@ -15,7 +15,7 @@ class GameManager extends UserControlledGameObjectPool{
         xwing = new XWing(gameView);
         spaceFrog = new SpaceFrog(gameView);
         head = new Head(gameView);
-        obstacle_1 = new Obstacle(gameView);
+        obstacle1 = new Obstacle(gameView);
         turretBig = new TurretBig(gameView);
         turretSmall = new TurretSmall(gameView);
     }
@@ -30,8 +30,8 @@ class GameManager extends UserControlledGameObjectPool{
         spaceFrog.updatePosition();
         spaceFrog.addToCanvas();
 
-        obstacle_1.updatePosition();
-        obstacle_1.addToCanvas();
+        obstacle1.updatePosition();
+        obstacle1.addToCanvas();
 
         turretBig.updatePosition();
         turretBig.addToCanvas();

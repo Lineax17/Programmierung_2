@@ -3,6 +3,9 @@ package thd.gameobjects.movable;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
+/**
+ * Describing a static gameobject that looks like an alien head.
+ */
 public class Head extends GameObject {
     private StaticRandomMovementPattern headMovementPattern;
 

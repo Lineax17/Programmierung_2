@@ -6,14 +6,14 @@ import thd.gameobjects.unmovable.Score;
 
 import java.awt.event.KeyEvent;
 
-public class UserControlledGameObjectPool {
+class UserControlledGameObjectPool {
     protected Alien alien;
     protected Gem gem;
     protected Score score;
     protected XWing xwing;
     protected SpaceFrog spaceFrog;
     protected Head head;
-    protected Obstacle obstacle_1;
+    protected Obstacle obstacle1;
     protected TurretBig turretBig;
     protected TurretSmall turretSmall;
 

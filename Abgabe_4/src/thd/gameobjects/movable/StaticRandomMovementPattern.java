@@ -4,7 +4,7 @@ import thd.gameobjects.base.GameObject;
 import thd.gameobjects.base.MovementPattern;
 import thd.gameobjects.base.Position;
 
-public class StaticRandomMovementPattern extends MovementPattern {
+class StaticRandomMovementPattern extends MovementPattern {
     private final GameObject object;
 
     protected StaticRandomMovementPattern(GameObject object) {

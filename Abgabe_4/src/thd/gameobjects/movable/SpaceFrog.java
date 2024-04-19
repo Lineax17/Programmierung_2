@@ -3,6 +3,9 @@ package thd.gameobjects.movable;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
+/**
+ * Describes a gameobject looking like a frog.
+ */
 public class SpaceFrog extends GameObject {
     private StaticRandomMovementPattern spaceFrogMovementPattern;
 
