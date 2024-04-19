@@ -26,7 +26,7 @@ public class XWing extends GameObject {
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 2;
-        shotInProgress = false;
+        //shotInProgress = false;
     }
 
     /**
@@ -48,6 +48,7 @@ public class XWing extends GameObject {
     public void addToCanvas() {
         if (shotInProgress) {
             gameView.addTextToCanvas("X", position.getX(), position.getY(), 50, true, Color.WHITE, rotation);
+            shotInProgress = false;
         } else {
             gameView.addImageToCanvas("xwing.png", position.getX(), position.getY(), 2.0, rotation);
         }
@@ -71,7 +72,6 @@ public class XWing extends GameObject {
 
     public void shoot() {
         shotInProgress = true;
-
     }
 
     @Override
