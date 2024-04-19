@@ -70,6 +70,11 @@ public class XWing extends GameObject {
     }
 
     public void shoot() {
-        shotInProgress = true;
+        if (!gameView.timer(2000, this)) {
+            shotInProgress = true;
+        } else {
+            shotInProgress = false;
+
+        }
     }
 }

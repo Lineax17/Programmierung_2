@@ -28,9 +28,21 @@ public class UserControlledGameObjectPool {
     protected void gameLoopUpdate() {
         Integer[] pressedKeys = gameView.keyCodesOfCurrentlyPressedKeys();
         for (int keyCode : pressedKeys) {
-            if (keyCode == KeyEvent.VK_A) {
-                gameView.addTextToCanvas("Taste A gedrückt", 0, 0, 18, true, Color.WHITE, 0);
-            }
+            processKeyCode(keyCode);
+        }
+    }
+
+    private void processKeyCode(int keyCode) {
+        if (keyCode == KeyEvent.VK_A) {
+            xwing.left();
+        } else if (keyCode == KeyEvent.VK_D) {
+            xwing.right();
+        } else if (keyCode == KeyEvent.VK_W) {
+            xwing.up();
+        } else if (keyCode == KeyEvent.VK_S) {
+            xwing.down();
+        } else if (keyCode == KeyEvent.VK_SPACE) {
+            xwing.shoot();
         }
     }
 
