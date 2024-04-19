@@ -26,11 +26,11 @@ class GemMovementPattern extends MovementPattern {
     protected Position nextTargetPosition(Position... referencePositions) {
         double x;
         if (directionIsRight) {
-            x = gem.getPosition().getX() + 10;
+            x = gem.getPosition().getX() + 3;
         } else {
-            x = gem.getPosition().getX() - 10;
+            x = gem.getPosition().getX() - 3;
         }
-        double y = gem.getPosition().getY() + 10;
+        double y = gem.getPosition().getY() + 5;
         return new Position(x, y);
     }
 

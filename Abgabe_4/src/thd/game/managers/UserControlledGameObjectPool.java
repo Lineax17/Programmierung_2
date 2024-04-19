@@ -1,20 +1,22 @@
 package thd.game.managers;
 
 import thd.game.utilities.GameView;
-import thd.gameobjects.movable.Alien;
-import thd.gameobjects.movable.Gem;
-import thd.gameobjects.movable.XWing;
+import thd.gameobjects.movable.*;
 import thd.gameobjects.unmovable.Score;
 
-import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class UserControlledGameObjectPool {
     protected Alien alien;
     protected Gem gem;
-    protected Score obstacle;
-
+    protected Score score;
     protected XWing xwing;
+    protected SpaceFrog spaceFrog;
+    protected Head head;
+    protected Obstacle obstacle_1;
+    protected TurretBig turretBig;
+    protected TurretSmall turretSmall;
+
     protected final GameView gameView;
 
     UserControlledGameObjectPool(GameView gameView) {
