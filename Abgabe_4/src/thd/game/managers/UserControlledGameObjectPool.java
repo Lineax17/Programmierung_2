@@ -10,19 +10,16 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class UserControlledGameObjectPool {
-    protected final Alien alien;
-    protected final Gem gem;
-    protected final Score obstacle;
+    protected Alien alien;
+    protected Gem gem;
+    protected Score obstacle;
 
-    protected final XWing xwing;
+    protected XWing xwing;
     protected final GameView gameView;
 
     UserControlledGameObjectPool(GameView gameView) {
         this.gameView = gameView;
-        alien = new Alien(gameView);
-        gem = new Gem(gameView);
-        obstacle = new Score(gameView);
-        xwing = new XWing(gameView);
+
     }
 
     protected void gameLoopUpdate() {
