@@ -16,6 +16,7 @@ class UserControlledGameObjectPool {
     protected Obstacle obstacle1;
     protected TurretBig turretBig;
     protected TurretSmall turretSmall;
+    protected ShotBlockImages shotBlockImages;
 
     protected final GameView gameView;
 

@@ -20,13 +20,12 @@ public class XWing extends GameObject {
      */
     public XWing(GameView gameView) {
         super(gameView);
-        super.size = 30;
+        super.size = 2;
         position.updateCoordinates(GameView.WIDTH / 2, 600);
         super.rotation = 0;
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 2;
-        //shotInProgress = false;
     }
 
     /**
@@ -50,7 +49,7 @@ public class XWing extends GameObject {
             gameView.addTextToCanvas("X", position.getX(), position.getY(), 50, true, Color.WHITE, rotation);
             shotInProgress = false;
         } else {
-            gameView.addImageToCanvas("xwing.png", position.getX(), position.getY(), 2.0, rotation);
+            gameView.addImageToCanvas("xwing.png", position.getX(), position.getY(), size, rotation);
         }
     }
 
@@ -91,9 +90,8 @@ public class XWing extends GameObject {
 
     @Override
     public void updateStatus() {
-        super.updateStatus();
         if (gameView.timer(5000, this)) {
-            super.size++;
+            size++;
         }
     }
 }

@@ -5,10 +5,13 @@ import thd.gameobjects.movable.*;
 import thd.gameobjects.unmovable.Score;
 
 class GameManager extends UserControlledGameObjectPool{
+    private final GameObjectManager gameObjectManager;
 
 
     GameManager(GameView gameView) {
         super(gameView);
+        this.gameObjectManager = new GameObjectManager();
+
         alien = new Alien(gameView);
         gem = new Gem(gameView);
         score = new Score(gameView);
@@ -18,38 +21,24 @@ class GameManager extends UserControlledGameObjectPool{
         obstacle1 = new Obstacle(gameView);
         turretBig = new TurretBig(gameView);
         turretSmall = new TurretSmall(gameView);
+        shotBlockImages = new ShotBlockImages(gameView);
+
+        gameObjectManager.add(alien);
+        gameObjectManager.add(gem);
+        gameObjectManager.add(score);
+        gameObjectManager.add(xwing);
+        gameObjectManager.add(spaceFrog);
+        gameObjectManager.add(head);
+        gameObjectManager.add(obstacle1);
+        gameObjectManager.add(turretBig);
+        gameObjectManager.add(turretSmall);
+        gameObjectManager.add(shotBlockImages);
     }
+
 
     @Override
     protected void gameLoopUpdate() {
         super.gameLoopUpdate();
-
-        head.updatePosition();
-        head.addToCanvas();
-
-        spaceFrog.updatePosition();
-        spaceFrog.addToCanvas();
-
-        obstacle1.updatePosition();
-        obstacle1.addToCanvas();
-
-        turretBig.updatePosition();
-        turretBig.addToCanvas();
-
-        turretSmall.updatePosition();
-        turretSmall.addToCanvas();
-
-        gem.updatePosition();
-        gem.addToCanvas();
-
-        alien.updatePosition();
-        alien.addToCanvas();
-
-        xwing.updateStatus();
-        xwing.updatePosition();
-        xwing.addToCanvas();
-
-        score.updatePosition();
-        score.addToCanvas();
+        gameObjectManager.gameLoopUpdate();
     }
 }
