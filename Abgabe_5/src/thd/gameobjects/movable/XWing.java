@@ -10,7 +10,6 @@ import java.awt.*;
  * The force is strong in this one.
  */
 public class XWing extends GameObject {
-    private boolean shotInProgress;
 
     /**
      * Initializes a new XWing.
@@ -45,12 +44,7 @@ public class XWing extends GameObject {
 
     @Override
     public void addToCanvas() {
-        if (shotInProgress) {
-            gameView.addTextToCanvas("X", position.getX(), position.getY(), 50, true, Color.WHITE, rotation);
-            shotInProgress = false;
-        } else {
-            gameView.addImageToCanvas("xwing.png", position.getX(), position.getY(), size, rotation);
-        }
+        gameView.addImageToCanvas("xwing.png", position.getX(), position.getY(), size, rotation);
     }
 
     /**
@@ -85,13 +79,10 @@ public class XWing extends GameObject {
      * Allows the main object to fire a shot.
      */
     public void shoot() {
-        shotInProgress = true;
     }
 
     @Override
     public void updateStatus() {
-        if (gameView.timer(5000, this)) {
-            size++;
-        }
+
     }
 }
