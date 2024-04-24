@@ -6,22 +6,24 @@ import thd.gameobjects.movable.Square;
 
 public class GamePlayManager extends UserControlledGameObjectPool{
     GameObjectManager gameObjectManager;
+    int currentNumberOfVisibleSquares;
 
     public GamePlayManager(GameView gameView) {
         super(gameView);
         gameObjectManager = new GameObjectManager();
+        currentNumberOfVisibleSquares = 0;
     }
 
     public void spawnGameObject(GameObject gameObject) {
-
+        gameObjectManager.add(gameObject);
     }
 
     public void destroyGameObject(GameObject gameObject) {
-
+        gameObjectManager.remove(gameObject);
     }
 
     protected void destroyAllGameObjects() {
-
+        gameObjectManager.removeAll();
     }
 
     @Override
@@ -32,6 +34,11 @@ public class GamePlayManager extends UserControlledGameObjectPool{
     }
 
     private void gamePlayManagement() {
-        spawnGameObject(new Square(gameView));
+        if (currentNumberOfVisibleSquares < 5){
+            if (gameView.timer(1000, this)) {
+                spawnGameObject(new Square(gameView));
+                currentNumberOfVisibleSquares++;
+            }
+        }
     }
 }

@@ -6,24 +6,22 @@ import thd.gameobjects.base.GameObject;
 import java.awt.*;
 
 public class Square extends GameObject {
-    GameView gameView;
-
     public Square(GameView gameView) {
         super(gameView);
         super.width = 30;
         super.height = 30;
         super.position.updateCoordinates(100, 100);
-
+        super.speedInPixel = 5;
     }
 
     @Override
     public String toString() {
-        return "XWing: " + position;
+        return "Square: " + position;
     }
 
     @Override
     public void updatePosition() {
-
+        position.left(5);
     }
 
     @Override
