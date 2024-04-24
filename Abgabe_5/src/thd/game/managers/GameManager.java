@@ -4,9 +4,7 @@ import thd.game.utilities.GameView;
 import thd.gameobjects.movable.*;
 import thd.gameobjects.unmovable.Score;
 
-class GameManager extends UserControlledGameObjectPool{
-    private final GameObjectManager gameObjectManager;
-
+class GameManager extends GamePlayManager{
 
     GameManager(GameView gameView) {
         super(gameView);
@@ -39,6 +37,10 @@ class GameManager extends UserControlledGameObjectPool{
     @Override
     protected void gameLoopUpdate() {
         super.gameLoopUpdate();
-        gameObjectManager.gameLoopUpdate();
+        gameManagement();
+    }
+
+    void gameManagement() {
+
     }
 }
