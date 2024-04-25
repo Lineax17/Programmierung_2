@@ -83,8 +83,7 @@ public class XWing extends GameObject {
      */
     public void shoot() {
         if (gameView.timer(shotDurationInMilliseconds, this)) {
-            gamePlayManager.spawnGameObject(new ShotBlockImages(gameView, gamePlayManager));
-
+            gamePlayManager.spawnGameObject(new ShotBlockImages(gameView, gamePlayManager, this));
         }
     }
 
