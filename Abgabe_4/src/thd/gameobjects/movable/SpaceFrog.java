@@ -16,7 +16,7 @@ public class SpaceFrog extends GameObject {
      * @see GameView
      */
     public SpaceFrog(GameView gameView) {
-        super(gameView);
+        super(gameView, gamePlayManager);
         this.spaceFrogMovementPattern = new StaticRandomMovementPattern(this);
         super.size = 30;
         position.updateCoordinates(spaceFrogMovementPattern.startPosition());

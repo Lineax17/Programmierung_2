@@ -1,9 +1,8 @@
 package thd.gameobjects.movable;
 
+import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
-
-import java.awt.*;
 
 /**
  * This element represents a shot which is fired by the main object.
@@ -16,14 +15,17 @@ public class ShotBlockImages extends GameObject {
             """;
     private ShotMovementPattern shotMovementPattern;
 
+
     /**
-     * Initializes a new XWing.
+     * Initializes a new Shot.
      *
      * @param gameView Instance of {@link GameView}.
+     * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
+     * @see GamePlayManager
      */
-    public ShotBlockImages(GameView gameView) {
-        super(gameView);
+    public ShotBlockImages(GameView gameView, GamePlayManager gamePlayManager) {
+        super(gameView, gamePlayManager);
         this.shotMovementPattern = new ShotMovementPattern(this);
         super.size = 2;
         position.updateCoordinates(shotMovementPattern.startPosition());
@@ -41,10 +43,6 @@ public class ShotBlockImages extends GameObject {
     @Override
     public void updatePosition() {
         position.moveToPosition(shotMovementPattern.nextTargetPosition(), speedInPixel);
-
-        if (position.getY() < 0) {
-            position.updateCoordinates(shotMovementPattern.startPosition());
-        }
     }
 
     @Override

@@ -16,7 +16,7 @@ public class Head extends GameObject {
      * @see GameView
      */
     public Head(GameView gameView) {
-        super(gameView);
+        super(gameView, gamePlayManager);
         this.headMovementPattern = new StaticRandomMovementPattern(this);
         super.size = 30;
         position.updateCoordinates(headMovementPattern.startPosition());

@@ -3,8 +3,6 @@ package thd.gameobjects.movable;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
-import java.awt.*;
-
 /**
  * This element represents a shot which is fired by the main object.
  */
@@ -23,7 +21,7 @@ public class ShotBlockImages extends GameObject {
      * @see GameView
      */
     public ShotBlockImages(GameView gameView) {
-        super(gameView);
+        super(gameView, gamePlayManager);
         this.shotMovementPattern = new ShotMovementPattern(this);
         super.size = 2;
         position.updateCoordinates(shotMovementPattern.startPosition());

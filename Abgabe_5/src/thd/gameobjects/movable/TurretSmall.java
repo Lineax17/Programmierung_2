@@ -1,5 +1,6 @@
 package thd.gameobjects.movable;
 
+import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
@@ -13,10 +14,12 @@ public class TurretSmall extends GameObject {
      * Initializes a new small turret.
      *
      * @param gameView Instance of {@link GameView}.
+     * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
+     * @see GamePlayManager
      */
-    public TurretSmall(GameView gameView) {
-        super(gameView);
+    public TurretSmall(GameView gameView, GamePlayManager gamePlayManager) {
+        super(gameView, gamePlayManager);
         this.turretSmallMovementPattern = new TurretMovementPattern(this);
         super.size = 30;
         position.updateCoordinates(turretSmallMovementPattern.startPosition());

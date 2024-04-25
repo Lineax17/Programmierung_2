@@ -15,7 +15,7 @@ public class Gem extends GameObject {
      * @see GameView
      */
     public Gem(GameView gameView) {
-        super(gameView);
+        super(gameView, gamePlayManager);
         super.size = 30;
         gemMovementPattern = new GemMovementPattern(this);
         position.updateCoordinates(gemMovementPattern.startPosition());

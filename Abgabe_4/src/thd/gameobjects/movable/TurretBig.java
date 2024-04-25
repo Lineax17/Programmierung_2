@@ -16,7 +16,7 @@ public class TurretBig extends GameObject{
      * @see GameView
      */
     public TurretBig(GameView gameView) {
-        super(gameView);
+        super(gameView, gamePlayManager);
         this.turretBigMovementPattern = new TurretMovementPattern(this);
         super.size = 30;
         position.updateCoordinates(turretBigMovementPattern.startPosition());

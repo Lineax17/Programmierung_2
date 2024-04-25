@@ -1,5 +1,6 @@
 package thd.gameobjects.movable;
 
+import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
@@ -13,10 +14,12 @@ public class Head extends GameObject {
      * Initializes a new head.
      *
      * @param gameView Instance of {@link GameView}.
+     * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
+     * @see GamePlayManager
      */
-    public Head(GameView gameView) {
-        super(gameView);
+    public Head(GameView gameView, GamePlayManager gamePlayManager) {
+        super(gameView, gamePlayManager);
         this.headMovementPattern = new StaticRandomMovementPattern(this);
         super.size = 30;
         position.updateCoordinates(headMovementPattern.startPosition());

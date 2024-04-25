@@ -1,5 +1,6 @@
 package thd.gameobjects.unmovable;
 
+import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
@@ -14,10 +15,12 @@ public class Score extends GameObject {
      * Initializes a new score.
      *
      * @param gameView Instance of {@link GameView}.
+     * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
+     * @see GamePlayManager
      */
-    public Score(GameView gameView) {
-        super(gameView);
+    public Score(GameView gameView, GamePlayManager gamePlayManager) {
+        super(gameView, gamePlayManager);
         super.width = 150;
         super.height = 33;
         super.size = 30;

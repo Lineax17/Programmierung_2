@@ -1,5 +1,6 @@
 package thd.gameobjects.movable;
 
+import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
@@ -13,10 +14,12 @@ public class Obstacle extends GameObject {
      * Initializes a new obstacle.
      *
      * @param gameView Instance of {@link GameView}.
+     * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
+     * @see GamePlayManager
      */
-    public Obstacle(GameView gameView) {
-        super(gameView);
+    public Obstacle(GameView gameView, GamePlayManager gamePlayManager) {
+        super(gameView, gamePlayManager);
         this.obstacleMovementPattern = new StaticRandomMovementPattern(this);
         super.size = 30;
         position.updateCoordinates(obstacleMovementPattern.startPosition());

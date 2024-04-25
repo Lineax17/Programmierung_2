@@ -1,5 +1,6 @@
 package thd.gameobjects.movable;
 
+import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
@@ -12,11 +13,9 @@ public class SpaceFrog extends GameObject {
     /**
      * Initializes a new alien.
      *
-     * @param gameView Instance of {@link GameView}.
-     * @see GameView
-     */
-    public SpaceFrog(GameView gameView) {
-        super(gameView);
+* @param gameView Instance of {@link GameView}. * @param gamePlayManager Instance of {@link GamePlayManager}. * @see GameView * @see GamePlayManager */
+    public SpaceFrog(GameView gameView, GamePlayManager gamePlayManager) {
+        super(gameView, gamePlayManager);
         this.spaceFrogMovementPattern = new StaticRandomMovementPattern(this);
         super.size = 30;
         position.updateCoordinates(spaceFrogMovementPattern.startPosition());

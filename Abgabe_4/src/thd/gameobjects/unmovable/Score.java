@@ -17,7 +17,7 @@ public class Score extends GameObject {
      * @see GameView
      */
     public Score(GameView gameView) {
-        super(gameView);
+        super(gameView, gamePlayManager);
         super.width = 150;
         super.height = 33;
         super.size = 30;

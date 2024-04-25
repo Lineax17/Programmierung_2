@@ -1,5 +1,6 @@
 package thd.gameobjects.movable;
 
+import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 import thd.gameobjects.base.MovementPattern;
 import thd.gameobjects.base.Position;
@@ -20,10 +21,6 @@ class ShotMovementPattern extends MovementPattern {
 
     @Override
     protected Position startPosition(Position... referencePositions) {
-        double min = 320;
-        double max = 690;
-        double x = random.nextDouble(max - min + 1) + min;
-        double y = 720;
-        return new Position(x, y);
+        return new Position(GameView.WIDTH / 2, 600);
     }
 }

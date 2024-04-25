@@ -8,29 +8,25 @@ class GameManager extends GamePlayManager{
 
     GameManager(GameView gameView) {
         super(gameView);
-        this.gameObjectManager = new GameObjectManager();
+        alien = new Alien(gameView, this);
+        gem = new Gem(gameView, this);
+        score = new Score(gameView, this);
+        xwing = new XWing(gameView, this);
+        spaceFrog = new SpaceFrog(gameView, this);
+        head = new Head(gameView, this);
+        obstacle1 = new Obstacle(gameView, this);
+        turretBig = new TurretBig(gameView, this);
+        turretSmall = new TurretSmall(gameView, this);
 
-        alien = new Alien(gameView);
-        gem = new Gem(gameView);
-        score = new Score(gameView);
-        xwing = new XWing(gameView);
-        spaceFrog = new SpaceFrog(gameView);
-        head = new Head(gameView);
-        obstacle1 = new Obstacle(gameView);
-        turretBig = new TurretBig(gameView);
-        turretSmall = new TurretSmall(gameView);
-        shotBlockImages = new ShotBlockImages(gameView);
-
-        gameObjectManager.add(alien);
-        gameObjectManager.add(gem);
-        gameObjectManager.add(score);
-        gameObjectManager.add(xwing);
-        gameObjectManager.add(spaceFrog);
-        gameObjectManager.add(head);
-        gameObjectManager.add(obstacle1);
-        gameObjectManager.add(turretBig);
-        gameObjectManager.add(turretSmall);
-        gameObjectManager.add(shotBlockImages);
+        spawnGameObject(alien);
+        spawnGameObject(gem);
+        spawnGameObject(score);
+        spawnGameObject(xwing);
+        spawnGameObject(spaceFrog);
+        spawnGameObject(head);
+        spawnGameObject(obstacle1);
+        spawnGameObject(turretBig);
+        spawnGameObject(turretSmall);
     }
 
 
@@ -40,7 +36,8 @@ class GameManager extends GamePlayManager{
         gameManagement();
     }
 
-    void gameManagement() {
+    private void gameManagement() {
 
     }
+
 }

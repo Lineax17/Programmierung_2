@@ -1,9 +1,8 @@
 package thd.gameobjects.movable;
 
+import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
-
-import java.awt.*;
 
 /**
  * Describing the main game object, which is controlled by the player.
@@ -11,20 +10,24 @@ import java.awt.*;
  */
 public class XWing extends GameObject {
 
+    int shotDurationInMilliseconds;
     /**
      * Initializes a new XWing.
      *
      * @param gameView Instance of {@link GameView}.
+     * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
+     * @see GamePlayManager
      */
-    public XWing(GameView gameView) {
-        super(gameView);
-        super.size = 2;
+    public XWing(GameView gameView, GamePlayManager gamePlayManager) {
+        super(gameView, gamePlayManager);
+        size = 2;
         position.updateCoordinates(GameView.WIDTH / 2, 600);
-        super.rotation = 0;
-        super.width = 150;
-        super.height = 33;
-        super.speedInPixel = 2;
+        rotation = 0;
+        width = 150;
+        height = 33;
+        speedInPixel = 2;
+        shotDurationInMilliseconds = 300;
     }
 
     /**
@@ -79,6 +82,10 @@ public class XWing extends GameObject {
      * Allows the main object to fire a shot.
      */
     public void shoot() {
+        if (gameView.timer(shotDurationInMilliseconds, this)) {
+            gamePlayManager.spawnGameObject(new ShotBlockImages(gameView, gamePlayManager));
+
+        }
     }
 
     @Override

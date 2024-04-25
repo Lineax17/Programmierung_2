@@ -19,7 +19,7 @@ public class XWing extends GameObject {
      * @see GameView
      */
     public XWing(GameView gameView) {
-        super(gameView);
+        super(gameView, gamePlayManager);
         super.size = 2;
         position.updateCoordinates(GameView.WIDTH / 2, 600);
         super.rotation = 0;

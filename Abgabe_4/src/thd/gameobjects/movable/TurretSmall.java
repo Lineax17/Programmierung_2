@@ -16,7 +16,7 @@ public class TurretSmall extends GameObject {
      * @see GameView
      */
     public TurretSmall(GameView gameView) {
-        super(gameView);
+        super(gameView, gamePlayManager);
         this.turretSmallMovementPattern = new TurretMovementPattern(this);
         super.size = 30;
         position.updateCoordinates(turretSmallMovementPattern.startPosition());

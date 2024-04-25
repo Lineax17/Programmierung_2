@@ -5,10 +5,10 @@ import thd.gameobjects.base.GameObject;
 import thd.gameobjects.movable.Square;
 
 public class GamePlayManager extends UserControlledGameObjectPool{
-    GameObjectManager gameObjectManager;
-    int currentNumberOfVisibleSquares;
+    private final GameObjectManager gameObjectManager;
+    private int currentNumberOfVisibleSquares;
 
-    public GamePlayManager(GameView gameView) {
+    protected GamePlayManager(GameView gameView) {
         super(gameView);
         gameObjectManager = new GameObjectManager();
         currentNumberOfVisibleSquares = 0;
@@ -36,7 +36,7 @@ public class GamePlayManager extends UserControlledGameObjectPool{
     private void gamePlayManagement() {
         if (currentNumberOfVisibleSquares < 5){
             if (gameView.timer(1000, this)) {
-                spawnGameObject(new Square(gameView));
+                spawnGameObject(new Square(gameView, this));
                 currentNumberOfVisibleSquares++;
             }
         }

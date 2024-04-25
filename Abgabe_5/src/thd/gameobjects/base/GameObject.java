@@ -1,5 +1,6 @@
 package thd.gameobjects.base;
 
+import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 
 /**
@@ -9,6 +10,7 @@ public class GameObject {
 
     protected final GameView gameView;
     protected final Position position;
+    protected final GamePlayManager gamePlayManager;
     protected final Position targetPosition;
     protected double speedInPixel;
     protected double rotation;
@@ -19,10 +21,12 @@ public class GameObject {
     /**
      * Crates a new GameObject.
      *
-     * @param gameView GameView to show the game object on.
+     * @param gameView Instance if {@link GameView}.
+     * @param gamePlayManager Instance of {@link GamePlayManager}.
      */
-    public GameObject(GameView gameView) {
+    public GameObject(GameView gameView, GamePlayManager gamePlayManager) {
         this.gameView = gameView;
+        this.gamePlayManager = gamePlayManager;
         position = new Position();
         targetPosition = new Position();
     }

@@ -1,7 +1,9 @@
 package thd.gameobjects.movable;
 
+import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
+
 /**
  * Describing a moving gameobject that increases the score when collected.
  */
@@ -12,10 +14,12 @@ public class Gem extends GameObject {
      * Initializes a new gem.
      *
      * @param gameView Instance of {@link GameView}.
+     * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
+     * @see GamePlayManager
      */
-    public Gem(GameView gameView) {
-        super(gameView);
+    public Gem(GameView gameView, GamePlayManager gamePlayManager) {
+        super(gameView, gamePlayManager);
         super.size = 30;
         gemMovementPattern = new GemMovementPattern(this);
         position.updateCoordinates(gemMovementPattern.startPosition());

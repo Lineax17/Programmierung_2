@@ -16,7 +16,7 @@ public class Alien extends GameObject {
      * @see GameView
      */
     public Alien(GameView gameView) {
-        super(gameView);
+        super(gameView, gamePlayManager);
         this.alienMovementPattern = new AlienMovementPattern(this);
         stop = false;
         super.size = 30;
