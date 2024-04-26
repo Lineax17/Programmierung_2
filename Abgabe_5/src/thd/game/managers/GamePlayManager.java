@@ -4,7 +4,10 @@ import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 import thd.gameobjects.movable.Square;
 
-public class GamePlayManager extends UserControlledGameObjectPool{
+/**
+ * Handles dynamically the spawning and destruction of gameobjects.
+ */
+public class GamePlayManager extends UserControlledGameObjectPool {
     private final GameObjectManager gameObjectManager;
     private int currentNumberOfVisibleSquares;
 
@@ -14,10 +17,20 @@ public class GamePlayManager extends UserControlledGameObjectPool{
         currentNumberOfVisibleSquares = 0;
     }
 
+    /**
+     * Spawns a new gameobject.
+     *
+     * @param gameObject The gameobject.
+     */
     public void spawnGameObject(GameObject gameObject) {
         gameObjectManager.add(gameObject);
     }
 
+    /**
+     * Destroys a certain gameobject.
+     *
+     * @param gameObject The gameobject to be destroyed.
+     */
     public void destroyGameObject(GameObject gameObject) {
         gameObjectManager.remove(gameObject);
     }
@@ -34,7 +47,7 @@ public class GamePlayManager extends UserControlledGameObjectPool{
     }
 
     private void gamePlayManagement() {
-        if (currentNumberOfVisibleSquares < 5){
+        if (currentNumberOfVisibleSquares < 5) {
             if (gameView.timer(1000, this)) {
                 spawnGameObject(new Square(gameView, this));
                 currentNumberOfVisibleSquares++;

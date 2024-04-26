@@ -12,6 +12,7 @@ public class GameObjectManager {
     private final List<GameObject> gameObjects;
     private final List<GameObject> gameObjectsToBeAdded;
     private final List<GameObject> gameObjectsToBeRemoved;
+    private static final int MAXIMUM_NUMBER_OF_GAME_OBJECTS = 500;
 
     /**
      * Initializes a new GameObjectManager.
@@ -45,8 +46,15 @@ public class GameObjectManager {
     }
 
     private void updateLists() {
-        removeFromGameObjects();
-        addToGameObjects();
+        try {
+            removeFromGameObjects();
+            addToGameObjects();
+            if (gameObjects.size() > MAXIMUM_NUMBER_OF_GAME_OBJECTS) {
+                throw new TooManyGameObjectsException("Gameobject limit is reached: " + MAXIMUM_NUMBER_OF_GAME_OBJECTS);
+            }
+        } catch (TooManyGameObjectsException e) {
+            System.err.println("Ein Fehler ist aufgetreten: " + e.getMessage());
+        }
     }
 
     private void removeFromGameObjects() {

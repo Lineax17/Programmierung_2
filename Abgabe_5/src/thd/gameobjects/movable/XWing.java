@@ -10,7 +10,7 @@ import thd.gameobjects.base.GameObject;
  */
 public class XWing extends GameObject {
 
-    int shotDurationInMilliseconds;
+    private int shotDurationInMilliseconds;
     /**
      * Initializes a new XWing.
      *

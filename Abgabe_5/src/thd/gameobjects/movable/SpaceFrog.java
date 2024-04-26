@@ -11,9 +11,13 @@ public class SpaceFrog extends GameObject {
     private StaticRandomMovementPattern spaceFrogMovementPattern;
 
     /**
-     * Initializes a new alien.
+     * Initializes a new spacefrog.
      *
-* @param gameView Instance of {@link GameView}. * @param gamePlayManager Instance of {@link GamePlayManager}. * @see GameView * @see GamePlayManager */
+     * @param gameView        Instance of {@link GameView}.
+     * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @see GameView
+     * @see GamePlayManager
+     */
     public SpaceFrog(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
         this.spaceFrogMovementPattern = new StaticRandomMovementPattern(this);
