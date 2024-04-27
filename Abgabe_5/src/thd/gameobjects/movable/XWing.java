@@ -3,18 +3,20 @@ package thd.gameobjects.movable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
+import thd.gameobjects.base.MainCharacter;
 
 /**
  * Describing the main game object, which is controlled by the player.
  * The force is strong in this one.
  */
-public class XWing extends GameObject {
+public class XWing extends GameObject implements MainCharacter {
 
     private int shotDurationInMilliseconds;
+
     /**
      * Initializes a new XWing.
      *
-     * @param gameView Instance of {@link GameView}.
+     * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
      * @see GamePlayManager
@@ -78,9 +80,7 @@ public class XWing extends GameObject {
         position.up(speedInPixel);
     }
 
-    /**
-     * Allows the main object to fire a shot.
-     */
+    @Override
     public void shoot() {
         if (gameView.timer(shotDurationInMilliseconds, this)) {
             gamePlayManager.spawnGameObject(new ShotBlockImages(gameView, gamePlayManager, this));
