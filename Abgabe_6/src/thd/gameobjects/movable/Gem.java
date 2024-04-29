@@ -2,12 +2,13 @@ package thd.gameobjects.movable;
 
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
+import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.GameObject;
 
 /**
  * Describing a moving gameobject that increases the score when collected.
  */
-public class Gem extends GameObject {
+public class Gem extends CollidingGameObject {
     private final GemMovementPattern gemMovementPattern;
 
     /**
@@ -26,6 +27,11 @@ public class Gem extends GameObject {
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 1;
+    }
+
+    @Override
+    public void reactToCollisionWith(CollidingGameObject other) {
+
     }
 
     /**

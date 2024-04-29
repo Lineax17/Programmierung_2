@@ -2,12 +2,13 @@ package thd.gameobjects.movable;
 
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
+import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.GameObject;
 
 /**
  * Describing a static gameobject that looks like a turret.
  */
-public class TurretBig extends GameObject{
+public class TurretBig extends CollidingGameObject {
     private TurretMovementPattern turretBigMovementPattern;
 
     /**
@@ -27,6 +28,11 @@ public class TurretBig extends GameObject{
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 2;
+    }
+
+    @Override
+    public void reactToCollisionWith(CollidingGameObject other) {
+
     }
 
     @Override

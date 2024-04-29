@@ -2,12 +2,13 @@ package thd.gameobjects.movable;
 
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
+import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.GameObject;
 
 /**
  * Describing a moving enemy that looks like an alien.
  */
-public class Alien extends GameObject {
+public class Alien extends CollidingGameObject {
     private AlienMovementPattern alienMovementPattern;
     private boolean stop;
 
@@ -29,6 +30,12 @@ public class Alien extends GameObject {
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 2;
+        hitBoxOffsets(0, 0, -120, 0);
+    }
+
+    @Override
+    public void reactToCollisionWith(CollidingGameObject other) {
+
     }
 
     /**

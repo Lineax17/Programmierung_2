@@ -2,12 +2,13 @@ package thd.gameobjects.movable;
 
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
+import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.GameObject;
 
 /**
  * Describes a gameobject looking like a frog.
  */
-public class SpaceFrog extends GameObject {
+public class SpaceFrog extends CollidingGameObject {
     private StaticRandomMovementPattern spaceFrogMovementPattern;
 
     /**
@@ -27,6 +28,11 @@ public class SpaceFrog extends GameObject {
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 2;
+    }
+
+    @Override
+    public void reactToCollisionWith(CollidingGameObject other) {
+
     }
 
     /**

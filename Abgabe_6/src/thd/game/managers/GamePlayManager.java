@@ -2,7 +2,6 @@ package thd.game.managers;
 
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
-import thd.gameobjects.movable.Square;
 
 /**
  * Handles dynamically the spawning and destruction of gameobjects.
@@ -47,11 +46,6 @@ public class GamePlayManager extends UserControlledGameObjectPool {
     }
 
     private void gamePlayManagement() {
-        if (currentNumberOfVisibleSquares < 5) {
-            if (gameView.timer(1000, this)) {
-                spawnGameObject(new Square(gameView, this));
-                currentNumberOfVisibleSquares++;
-            }
-        }
+
     }
 }

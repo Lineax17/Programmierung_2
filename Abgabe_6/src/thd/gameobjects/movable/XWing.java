@@ -2,6 +2,7 @@ package thd.gameobjects.movable;
 
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
+import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.GameObject;
 import thd.gameobjects.base.MainCharacter;
 
@@ -9,9 +10,9 @@ import thd.gameobjects.base.MainCharacter;
  * Describing the main game object, which is controlled by the player.
  * The force is strong in this one.
  */
-public class XWing extends GameObject implements MainCharacter {
+public class XWing extends CollidingGameObject implements MainCharacter {
 
-    private int shotDurationInMilliseconds;
+    private final int shotDurationInMilliseconds;
 
     /**
      * Initializes a new XWing.
@@ -30,6 +31,12 @@ public class XWing extends GameObject implements MainCharacter {
         height = 33;
         speedInPixel = 2;
         shotDurationInMilliseconds = 300;
+        hitBoxOffsets(0, 0, -120, 0);
+    }
+
+    @Override
+    public void reactToCollisionWith(CollidingGameObject other) {
+
     }
 
     /**
@@ -84,7 +91,6 @@ public class XWing extends GameObject implements MainCharacter {
     public void shoot() {
         if (gameView.timer(shotDurationInMilliseconds, this)) {
             gamePlayManager.spawnGameObject(new ShotBlockImages(gameView, gamePlayManager, this));
-            gamePlayManager.spawnGameObject(new SecondShotBlockImages(gameView, gamePlayManager, this));
         }
     }
 

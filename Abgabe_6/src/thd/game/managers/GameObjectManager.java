@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Manages adding and removal of gameobject during the runtime of the game.
  */
-public class GameObjectManager {
+public class GameObjectManager extends CollisionManager {
     private final List<GameObject> gameObjects;
     private final List<GameObject> gameObjectsToBeAdded;
     private final List<GameObject> gameObjectsToBeRemoved;
@@ -43,27 +43,31 @@ public class GameObjectManager {
             gameObject.updatePosition();
             gameObject.addToCanvas();
         }
+        manageCollisions(true);
     }
 
     private void updateLists() {
-        try {
-            removeFromGameObjects();
-            addToGameObjects();
-            if (gameObjects.size() > MAXIMUM_NUMBER_OF_GAME_OBJECTS) {
-                throw new TooManyGameObjectsException("Gameobject limit is reached: " + MAXIMUM_NUMBER_OF_GAME_OBJECTS);
-            }
-        } catch (TooManyGameObjectsException e) {
-            System.err.println("Ein Fehler ist aufgetreten: " + e.getMessage());
+        removeFromGameObjects();
+        addToGameObjects();
+        if (gameObjects.size() > MAXIMUM_NUMBER_OF_GAME_OBJECTS) {
+            throw new TooManyGameObjectsException("Gameobject limit is reached: " + MAXIMUM_NUMBER_OF_GAME_OBJECTS);
         }
     }
 
     private void removeFromGameObjects() {
-        gameObjects.removeAll(gameObjectsToBeRemoved);
+        for (GameObject gameObject : gameObjectsToBeRemoved) {
+            gameObjects.remove(gameObject);
+            removeFromCollisionManagement(gameObject);
+        }
         gameObjectsToBeRemoved.clear();
+
     }
 
     private void addToGameObjects() {
-        gameObjects.addAll(gameObjectsToBeAdded);
+        for (GameObject gameObject : gameObjectsToBeAdded) {
+            gameObjects.add(gameObject);
+            addToCollisionManagement(gameObject);
+        }
         gameObjectsToBeAdded.clear();
     }
 
