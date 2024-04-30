@@ -27,11 +27,15 @@ public class Gem extends CollidingGameObject {
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 1;
+        hitBoxOffsets(0, 0, -130, 0);
+
     }
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-
+        if (other instanceof ShotBlockImages) {
+            gamePlayManager.destroyGameObject(this);
+        }
     }
 
     /**

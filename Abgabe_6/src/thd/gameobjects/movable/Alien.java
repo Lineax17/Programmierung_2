@@ -35,7 +35,9 @@ public class Alien extends CollidingGameObject {
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-
+        if (other instanceof ShotBlockImages) {
+            gamePlayManager.destroyGameObject(this);
+        }
     }
 
     /**

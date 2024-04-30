@@ -10,9 +10,9 @@ import thd.gameobjects.base.GameObject;
  */
 public class ShotBlockImages extends CollidingGameObject {
     private static final String SHOT = """
-            WW
-            WW
-            WW
+            WW            WW
+            WW            WW
+            WW            WW
             """;
     private final XWing xWing;
 
