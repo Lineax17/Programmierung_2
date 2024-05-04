@@ -35,6 +35,7 @@ public class SpaceFrog extends CollidingGameObject {
     public void reactToCollisionWith(CollidingGameObject other) {
         if (other instanceof ShotBlockImages) {
             gamePlayManager.destroyGameObject(this);
+            gamePlayManager.addPoints(10);
         }
     }
 

@@ -4,12 +4,14 @@ import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
 
-
+/**
+ * This class represents the left border of the game world.
+ */
 public class Wall extends CollidingGameObject {
 
 
     /**
-     * Initializes a new score.
+     * Initializes a new wall.
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
@@ -45,7 +47,5 @@ public class Wall extends CollidingGameObject {
             gameView.addImageToCanvas("wall_inner.png", 32, i, 1, 0);
             gameView.addImageToCanvas("wall_outer.png", 64, i, 1, 0);
         }
-
     }
-
 }

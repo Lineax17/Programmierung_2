@@ -8,7 +8,7 @@ import thd.gameobjects.base.CollidingGameObject;
  * Describing a moving enemy that looks like an alien.
  */
 public class Alien extends CollidingGameObject {
-    private AlienMovementPattern alienMovementPattern;
+    private final AlienMovementPattern alienMovementPattern;
     private boolean stop;
 
     /**
@@ -36,6 +36,7 @@ public class Alien extends CollidingGameObject {
     public void reactToCollisionWith(CollidingGameObject other) {
         if (other instanceof ShotBlockImages) {
             gamePlayManager.destroyGameObject(this);
+            gamePlayManager.addPoints(10);
         }
     }
 

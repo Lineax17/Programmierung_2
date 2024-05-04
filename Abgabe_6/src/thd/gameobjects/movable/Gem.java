@@ -13,7 +13,7 @@ import java.util.Random;
  * Describing a moving gameobject that increases the score when collected.
  */
 public class Gem extends CollidingGameObject {
-    protected final Random random;
+    private final Random random;
     private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
     private boolean directionIsRight;
     private Wall wall;
@@ -24,8 +24,10 @@ public class Gem extends CollidingGameObject {
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @param wall            Instance if {@link Wall}.
      * @see GameView
      * @see GamePlayManager
+     * @see Wall
      */
     public Gem(GameView gameView, GamePlayManager gamePlayManager, Wall wall) {
         super(gameView, gamePlayManager);
@@ -57,6 +59,7 @@ public class Gem extends CollidingGameObject {
     public void reactToCollisionWith(CollidingGameObject other) {
         if (other instanceof ShotBlockImages) {
             gamePlayManager.destroyGameObject(this);
+            gamePlayManager.addPoints(100);
         }
     }
 

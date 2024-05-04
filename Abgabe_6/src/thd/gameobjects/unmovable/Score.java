@@ -10,6 +10,7 @@ import java.awt.*;
  * Describing a not moving gameobject that counts the score of the player.
  */
 public class Score extends GameObject {
+    private int score;
 
     /**
      * Initializes a new score.
@@ -26,7 +27,7 @@ public class Score extends GameObject {
         super.size = 30;
         position.updateCoordinates(GameView.WIDTH / 2 - 50, -8);
         super.rotation = 0;
-
+        score = gamePlayManager.getPoints();
     }
 
     /**
@@ -46,8 +47,13 @@ public class Score extends GameObject {
 
     @Override
     public void addToCanvas() {
-        gameView.addTextToCanvas("000000",
+        gameView.addTextToCanvas(String.valueOf(score),
                 position.getX(), position.getY(),
                 size, true, Color.WHITE, rotation);
+    }
+
+    @Override
+    public void updateStatus() {
+        score = gamePlayManager.getPoints();
     }
 }

@@ -2,6 +2,8 @@ package thd.gameobjects.base;
 
 import thd.game.utilities.GameView;
 
+import java.util.Objects;
+
 /**
  * Manages positon of gameobjects in {@link GameView} with a resolution of 1280 x 720 pixels.
  *
@@ -183,5 +185,23 @@ public class Position {
     public boolean similarTo(Position otherPosition) {
         return Math.round(x) == Math.round(otherPosition.x)
                 && Math.round(y) == Math.round(otherPosition.y);
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Position other = (Position) o;
+        return (Double.compare(x, other.x) == 0
+                && Double.compare(y, other.y) == 0);
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }
