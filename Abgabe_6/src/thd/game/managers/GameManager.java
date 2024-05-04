@@ -10,7 +10,8 @@ class GameManager extends GamePlayManager {
     GameManager(GameView gameView) {
         super(gameView);
         alien = new Alien(gameView, this);
-        gem = new Gem(gameView, this);
+        wall = new Wall(gameView, this);
+        gem = new Gem(gameView, this, wall);
         score = new Score(gameView, this);
         xwing = new XWing(gameView, this);
         spaceFrog = new SpaceFrog(gameView, this);
@@ -18,7 +19,6 @@ class GameManager extends GamePlayManager {
         obstacle1 = new Obstacle(gameView, this);
         turretBig = new TurretBig(gameView, this);
         turretSmall = new TurretSmall(gameView, this);
-        wall = new Wall(gameView, this);
 
         spawnGameObject(alien);
         spawnGameObject(gem);
