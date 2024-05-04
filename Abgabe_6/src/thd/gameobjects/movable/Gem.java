@@ -3,8 +3,6 @@ package thd.gameobjects.movable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
-import thd.gameobjects.base.GameObject;
-import thd.gameobjects.base.Position;
 import thd.gameobjects.unmovable.Wall;
 
 import java.util.LinkedList;

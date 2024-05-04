@@ -3,9 +3,7 @@ package thd.gameobjects.unmovable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
-import thd.gameobjects.base.GameObject;
 
-import java.awt.*;
 
 public class Wall extends CollidingGameObject {
 
@@ -13,7 +11,7 @@ public class Wall extends CollidingGameObject {
     /**
      * Initializes a new score.
      *
-     * @param gameView Instance of {@link GameView}.
+     * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
      * @see GamePlayManager
@@ -29,6 +27,7 @@ public class Wall extends CollidingGameObject {
     public void reactToCollisionWith(CollidingGameObject other) {
 
     }
+
     @Override
     public String toString() {
         return "Wall: " + position;
@@ -42,9 +41,9 @@ public class Wall extends CollidingGameObject {
     @Override
     public void addToCanvas() {
         for (int i = 0; i <= 1280; i += 32) {
-            gameView.addImageToCanvas("wall_inner.png", 0, i, 1, 0 );
-            gameView.addImageToCanvas("wall_inner.png", 32, i, 1, 0 );
-            gameView.addImageToCanvas("wall_outer.png", 64, i, 1, 0 );
+            gameView.addImageToCanvas("wall_inner.png", 0, i, 1, 0);
+            gameView.addImageToCanvas("wall_inner.png", 32, i, 1, 0);
+            gameView.addImageToCanvas("wall_outer.png", 64, i, 1, 0);
         }
 
     }
