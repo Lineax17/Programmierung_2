@@ -8,12 +8,10 @@ import thd.gameobjects.base.GameObject;
  */
 public class GamePlayManager extends UserControlledGameObjectPool {
     private final GameObjectManager gameObjectManager;
-    private int currentNumberOfVisibleSquares;
 
     protected GamePlayManager(GameView gameView) {
         super(gameView);
         gameObjectManager = new GameObjectManager();
-        currentNumberOfVisibleSquares = 0;
     }
 
     /**

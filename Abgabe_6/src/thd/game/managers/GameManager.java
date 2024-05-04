@@ -3,6 +3,7 @@ package thd.game.managers;
 import thd.game.utilities.GameView;
 import thd.gameobjects.movable.*;
 import thd.gameobjects.unmovable.Score;
+import thd.gameobjects.unmovable.Wall;
 
 class GameManager extends GamePlayManager {
 
@@ -17,6 +18,7 @@ class GameManager extends GamePlayManager {
         obstacle1 = new Obstacle(gameView, this);
         turretBig = new TurretBig(gameView, this);
         turretSmall = new TurretSmall(gameView, this);
+        wall = new Wall(gameView, this);
 
         spawnGameObject(alien);
         spawnGameObject(gem);
@@ -27,6 +29,7 @@ class GameManager extends GamePlayManager {
         spawnGameObject(obstacle1);
         spawnGameObject(turretBig);
         spawnGameObject(turretSmall);
+        spawnGameObject(wall);
     }
 
 

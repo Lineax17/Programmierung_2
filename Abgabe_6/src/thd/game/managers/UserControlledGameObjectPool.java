@@ -3,6 +3,7 @@ package thd.game.managers;
 import thd.game.utilities.GameView;
 import thd.gameobjects.movable.*;
 import thd.gameobjects.unmovable.Score;
+import thd.gameobjects.unmovable.Wall;
 
 import java.awt.event.KeyEvent;
 
@@ -16,6 +17,7 @@ class UserControlledGameObjectPool {
     Obstacle obstacle1;
     TurretBig turretBig;
     TurretSmall turretSmall;
+    Wall wall;
     private ShotBlockImages shotBlockImages;
 
     protected final GameView gameView;

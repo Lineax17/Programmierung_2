@@ -29,7 +29,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
         rotation = 0;
         width = 150;
         height = 33;
-        speedInPixel = 2;
+        speedInPixel = 4;
         shotDurationInMilliseconds = 300;
         hitBoxOffsets(0, 0, -120, 0);
     }
