@@ -19,6 +19,7 @@ public abstract class GameObject {
     protected double size;
     protected double width;
     protected double height;
+    protected char distanceToBackground;
 
     /**
      * Crates a new GameObject.
@@ -72,6 +73,15 @@ public abstract class GameObject {
     }
 
     /**
+     * Returns the distance of the game object to the background.
+     *
+     * @return Distance to the background for the game object.
+     */
+    public char getDistanceToBackground() {
+        return distanceToBackground;
+    }
+
+    /**
      * Updates the status of the current object.
      */
     public void updateStatus() {
@@ -92,12 +102,13 @@ public abstract class GameObject {
                 && Double.compare(width, other.width) == 0
                 && Double.compare(size, other.size) == 0
                 && Double.compare(speedInPixel, other.speedInPixel) == 0
+                && Character.compare(distanceToBackground, other.distanceToBackground) == 0
                 && position.equals(other.position)
                 && targetPosition.equals(other.targetPosition);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rotation, height, width, size, speedInPixel, position, targetPosition);
+        return Objects.hash(rotation, height, width, size, speedInPixel, position, targetPosition, distanceToBackground);
     }
 }

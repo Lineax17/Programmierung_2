@@ -27,6 +27,7 @@ public class SpaceFrog extends CollidingGameObject {
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 2;
+        distanceToBackground = 10;
         hitBoxOffsets(0, 0, -120, 0);
 
     }

@@ -41,6 +41,7 @@ public class Gem extends CollidingGameObject {
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 1;
+        distanceToBackground = 20;
         hitBoxOffsets(0, 0, -130, 0);
 
     }

@@ -4,7 +4,7 @@ import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
 /**
- * Handles dynamically the spawning and destruction of gameobjects.
+ * Handles dynamically the spawning and destruction of game objects.
  */
 public class GamePlayManager extends UserControlledGameObjectPool {
     private final GameObjectManager gameObjectManager;
@@ -29,7 +29,7 @@ public class GamePlayManager extends UserControlledGameObjectPool {
     }
 
     /**
-     * Decreases the Lives-Counter of the main object by 1 if its hitting a projectile of wall.
+     * Decreases the Lives-Counter of the main object by 1 if it's hitting a projectile of wall.
      */
     public void decreaseLive() {
         lives = lives - 1;
@@ -45,18 +45,18 @@ public class GamePlayManager extends UserControlledGameObjectPool {
     }
 
     /**
-     * Spawns a new gameobject.
+     * Spawns a new game object.
      *
-     * @param gameObject The gameobject.
+     * @param gameObject The game object.
      */
     public void spawnGameObject(GameObject gameObject) {
         gameObjectManager.add(gameObject);
     }
 
     /**
-     * Destroys a certain gameobject.
+     * Destroys a certain game object.
      *
-     * @param gameObject The gameobject to be destroyed.
+     * @param gameObject The game object to be destroyed.
      */
     public void destroyGameObject(GameObject gameObject) {
         gameObjectManager.remove(gameObject);

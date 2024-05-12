@@ -33,6 +33,7 @@ public class ShotBlockImages extends CollidingGameObject {
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 7;
+        distanceToBackground = 50;
         hitBoxOffsets(0, 0, -120, 0);
     }
 
