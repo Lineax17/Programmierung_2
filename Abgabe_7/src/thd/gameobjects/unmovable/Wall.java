@@ -45,7 +45,7 @@ public class Wall extends CollidingGameObject {
         for (int i = 0; i <= 1280; i += 32) {
             gameView.addImageToCanvas("wall_inner.png", 0, i, 1, 0);
             gameView.addImageToCanvas("wall_inner.png", 32, i, 1, 0);
-            gameView.addImageToCanvas("wall_outer.png", 64, i, 1, 0);
+            gameView.addImageToCanvas("wall_left.png", 64, i, 1, 0);
         }
     }
 }

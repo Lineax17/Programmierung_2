@@ -11,13 +11,13 @@ public class GameWorldManager extends GamePlayManager{
     protected GameWorldManager(GameView gameView){
         super(gameView);
         world = """
-                B   G  G    \s
+                W   G       \s
                             \s
                             \s
                             \s
                             \s
                       X     \s
-                L          R\s""";
+                            \s""";
         alien = new Alien(gameView, this);
         wall = new Wall(gameView, this);
         gem = new Gem(gameView, this, wall);
@@ -42,5 +42,9 @@ public class GameWorldManager extends GamePlayManager{
         spawnGameObject(turretBig);
         spawnGameObject(turretSmall);
         spawnGameObject(wall);
+    }
+
+    void spawnGameObjectsFromWorldString(){
+
     }
 }
