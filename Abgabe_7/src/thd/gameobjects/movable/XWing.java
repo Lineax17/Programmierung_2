@@ -4,7 +4,6 @@ import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.MainCharacter;
-import thd.gameobjects.unmovable.Wall;
 
 /**
  * Describing the main game object, which is controlled by the player.
@@ -37,10 +36,10 @@ public class XWing extends CollidingGameObject implements MainCharacter {
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof Wall) {
-            gamePlayManager.decreaseLive();
-            position.updateCoordinates(GameView.WIDTH / 2, 600);
-        }
+        //if (other instanceof Wall) {
+        //    gamePlayManager.decreaseLive();
+        //    position.updateCoordinates(GameView.WIDTH / 2, 600);
+        //}
     }
 
     /**

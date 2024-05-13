@@ -3,7 +3,6 @@ package thd.gameobjects.movable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
-import thd.gameobjects.unmovable.Wall;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -16,7 +15,6 @@ public class Gem extends CollidingGameObject {
     private final Random random;
     private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
     private boolean directionIsRight;
-    private Wall wall;
 
 
     /**
@@ -24,20 +22,17 @@ public class Gem extends CollidingGameObject {
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
-     * @param wall            Instance if {@link Wall}.
      * @see GameView
      * @see GamePlayManager
-     * @see Wall
      */
-    public Gem(GameView gameView, GamePlayManager gamePlayManager, Wall wall) {
+    public Gem(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
         random = new Random();
-        this.wall = wall;
         decideDirection();
         super.size = 30;
         position.updateCoordinates(random.nextDouble(690 - 320 + 1) + 320, 0);
         collidingGameObjectsForPathDecision = new LinkedList<>();
-        collidingGameObjectsForPathDecision.add(wall);
+        //collidingGameObjectsForPathDecision.add(wall);
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 1;

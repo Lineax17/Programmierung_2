@@ -53,7 +53,7 @@ public class Head extends CollidingGameObject {
     public void updatePosition() {
         position.moveToPosition(headMovementPattern.nextTargetPosition(), speedInPixel);
         if (position.getY() > 720) {
-            position.updateCoordinates(headMovementPattern.startPosition());
+            gamePlayManager.destroyGameObject(this);
         }
     }
 

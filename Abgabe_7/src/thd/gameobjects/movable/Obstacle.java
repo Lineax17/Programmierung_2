@@ -53,7 +53,7 @@ public class Obstacle extends CollidingGameObject {
     public void updatePosition() {
         position.moveToPosition(obstacleMovementPattern.nextTargetPosition(), speedInPixel);
         if (position.getY() > 720) {
-            position.updateCoordinates(obstacleMovementPattern.startPosition());
+            gamePlayManager.destroyGameObject(this);
         }
     }
 

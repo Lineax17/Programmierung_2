@@ -65,7 +65,7 @@ public class Alien extends CollidingGameObject {
         }
 
         if (position.getY() > 720) {
-            position.updateCoordinates(alienMovementPattern.startPosition());
+            gamePlayManager.destroyGameObject(this);
         }
     }
 

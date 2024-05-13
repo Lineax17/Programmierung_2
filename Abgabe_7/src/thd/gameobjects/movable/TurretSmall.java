@@ -48,7 +48,7 @@ public class TurretSmall extends CollidingGameObject {
     public void updatePosition() {
         position.moveToPosition(turretSmallMovementPattern.nextTargetPosition(), speedInPixel);
         if (position.getY() > 720) {
-            position.updateCoordinates(turretSmallMovementPattern.startPosition());
+            gamePlayManager.destroyGameObject(this);
         }
     }
 

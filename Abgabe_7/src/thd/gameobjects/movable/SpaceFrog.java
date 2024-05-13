@@ -54,7 +54,7 @@ public class SpaceFrog extends CollidingGameObject {
     public void updatePosition() {
         position.moveToPosition(spaceFrogMovementPattern.nextTargetPosition(), speedInPixel);
         if (position.getY() > 720) {
-            position.updateCoordinates(spaceFrogMovementPattern.startPosition());
+            gamePlayManager.destroyGameObject(this);
         }
     }
 
