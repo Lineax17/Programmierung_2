@@ -3,11 +3,12 @@ package thd.gameobjects.movable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
+import thd.gameobjects.base.ShiftableGameObject;
 
 /**
  * This class represents the left border of the game world.
  */
-public class Wall extends CollidingGameObject {
+public class Wall extends CollidingGameObject implements ShiftableGameObject {
 
 
     /**
@@ -20,6 +21,8 @@ public class Wall extends CollidingGameObject {
      */
     public Wall(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
+        super.width = 32;
+        super.height = 32;
         hitBoxOffsets(0, 0, 0, 0);
     }
 
@@ -35,7 +38,10 @@ public class Wall extends CollidingGameObject {
 
     @Override
     public void updatePosition() {
-
+        //    position.updateCoordinates(position.getX(), position.getY() + 3);
+        //    if (position.getY() > 720) {
+        //       gamePlayManager.destroyGameObject(this);
+        //    }
     }
 
     @Override

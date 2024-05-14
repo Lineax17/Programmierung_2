@@ -32,7 +32,6 @@ public class Gem extends CollidingGameObject {
         super.size = 30;
         position.updateCoordinates(random.nextDouble(690 - 320 + 1) + 320, 0);
         collidingGameObjectsForPathDecision = new LinkedList<>();
-        //collidingGameObjectsForPathDecision.add(wall);
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 1;
@@ -83,7 +82,7 @@ public class Gem extends CollidingGameObject {
 
         for (CollidingGameObject collidingGameObject : collidingGameObjectsForPathDecision) {
             if (collidesWith(collidingGameObject)) {
-                directionIsRight = true;
+                directionIsRight = !directionIsRight;
             }
         }
 
@@ -97,6 +96,15 @@ public class Gem extends CollidingGameObject {
     @Override
     public void addToCanvas() {
         gameView.addImageToCanvas("gem.png", position.getX(), position.getY(), 2.0, rotation);
+    }
+
+    /**
+     * Adds walls to collision list to calculate collisions.
+     *
+     * @param wallsForPathDecision The list with the wall to be added.
+     */
+    public void addWallsToCollisionList(List<CollidingGameObject> wallsForPathDecision) {
+        collidingGameObjectsForPathDecision.addAll(wallsForPathDecision);
     }
 }
 

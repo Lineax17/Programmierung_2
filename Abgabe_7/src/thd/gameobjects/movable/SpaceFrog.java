@@ -2,14 +2,14 @@ package thd.gameobjects.movable;
 
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
+import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
+import thd.gameobjects.base.ShiftableGameObject;
 
 /**
  * Describes a gameobject looking like a frog.
  */
-public class SpaceFrog extends CollidingGameObject {
-    private StaticRandomMovementPattern spaceFrogMovementPattern;
-
+public class SpaceFrog extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject {
     /**
      * Initializes a new spacefrog.
      *
@@ -20,9 +20,7 @@ public class SpaceFrog extends CollidingGameObject {
      */
     public SpaceFrog(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
-        this.spaceFrogMovementPattern = new StaticRandomMovementPattern(this);
         super.size = 30;
-        position.updateCoordinates(spaceFrogMovementPattern.startPosition());
         super.rotation = 0;
         super.width = 150;
         super.height = 33;
@@ -52,7 +50,6 @@ public class SpaceFrog extends CollidingGameObject {
 
     @Override
     public void updatePosition() {
-        position.moveToPosition(spaceFrogMovementPattern.nextTargetPosition(), speedInPixel);
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);
         }
@@ -61,5 +58,10 @@ public class SpaceFrog extends CollidingGameObject {
     @Override
     public void addToCanvas() {
         gameView.addImageToCanvas("space_frog.png", position.getX(), position.getY(), 2.0, rotation);
+    }
+
+    @Override
+    public boolean tryToActivate(Object info) {
+        return false;
     }
 }

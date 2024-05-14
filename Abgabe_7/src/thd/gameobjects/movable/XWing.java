@@ -96,5 +96,4 @@ public class XWing extends CollidingGameObject implements MainCharacter {
             gamePlayManager.spawnGameObject(new ShotBlockImages(gameView, gamePlayManager, this));
         }
     }
-
 }

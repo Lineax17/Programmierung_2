@@ -6,7 +6,7 @@ import thd.gameobjects.base.GameObject;
 /**
  * Handles dynamically the spawning and destruction of game objects.
  */
-public class GamePlayManager extends UserControlledGameObjectPool {
+public class GamePlayManager extends WorldShiftManager {
     private final GameObjectManager gameObjectManager;
     protected int points;
     protected int lives;
@@ -44,25 +44,21 @@ public class GamePlayManager extends UserControlledGameObjectPool {
         return points;
     }
 
-    /**
-     * Spawns a new game object.
-     *
-     * @param gameObject The game object.
-     */
+    @Override
     public void spawnGameObject(GameObject gameObject) {
+        super.spawnGameObject(gameObject);
         gameObjectManager.add(gameObject);
     }
 
-    /**
-     * Destroys a certain game object.
-     *
-     * @param gameObject The game object to be destroyed.
-     */
+    @Override
     public void destroyGameObject(GameObject gameObject) {
+        super.destroyGameObject(gameObject);
         gameObjectManager.remove(gameObject);
     }
 
+    @Override
     protected void destroyAllGameObjects() {
+        super.destroyAllGameObjects();
         gameObjectManager.removeAll();
     }
 
@@ -74,6 +70,7 @@ public class GamePlayManager extends UserControlledGameObjectPool {
     }
 
     private void gamePlayManagement() {
-
+        int speedInPixel = 4;
+        moveWorldDown(speedInPixel);
     }
 }

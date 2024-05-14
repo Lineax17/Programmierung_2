@@ -7,7 +7,7 @@ import thd.gameobjects.base.CollidingGameObject;
 /**
  * Describing a moving enemy that looks like an alien.
  */
-public class Alien extends CollidingGameObject {
+public class Alien extends CollidingGameObject{
     private final AlienMovementPattern alienMovementPattern;
     private boolean stop;
 

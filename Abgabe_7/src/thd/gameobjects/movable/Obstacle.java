@@ -3,12 +3,12 @@ package thd.gameobjects.movable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
+import thd.gameobjects.base.ShiftableGameObject;
 
 /**
  * Describing a static gameobject that looks like a pyramid obstacle.
  */
-public class Obstacle extends CollidingGameObject {
-    private StaticRandomMovementPattern obstacleMovementPattern;
+public class Obstacle extends CollidingGameObject implements ShiftableGameObject {
 
     /**
      * Initializes a new obstacle.
@@ -20,9 +20,7 @@ public class Obstacle extends CollidingGameObject {
      */
     public Obstacle(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
-        this.obstacleMovementPattern = new StaticRandomMovementPattern(this);
         super.size = 30;
-        position.updateCoordinates(obstacleMovementPattern.startPosition());
         super.rotation = 0;
         super.width = 150;
         super.height = 33;
@@ -51,7 +49,7 @@ public class Obstacle extends CollidingGameObject {
 
     @Override
     public void updatePosition() {
-        position.moveToPosition(obstacleMovementPattern.nextTargetPosition(), speedInPixel);
+        position.updateCoordinates(position.getX(), position.getY() + 3);
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);
         }

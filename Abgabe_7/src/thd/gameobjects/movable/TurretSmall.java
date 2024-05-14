@@ -3,12 +3,12 @@ package thd.gameobjects.movable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
+import thd.gameobjects.base.ShiftableGameObject;
 
 /**
  * Describing a static gameobject that looks like a turret.
  */
-public class TurretSmall extends CollidingGameObject {
-    private TurretMovementPattern turretSmallMovementPattern;
+public class TurretSmall extends CollidingGameObject implements ShiftableGameObject {
 
     /**
      * Initializes a new small turret.
@@ -20,9 +20,7 @@ public class TurretSmall extends CollidingGameObject {
      */
     public TurretSmall(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
-        this.turretSmallMovementPattern = new TurretMovementPattern(this);
         super.size = 30;
-        position.updateCoordinates(turretSmallMovementPattern.startPosition());
         super.rotation = 0;
         super.width = 150;
         super.height = 33;
@@ -46,7 +44,7 @@ public class TurretSmall extends CollidingGameObject {
 
     @Override
     public void updatePosition() {
-        position.moveToPosition(turretSmallMovementPattern.nextTargetPosition(), speedInPixel);
+        position.updateCoordinates(position.getX(), position.getY() + 3);
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);
         }
