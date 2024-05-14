@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class GameWorldManager extends GamePlayManager {
+class GameWorldManager extends GamePlayManager {
     private final String world;
     private final int worldOffsetLines;
     private final int worldOffsetColumns;
@@ -97,20 +97,20 @@ public class GameWorldManager extends GamePlayManager {
         wallsForPathDecision = new LinkedList<CollidingGameObject>();
         score = new Score(gameView, this);
         xwing = new XWing(gameView, this);
-        //head = new Head(gameView, this);
-        //obstacle1 = new Obstacle(gameView, this);
-        //turretBig = new TurretBig(gameView, this);
-        //turretSmall = new TurretSmall(gameView, this);
+        head = new Head(gameView, this);
+        obstacle1 = new Obstacle(gameView, this);
+        turretBig = new TurretBig(gameView, this);
+        turretSmall = new TurretSmall(gameView, this);
         spawnGameObjects();
         spawnGameObjectsFromWorldString();
     }
 
     private void spawnGameObjects() {
         spawnGameObject(score);
-        //spawnGameObject(head);
-        //spawnGameObject(obstacle1);
-        //spawnGameObject(turretBig);
-        //spawnGameObject(turretSmall);
+        spawnGameObject(head);
+        spawnGameObject(obstacle1);
+        spawnGameObject(turretBig);
+        spawnGameObject(turretSmall);
         spawnGameObject(xwing);
     }
 
@@ -152,7 +152,8 @@ public class GameWorldManager extends GamePlayManager {
                     double x = (column - worldOffsetColumns) * 32;
                     double y = (line - worldOffsetLines) * 32;
                     spaceFrog.getPosition().updateCoordinates(x, y);
-                    spawnGameObject(spaceFrog);
+                    addActivatableGameObject(spaceFrog);
+                    activateGameObjects();
                 }
             }
         }
@@ -174,7 +175,10 @@ public class GameWorldManager extends GamePlayManager {
         while (iterator.hasNext()) {
             GameObject gameObject = iterator.next();
             if (gameObject instanceof SpaceFrog spaceFrog) {
-                spaceFrog.tryToActivate(xwing);
+                if (spaceFrog.tryToActivate(xwing)) {
+                    spawnGameObject(spaceFrog);
+                    iterator.remove();
+                }
             }
         }
     }

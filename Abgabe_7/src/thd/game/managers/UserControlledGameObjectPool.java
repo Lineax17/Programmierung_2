@@ -7,16 +7,13 @@ import thd.gameobjects.unmovable.Score;
 import java.awt.event.KeyEvent;
 
 class UserControlledGameObjectPool {
-    //Alien alien;
-    //Gem gem;
     Score score;
     XWing xwing;
-    //SpaceFrog spaceFrog;
-    //Head head;
-    //Obstacle obstacle1;
-    //TurretBig turretBig;
-    //TurretSmall turretSmall;
-    //Wall wall;
+    SpaceFrog spaceFrog;
+    Head head;
+    Obstacle obstacle1;
+    TurretBig turretBig;
+    TurretSmall turretSmall;
     private ShotBlockImages shotBlockImages;
 
     protected final GameView gameView;

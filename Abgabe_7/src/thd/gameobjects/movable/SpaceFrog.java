@@ -10,6 +10,8 @@ import thd.gameobjects.base.ShiftableGameObject;
  * Describes a gameobject looking like a frog.
  */
 public class SpaceFrog extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject {
+    private XWing xWing;
+
     /**
      * Initializes a new spacefrog.
      *
@@ -62,6 +64,7 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
 
     @Override
     public boolean tryToActivate(Object info) {
-        return false;
+        this.xWing = (XWing) info;
+        return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
     }
 }
