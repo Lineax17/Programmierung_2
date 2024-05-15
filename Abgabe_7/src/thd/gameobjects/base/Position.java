@@ -9,7 +9,7 @@ import java.util.Objects;
  *
  * @see GameView
  */
-public class Position {
+public class Position implements Comparable<Position> {
 
     private double x;
     private double y;
@@ -163,7 +163,7 @@ public class Position {
      * Moves towards the given position with the given speed.
      *
      * @param otherPosition Another position.
-     * @param speedInPixel Speed of movement in a single frame.
+     * @param speedInPixel  Speed of movement in a single frame.
      */
     public void moveToPosition(Position otherPosition, double speedInPixel) {
         double distance = distance(otherPosition);
@@ -186,6 +186,7 @@ public class Position {
         return Math.round(x) == Math.round(otherPosition.x)
                 && Math.round(y) == Math.round(otherPosition.y);
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -203,5 +204,10 @@ public class Position {
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
+    }
+
+    @Override
+    public int compareTo(Position o) {
+        return Double.compare(distance(new Position(0, 0)), o.distance(new Position(0, 0)));
     }
 }

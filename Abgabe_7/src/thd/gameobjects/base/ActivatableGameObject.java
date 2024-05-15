@@ -9,8 +9,8 @@ public interface ActivatableGameObject<T> {
     /**
      * Tells when to activate the game object.
      *
-     * @param t1 Reference to another object to calculate spawn time.
+     * @param info Reference to another object to calculate spawn time.
      * @return true if the spawn condition is set, otherwise false.
      */
-    boolean tryToActivate(T t1);
+    boolean tryToActivate(T info);
 }
