@@ -2,7 +2,7 @@ package thd.game.managers;
 
 import thd.game.utilities.GameView;
 
-class GameManager extends GameWorldManager {
+class GameManager extends LevelManager {
 
     GameManager(GameView gameView) {
         super(gameView);
@@ -14,6 +14,11 @@ class GameManager extends GameWorldManager {
     protected void gameLoopUpdate() {
         super.gameLoopUpdate();
         gameManagement();
+    }
+
+    @Override
+    public void initializeLevel() {
+        super.initializeLevel();
     }
 
     private void gameManagement() {

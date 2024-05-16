@@ -1,5 +1,6 @@
 package thd.game.managers;
 
+import thd.game.level.Level;
 import thd.game.utilities.GameView;
 import thd.gameobjects.movable.*;
 import thd.gameobjects.unmovable.*;
@@ -10,6 +11,7 @@ class UserControlledGameObjectPool {
     Score score;
     XWing xwing;
     private ShotBlockImages shotBlockImages;
+    protected Level level;
 
     protected final GameView gameView;
 

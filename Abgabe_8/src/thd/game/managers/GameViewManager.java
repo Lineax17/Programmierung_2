@@ -18,6 +18,7 @@ public class GameViewManager extends GameView {
         setStatusText("Philipp Hartmann - Java Programmierung SS 2024");
         setWindowIcon("icon.png");
         gameManager = new GameManager(this);
+        gameManager.initializeLevel();
     }
 
     /**
