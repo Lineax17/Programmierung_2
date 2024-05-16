@@ -2,18 +2,13 @@ package thd.game.managers;
 
 import thd.game.utilities.GameView;
 import thd.gameobjects.movable.*;
-import thd.gameobjects.unmovable.Score;
+import thd.gameobjects.unmovable.*;
 
 import java.awt.event.KeyEvent;
 
 class UserControlledGameObjectPool {
     Score score;
     XWing xwing;
-    SpaceFrog spaceFrog;
-    Head head;
-    Obstacle obstacle1;
-    TurretBig turretBig;
-    TurretSmall turretSmall;
     private ShotBlockImages shotBlockImages;
 
     protected final GameView gameView;

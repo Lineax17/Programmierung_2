@@ -1,24 +1,28 @@
-package thd.gameobjects.movable;
+package thd.gameobjects.unmovable;
 
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
+import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
+import thd.gameobjects.base.GameObject;
 import thd.gameobjects.base.ShiftableGameObject;
+import thd.gameobjects.movable.ShotBlockImages;
+import thd.gameobjects.movable.XWing;
 
 /**
- * Describing a static gameobject that looks like a pyramid obstacle.
+ * Describing a static gameobject that looks like an alien head.
  */
-public class Obstacle extends CollidingGameObject implements ShiftableGameObject {
+public class Head extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
 
     /**
-     * Initializes a new obstacle.
+     * Initializes a new head.
      *
      * @param gameView Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
      * @see GamePlayManager
      */
-    public Obstacle(GameView gameView, GamePlayManager gamePlayManager) {
+    public Head(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
         super.size = 30;
         super.rotation = 0;
@@ -44,12 +48,11 @@ public class Obstacle extends CollidingGameObject implements ShiftableGameObject
      */
     @Override
     public String toString() {
-        return "Obstacle_1: " + position;
+        return "Head: " + position;
     }
 
     @Override
     public void updatePosition() {
-        position.updateCoordinates(position.getX(), position.getY() + 3);
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);
         }
@@ -57,6 +60,12 @@ public class Obstacle extends CollidingGameObject implements ShiftableGameObject
 
     @Override
     public void addToCanvas() {
-        gameView.addImageToCanvas("obstacle_1.png", position.getX(), position.getY(), 2.0, rotation);
+        gameView.addImageToCanvas("head.png", position.getX(), position.getY(), 2.0, rotation);
+    }
+
+
+    @Override
+    public boolean tryToActivate(XWing xWing) {
+        return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
     }
 }

@@ -2,13 +2,14 @@ package thd.gameobjects.movable;
 
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
+import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
 /**
  * Describing a moving enemy that looks like an alien.
  */
-public class Alien extends CollidingGameObject implements ShiftableGameObject {
+public class Alien extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private final AlienMovementPattern alienMovementPattern;
     private boolean stop;
 
@@ -73,5 +74,10 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject {
     @Override
     public void addToCanvas() {
         gameView.addImageToCanvas("alien.png", position.getX(), position.getY(), 2.0, rotation);
+    }
+
+    @Override
+    public boolean tryToActivate(XWing xWing) {
+        return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
     }
 }

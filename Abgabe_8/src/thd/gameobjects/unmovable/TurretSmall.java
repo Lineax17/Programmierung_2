@@ -1,14 +1,17 @@
-package thd.gameobjects.movable;
+package thd.gameobjects.unmovable;
 
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
+import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
+import thd.gameobjects.movable.ShotBlockImages;
+import thd.gameobjects.movable.XWing;
 
 /**
  * Describing a static gameobject that looks like a turret.
  */
-public class TurretSmall extends CollidingGameObject implements ShiftableGameObject {
+public class TurretSmall extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
 
     /**
      * Initializes a new small turret.
@@ -44,7 +47,6 @@ public class TurretSmall extends CollidingGameObject implements ShiftableGameObj
 
     @Override
     public void updatePosition() {
-        position.updateCoordinates(position.getX(), position.getY() + 3);
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);
         }
@@ -53,5 +55,10 @@ public class TurretSmall extends CollidingGameObject implements ShiftableGameObj
     @Override
     public void addToCanvas() {
         gameView.addImageToCanvas("turret_small.png", position.getX(), position.getY(), 2.0, rotation);
+    }
+
+    @Override
+    public boolean tryToActivate(XWing xWing) {
+        return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
     }
 }

@@ -1,4 +1,4 @@
-package thd.gameobjects.movable;
+package thd.gameobjects.unmovable;
 
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
@@ -38,10 +38,9 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject {
 
     @Override
     public void updatePosition() {
-        //    position.updateCoordinates(position.getX(), position.getY() + 3);
-        //    if (position.getY() > 720) {
-        //       gamePlayManager.destroyGameObject(this);
-        //    }
+        if (position.getY() > 720) {
+            gamePlayManager.destroyGameObject(this);
+        }
     }
 
     @Override

@@ -59,19 +59,19 @@ class GameWorldManager extends GamePlayManager {
                 W                             G        W\s
                 W                                      W\s
                 W                                      W\s
+                W              O                       W\s
+                W              OOO                     W\s
+                W               OO                     W\s
                 W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
+                W                    H                 W\s
                 W                                      W\s
                 WW                                   WWW\s
                 WW                                    WW\s
-                WWW                                   WW\s
+                WWW                                  BWW\s
                 WWWW         G        A             WWWW\s
                 WW                                    WW\s
                 W                                      W\s
-                WW             A                       W\s
+                WW             A                      SW\s
                 WWW                       F            W\s
                 WW                                     W\s
                 W                                      W\s
@@ -97,20 +97,12 @@ class GameWorldManager extends GamePlayManager {
         wallsForPathDecision = new LinkedList<CollidingGameObject>();
         score = new Score(gameView, this);
         xwing = new XWing(gameView, this);
-        head = new Head(gameView, this);
-        obstacle1 = new Obstacle(gameView, this);
-        turretBig = new TurretBig(gameView, this);
-        turretSmall = new TurretSmall(gameView, this);
         spawnGameObjects();
         spawnGameObjectsFromWorldString();
     }
 
     private void spawnGameObjects() {
         spawnGameObject(score);
-        spawnGameObject(head);
-        spawnGameObject(obstacle1);
-        spawnGameObject(turretBig);
-        spawnGameObject(turretSmall);
         spawnGameObject(xwing);
     }
 
@@ -153,6 +145,34 @@ class GameWorldManager extends GamePlayManager {
                     double y = (line - worldOffsetLines) * 32;
                     spaceFrog.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(spaceFrog);
+                    activateGameObjects();
+                } else if (character == 'H') {
+                    Head head = new Head(gameView, this);
+                    double x = (column - worldOffsetColumns) * 32;
+                    double y = (line - worldOffsetLines) * 32;
+                    head.getPosition().updateCoordinates(x, y);
+                    addActivatableGameObject(head);
+                    activateGameObjects();
+                } else if (character == 'O') {
+                    Obstacle obstacle = new Obstacle(gameView, this);
+                    double x = (column - worldOffsetColumns) * 32;
+                    double y = (line - worldOffsetLines) * 32;
+                    obstacle.getPosition().updateCoordinates(x, y);
+                    addActivatableGameObject(obstacle);
+                    activateGameObjects();
+                } else if (character == 'B') {
+                    TurretBig turretBig = new TurretBig(gameView, this);
+                    double x = (column - worldOffsetColumns) * 32;
+                    double y = (line - worldOffsetLines) * 32;
+                    turretBig.getPosition().updateCoordinates(x, y);
+                    addActivatableGameObject(turretBig);
+                    activateGameObjects();
+                } else if (character == 'S') {
+                    TurretSmall turretSmall = new TurretSmall(gameView, this);
+                    double x = (column - worldOffsetColumns) * 32;
+                    double y = (line - worldOffsetLines) * 32;
+                    turretSmall.getPosition().updateCoordinates(x, y);
+                    addActivatableGameObject(turretSmall);
                     activateGameObjects();
                 }
             }
