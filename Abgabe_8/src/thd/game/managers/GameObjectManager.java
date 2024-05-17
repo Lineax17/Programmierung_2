@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Manages adding and removal of gameobject during the runtime of the game.
  */
-public class GameObjectManager extends CollisionManager {
+class GameObjectManager extends CollisionManager {
     private final List<GameObject> gameObjects;
     private final List<GameObject> gameObjectsToBeAdded;
     private final List<GameObject> gameObjectsToBeRemoved;
@@ -17,7 +17,7 @@ public class GameObjectManager extends CollisionManager {
     /**
      * Initializes a new GameObjectManager.
      */
-    public GameObjectManager() {
+    GameObjectManager() {
         gameObjects = new LinkedList<>();
         gameObjectsToBeAdded = new LinkedList<>();
         gameObjectsToBeRemoved = new LinkedList<>();

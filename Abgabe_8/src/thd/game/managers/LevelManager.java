@@ -1,35 +1,51 @@
 package thd.game.managers;
 
-import thd.game.level.Level;
-import thd.game.level.Level1;
-import thd.game.level.Level2;
-import thd.game.level.Level3;
+import thd.game.level.*;
 import thd.game.utilities.GameView;
 
 import java.util.List;
 
-public class LevelManager extends GameWorldManager {
-    List<Level> levels;
+class LevelManager extends GameWorldManager {
+    private List<Level> levels;
+    private int index;
+    private static final int LIVES = 5;
+
 
     protected LevelManager(GameView gameView) {
         super(gameView);
-        levels = List.of(new Level1(), new Level2(), new Level3());
-        super.level = levels.get(0);
     }
 
     @Override
-    public void initializeLevel() {
+    protected void initializeLevel() {
         super.initializeLevel();
-        super.level = new Level1();
+        initializeGameObjects();
     }
 
-    protected boolean HasNextLevel() {
-        return levels.size() > 1;
+    private void initializeGameObjects() {
+        //Hintergrund ändern
+        //Lebensanzeige aktualiesieren
+        //Punktestand übernehmen
+        //Einen Countdown neu starten
+    }
+
+    protected boolean hasNextLevel() {
+        return levels.size() > index+1;
     }
 
     protected void switchToNextLevel() {
-        if (HasNextLevel()) {
-
+        if (hasNextLevel()) {
+            index++;
+            super.level = levels.get(index);
+        } else {
+            throw new NoMoreLevelsAvailableException("No more levels available");
         }
+    }
+
+    protected void initializeGame() {
+        index = 0;
+        levels = List.of(new Level1(), new Level2(), new Level3());
+        level = levels.get(0);
+        lives = LIVES;
+        points = 0;
     }
 }

@@ -10,13 +10,10 @@ public class GamePlayManager extends WorldShiftManager {
     private final GameObjectManager gameObjectManager;
     protected int points;
     protected int lives;
-    private static final int LIVES = 5;
 
     protected GamePlayManager(GameView gameView) {
         super(gameView);
         gameObjectManager = new GameObjectManager();
-        this.lives = LIVES;
-        points = 0;
     }
 
     /**

@@ -9,7 +9,6 @@ class GameManager extends LevelManager {
 
     }
 
-
     @Override
     protected void gameLoopUpdate() {
         super.gameLoopUpdate();
@@ -17,12 +16,31 @@ class GameManager extends LevelManager {
     }
 
     @Override
-    public void initializeLevel() {
+    protected void initializeLevel() {
         super.initializeLevel();
     }
 
-    private void gameManagement() {
-
+    @Override
+    protected void initializeGame() {
+        super.initializeGame();
+        initializeLevel();
     }
 
+    private void gameManagement() {
+        if (endOfGame()) {
+            initializeGame();
+        } else if (endOfLevel()) {
+            switchToNextLevel();
+            initializeLevel();
+        }
+    }
+
+    private boolean endOfGame() {
+        return lives == 0 || (!hasNextLevel() && endOfLevel());
+    }
+
+    //Not working properly
+    private boolean endOfLevel() {
+        return gameView.timer(3000, this) || endOfGame();
+    }
 }

@@ -1,7 +1,12 @@
 package thd.game.level;
 
+/**
+ * The first Level of the game.
+ */
 public class Level1 extends Level {
-
+    /**
+     * Initializes the level.
+     */
     public Level1() {
         super.world = """
                 W                                      W\s
@@ -94,7 +99,7 @@ public class Level1 extends Level {
                 W                                      W\s
                 W                                      W\s
                 W                                      W\s""";
-        numberOfLevel = 1;
+        number = 1;
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
     }

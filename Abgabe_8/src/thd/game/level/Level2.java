@@ -1,7 +1,13 @@
 package thd.game.level;
 
+/**
+ * The second level of the game.
+ */
 public class Level2 extends Level {
 
+    /**
+     * Initializes the level.
+     */
     public Level2() {
         super.world = """
                 W                                      W\s
@@ -64,21 +70,8 @@ public class Level2 extends Level {
                 W                                      W\s
                 W                                      W\s
                 W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
                 W                                      W\s""";
-        numberOfLevel = 1;
+        number = 2;
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
     }

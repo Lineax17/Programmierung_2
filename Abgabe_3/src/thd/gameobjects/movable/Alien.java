@@ -6,7 +6,7 @@ import thd.gameobjects.base.GameObject;
  * Describing a moving enemy that looks like an alien.
  */
 public class Alien extends GameObject {
-    private AlienMovementPattern alienMovementPattern;
+    private final AlienMovementPattern alienMovementPattern;
     private boolean stop;
 
     /**

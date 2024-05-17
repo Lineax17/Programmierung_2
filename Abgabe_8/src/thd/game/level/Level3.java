@@ -1,7 +1,13 @@
 package thd.game.level;
 
+/**
+ * The third level of the game.
+ */
 public class Level3 extends Level {
 
+    /**
+     * Initializes the level.
+     */
     public Level3() {
         super.world = """
                 W                                      W\s
@@ -77,24 +83,8 @@ public class Level3 extends Level {
                 W                                      W\s
                 W                                      W\s
                 W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
                 W                                      W\s""";
-        numberOfLevel = 1;
+        number = 3;
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
     }
