@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.ListIterator;
 
 class GameWorldManager extends GamePlayManager {
-
     private final List<CollidingGameObject> wallsForPathDecision;
     private final List<GameObject> activatableGameObjects;
 
@@ -53,7 +52,7 @@ class GameWorldManager extends GamePlayManager {
                 char character = lines[line].charAt(column);
 
                 if (character == 'A') {
-                    Alien alien = new Alien(gameView, this);
+                    Alien alien = new Alien(gameView, this, xwing);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     alien.getPosition().updateCoordinates(x, y);

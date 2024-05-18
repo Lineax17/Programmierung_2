@@ -10,7 +10,10 @@ import thd.gameobjects.base.ShiftableGameObject;
  * Describes a gameobject looking like a frog.
  */
 public class SpaceFrog extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
-
+    private enum State {
+        STANDARD, EXPLODING, SHOOTING
+    }
+    private final State currentState;
     /**
      * Initializes a new spacefrog.
      *
@@ -27,6 +30,7 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
         super.height = 33;
         super.speedInPixel = 2;
         distanceToBackground = 10;
+        currentState = State.STANDARD;
         hitBoxOffsets(0, 0, -120, 0);
 
     }
@@ -64,5 +68,15 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
     @Override
     public boolean tryToActivate(XWing xWing) {
         return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
+    }
+
+    @Override
+    public void updateStatus() {
+        super.updateStatus();
+        switch (currentState) {
+            case STANDARD: break;
+            case EXPLODING: break;
+            case SHOOTING: break;
+        }
     }
 }

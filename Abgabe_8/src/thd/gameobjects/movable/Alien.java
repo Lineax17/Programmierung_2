@@ -10,6 +10,7 @@ import thd.gameobjects.base.ShiftableGameObject;
  * Describing a moving enemy that looks like an alien.
  */
 public class Alien extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
+    private final XWing xWing;
     private final AlienMovementPattern alienMovementPattern;
     private boolean stop;
 
@@ -18,15 +19,17 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @param xWing           Instance of {@link XWing}
      * @see GameView
      * @see GamePlayManager
+     * @see XWing
      */
-    public Alien(GameView gameView, GamePlayManager gamePlayManager) {
+    public Alien(GameView gameView, GamePlayManager gamePlayManager, XWing xWing) {
         super(gameView, gamePlayManager);
+        this.xWing = xWing;
         this.alienMovementPattern = new AlienMovementPattern(this);
         stop = false;
         super.size = 30;
-        position.updateCoordinates(alienMovementPattern.startPosition());
         super.rotation = 0;
         super.width = 150;
         super.height = 33;
@@ -55,16 +58,21 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
 
     @Override
     public void updatePosition() {
-        if (stop) {
-            if (gameView.timer(500, this)) {
-                stop = false;
+        if (xWing.getPosition().getY() - position.getY() < 300) {
+            if (stop) {
+                if (gameView.timer(500, this)) {
+                    stop = false;
+                }
+            } else {
+                if (gameView.timer(8000, this)) {
+                    stop = true;
+                }
+                position.moveToPosition(alienMovementPattern.nextTargetPosition(), speedInPixel);
             }
         } else {
-            if (gameView.timer(8000, this)) {
-                stop = true;
-            }
-            position.moveToPosition(alienMovementPattern.nextTargetPosition(), speedInPixel);
+            position.down(speedInPixel);
         }
+
 
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);

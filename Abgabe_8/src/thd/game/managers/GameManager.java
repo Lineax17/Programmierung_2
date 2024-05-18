@@ -41,6 +41,6 @@ class GameManager extends LevelManager {
 
     //Not working properly
     private boolean endOfLevel() {
-        return gameView.timer(3000, this) || endOfGame();
+        return gameView.timer(10000, this);
     }
 }
