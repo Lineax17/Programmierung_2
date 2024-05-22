@@ -16,6 +16,7 @@ import java.util.ListIterator;
 class GameWorldManager extends GamePlayManager {
     private final List<CollidingGameObject> wallsForPathDecision;
     private final List<GameObject> activatableGameObjects;
+    private int[][] walls;
 
 
     protected GameWorldManager(GameView gameView) {
@@ -33,11 +34,24 @@ class GameWorldManager extends GamePlayManager {
 
     private void spawnGameObjectsFromWorldString() {
         String[] lines = super.level.world.split("\\R");
+
         for (int line = 0; line < lines.length; line++) {
             for (int column = 0; column < lines[line].length(); column++) {
                 char character = lines[line].charAt(column);
                 if (character == 'W') {
-                    Wall wall = new Wall(gameView, this);
+                    walls[line][column] = 1;
+                } else {
+                    walls[line][column] = 0;
+                }
+            }
+        }
+
+
+        for (int line = 0; line < lines.length; line++) {
+            for (int column = 0; column < lines[line].length(); column++) {
+                char character = lines[line].charAt(column);
+                if (character == 'W') {
+                    Wall wall = new Wall(gameView, this, walls, line, column);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     wall.getPosition().updateCoordinates(x, y);

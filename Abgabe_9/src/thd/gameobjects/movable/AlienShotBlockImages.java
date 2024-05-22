@@ -1,0 +1,70 @@
+package thd.gameobjects.movable;
+
+import thd.game.managers.GamePlayManager;
+import thd.game.utilities.GameView;
+import thd.gameobjects.base.CollidingGameObject;
+import thd.gameobjects.base.Position;
+import thd.gameobjects.unmovable.Wall;
+
+public class AlienShotBlockImages extends CollidingGameObject {
+
+    private static final String SHOT = """
+              W
+             WWW
+             RWR
+            WWRWW
+            WWRWW
+            """;
+    private final XWing xWing;
+    private final Alien alien;
+    private final Position targetPosition;
+
+    /**
+     * Initializes a new Shot.
+     *
+     * @param gameView        Instance of {@link GameView}.
+     * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @param xWing           Instance of {@link XWing}.
+     * @see GameView
+     * @see GamePlayManager
+     */
+    public AlienShotBlockImages(GameView gameView, GamePlayManager gamePlayManager, XWing xWing, Alien alien) {
+        super(gameView, gamePlayManager);
+        this.xWing = xWing;
+        this.alien = alien;
+        targetPosition = xWing.getPosition();
+        super.size = 2;
+        position.updateCoordinates(alien.getPosition());
+        super.rotation = 0;
+        super.width = 150;
+        super.height = 33;
+        super.speedInPixel = 2;
+        distanceToBackground = 50;
+        hitBoxOffsets(0, 0, -120, 0);
+    }
+
+    @Override
+    public String toString() {
+        return "AlienShot: " + position;
+    }
+
+
+    @Override
+    public void updatePosition() {
+        position.moveToPosition(targetPosition, speedInPixel);
+    }
+
+    @Override
+    public void addToCanvas() {
+        gameView.addBlockImageToCanvas(SHOT, position.getX(), position.getY(), size, rotation);
+    }
+
+
+    @Override
+    public void reactToCollisionWith(CollidingGameObject other) {
+        if (other instanceof Wall) {
+            gamePlayManager.destroyGameObject(this);
+        }
+    }
+
+}
