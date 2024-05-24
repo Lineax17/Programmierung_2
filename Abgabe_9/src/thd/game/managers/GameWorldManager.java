@@ -35,8 +35,10 @@ class GameWorldManager extends GamePlayManager {
     private void spawnGameObjectsFromWorldString() {
         String[] lines = super.level.world.split("\\R");
 
+        walls = new int[lines.length][40];
+
         for (int line = 0; line < lines.length; line++) {
-            for (int column = 0; column < lines[line].length(); column++) {
+            for (int column = 0; column < lines[line].length() - 1; column++) {
                 char character = lines[line].charAt(column);
                 if (character == 'W') {
                     walls[line][column] = 1;
