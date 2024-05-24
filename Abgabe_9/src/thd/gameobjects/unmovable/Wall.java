@@ -62,11 +62,11 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject {
             if (column <= 20) {
                 if (walls[line][column + 1] == 0) {
                     imageName = "wall_left.png";
-                } else  {
+                } else {
                     imageName = "wall_inner.png";
                 }
             } else {
-                if (walls[line][column- 1] == 0) {
+                if (walls[line][column - 1] == 0) {
                     imageName = "wall_right.png";
                 } else {
                     imageName = "wall_inner.png";
@@ -97,6 +97,8 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject {
                 imageName = "corner_left_top_1.png";
             } else if (isLeftLowerCorner) {
                 imageName = "corner_left_bottom_1.png";
+            } else {
+                imageName = "explosion_1.png";
             }
         }
         return imageName;

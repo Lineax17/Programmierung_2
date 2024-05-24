@@ -9,96 +9,96 @@ public class Level1 extends Level {
      */
     public Level1() {
         super.world = """
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W         F                            W\s
-                W                                      W\s
-                W                                      W\s
-                W                         F            W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W         F                            W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                 A                    W\s
-                W                                      W\s
-                W                                      W\s
-                W       G                              W\s
-                W                             G        W\s
-                W                                      W\s
-                W                                      W\s
-                W              O                       W\s
-                W              OOO                     W\s
-                W               OO                     W\s
-                W                                      W\s
-                W                    H                 W\s
-                W                                      W\s
-                WW                                   WWW\s
-                WW                                    WW\s
-                WWW                                  BWW\s
-                WWWW         G        A             WWWW\s
-                WW                                    WW\s
-                W                                      W\s
-                WW             A                      SW\s
-                WWW                       F            W\s
                 WW                                     W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s
-                W                                      W\s""";
+                WWW                                    W\s
+                WWW                                    W\s
+                WWW                                    W\s
+                WWW                                    W\s
+                WWWW                                   W\s
+                WWWW                                   W\s
+                WWW                                    W\s
+                WWW                                    W\s
+                WWW                                    W\s
+                WWWW         F                         W\s
+                WWWW                                   W\s
+                WWW                                    W\s
+                WWW                         F          W\s
+                WWW                                    W\s
+                WWW                                    W\s
+                WWWW                                   W\s
+                WWWWW                                  W\s
+                WWWWWW         F                       W\s
+                WWWWWWW                                W\s
+                WWWWWWW                                W\s
+                WWWWWWW                                W\s
+                WWWWWW                                 W\s
+                WWWWW                                  W\s
+                WWWW                                   W\s
+                WWW                                    W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                 A                   W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW       G                             W\s
+                WW                             G       W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW              O                      W\s
+                WW              OOO                    W\s
+                WW               OO                    W\s
+                WW                                     W\s
+                WW                    H                W\s
+                WW                                    WW\s
+                WW                                    WW\s
+                WW                                    WW\s
+                WWW                                  WWW\s
+                WWWW         G        A            BWWWW\s
+                WWWW                                WWWW\s
+                WWW                                  WWW\s
+                WW             A                     SWW\s
+                WWW                       F            W\s
+                WWW                                    W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s
+                WW                                     W\s""";
         number = 1;
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
