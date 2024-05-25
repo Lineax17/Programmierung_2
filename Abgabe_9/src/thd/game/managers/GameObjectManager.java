@@ -12,7 +12,7 @@ class GameObjectManager extends CollisionManager {
     private final List<GameObject> gameObjects;
     private final List<GameObject> gameObjectsToBeAdded;
     private final List<GameObject> gameObjectsToBeRemoved;
-    private static final int MAXIMUM_NUMBER_OF_GAME_OBJECTS = 500;
+    private static final int MAXIMUM_NUMBER_OF_GAME_OBJECTS = 1000;
 
     /**
      * Initializes a new GameObjectManager.

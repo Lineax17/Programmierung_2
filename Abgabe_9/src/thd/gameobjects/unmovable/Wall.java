@@ -2,13 +2,15 @@ package thd.gameobjects.unmovable;
 
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
+import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
+import thd.gameobjects.movable.XWing;
 
 /**
  * This class represents the left border of the game world.
  */
-public class Wall extends CollidingGameObject implements ShiftableGameObject {
+public class Wall extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     int[][] walls;
     int line;
     int column;
@@ -102,5 +104,10 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject {
             }
         }
         return imageName;
+    }
+
+    @Override
+    public boolean tryToActivate(XWing xWing) {
+        return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
     }
 }
