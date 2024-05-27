@@ -59,15 +59,7 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
     @Override
     public void updatePosition() {
         if (xWing.getPosition().getY() - position.getY() < 300) {
-            if (stop) {
-                if (gameView.timer(1000, this)) {
-                    stop = false;
-                }
-                shoot();
-            } else {
-                if (gameView.timer(2000, this)) {
-                    stop = true;
-                }
+            if (!stop) {
                 position.moveToPosition(alienMovementPattern.nextTargetPosition(), speedInPixel);
             }
         } else {
@@ -77,6 +69,22 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
 
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);
+        }
+    }
+
+    @Override
+    public void updateStatus() {
+        if (xWing.getPosition().getY() - position.getY() < 500) {
+            if (stop) {
+                if (gameView.timer(1000, this)) {
+                    stop = false;
+                    shoot();
+                }
+            } else {
+                if (gameView.timer(1000, this)) {
+                    stop = true;
+                }
+            }
         }
     }
 
@@ -91,6 +99,6 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
     }
 
     private void shoot() {
-        //gamePlayManager.spawnGameObject(new AlienShotBlockImages(gameView, gamePlayManager, xWing, this));
+        gamePlayManager.spawnGameObject(new AlienShotBlockImages(gameView, gamePlayManager, xWing, this));
     }
 }
