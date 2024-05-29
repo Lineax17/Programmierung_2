@@ -32,7 +32,7 @@ public class AlienShotBlockImages extends CollidingGameObject {
         super(gameView, gamePlayManager);
         this.xWing = xWing;
         this.alien = alien;
-        targetPosition = new Position(xWing.getPosition());
+        targetPosition = new Position(xWing.getPosition().getX(), xWing.getPosition().getY());
         super.size = 2;
         position.updateCoordinates(alien.getPosition());
         super.rotation = 0;

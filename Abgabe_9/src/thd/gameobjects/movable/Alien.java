@@ -78,7 +78,7 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
             if (stop) {
                 if (gameView.timer(1000, this)) {
                     stop = false;
-                    shoot();
+                    //shoot();
                 }
             } else {
                 if (gameView.timer(1000, this)) {

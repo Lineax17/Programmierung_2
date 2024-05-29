@@ -39,8 +39,13 @@ class GameManager extends LevelManager {
         return lives == 0 || (!hasNextLevel() && endOfLevel());
     }
 
-    //Not working properly
+    //Revert after Abgabe_9
     private boolean endOfLevel() {
-        return gameView.timer(10000, this);
+        return levelHasEnded();
+        //return gameView.timer(10000, this);
+    }
+
+    private boolean levelHasEnded() {
+        return gameView.timer(15000, this);
     }
 }

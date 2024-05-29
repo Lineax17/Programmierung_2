@@ -108,6 +108,7 @@ class GameWorldManager extends GamePlayManager {
 
     private void spawnGameObjectsFromWorldString() {
         String[] lines = world.split("\\R");
+
         for (int line = 0; line < lines.length; line++) {
             for (int column = 0; column < lines[line].length(); column++) {
                 char character = lines[line].charAt(column);

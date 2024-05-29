@@ -3,10 +3,7 @@ package thd.game.managers;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.GameObject;
-import thd.gameobjects.movable.Alien;
-import thd.gameobjects.movable.Gem;
-import thd.gameobjects.movable.SpaceFrog;
-import thd.gameobjects.movable.XWing;
+import thd.gameobjects.movable.*;
 import thd.gameobjects.unmovable.*;
 
 import java.util.LinkedList;
@@ -29,6 +26,7 @@ class GameWorldManager extends GamePlayManager {
     private void spawnGameObjects() {
         spawnGameObject(score);
         spawnGameObject(xwing);
+        spawnGameObject(new Jimmy(gameView, this));
     }
 
     private void spawnGameObjectsFromWorldString() {
