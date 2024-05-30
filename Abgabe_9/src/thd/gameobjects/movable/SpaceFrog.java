@@ -62,7 +62,7 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
 
     @Override
     public void addToCanvas() {
-        gameView.addImageToCanvas("space_frog.png", position.getX(), position.getY(), 2.0, rotation);
+        gameView.addImageToCanvas("space_frog_1.png", position.getX(), position.getY(), 2.0, rotation);
     }
 
     @Override

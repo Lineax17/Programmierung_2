@@ -11,17 +11,17 @@ import thd.gameobjects.movable.XWing;
 /**
  * Describing a static gameobject that looks like a turret.
  */
-public class TurretBig extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
+public class TurretLeft extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
 
     /**
-     * Initializes a new big turret.
+     * Initializes a new small turret.
      *
      * @param gameView Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
      * @see GamePlayManager
      */
-    public TurretBig(GameView gameView, GamePlayManager gamePlayManager) {
+    public TurretLeft(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
         super.size = 30;
         super.rotation = 0;
@@ -42,7 +42,7 @@ public class TurretBig extends CollidingGameObject implements ShiftableGameObjec
 
     @Override
     public String toString() {
-        return "TurretBig: " + position;
+        return "TurretSmall: " + position;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class TurretBig extends CollidingGameObject implements ShiftableGameObjec
 
     @Override
     public void addToCanvas() {
-        gameView.addImageToCanvas("turret_big.png", position.getX(), position.getY(), 2.0, rotation);
+        gameView.addImageToCanvas("turret_right_small.png", position.getX(), position.getY(), 2.0, rotation);
     }
 
     @Override

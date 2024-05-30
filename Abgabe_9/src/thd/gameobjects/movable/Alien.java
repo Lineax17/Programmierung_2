@@ -90,7 +90,7 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
 
     @Override
     public void addToCanvas() {
-        gameView.addImageToCanvas("alien.png", position.getX(), position.getY(), 2.0, rotation);
+        gameView.addImageToCanvas("alien_1.png", position.getX(), position.getY(), 2.0, rotation);
     }
 
     @Override

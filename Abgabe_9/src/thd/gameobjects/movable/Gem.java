@@ -97,7 +97,7 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public void addToCanvas() {
-        gameView.addImageToCanvas("gem.png", position.getX(), position.getY(), 2.0, rotation);
+        gameView.addImageToCanvas("gem_1.png", position.getX(), position.getY(), 2.0, rotation);
     }
 
     /**

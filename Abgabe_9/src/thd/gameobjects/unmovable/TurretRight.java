@@ -9,19 +9,19 @@ import thd.gameobjects.movable.ShotBlockImages;
 import thd.gameobjects.movable.XWing;
 
 /**
- * Describing a static gameobject that looks like a pyramid obstacle.
+ * Describing a static gameobject that looks like a turret.
  */
-public class Obstacle extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
+public class TurretRight extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
 
     /**
-     * Initializes a new obstacle.
+     * Initializes a new big turret.
      *
      * @param gameView Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
      * @see GamePlayManager
      */
-    public Obstacle(GameView gameView, GamePlayManager gamePlayManager) {
+    public TurretRight(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
         super.size = 30;
         super.rotation = 0;
@@ -40,14 +40,9 @@ public class Obstacle extends CollidingGameObject implements ShiftableGameObject
         }
     }
 
-    /**
-     * Returns a string.
-     *
-     * @return name of object and position.
-     */
     @Override
     public String toString() {
-        return "Obstacle_1: " + position;
+        return "TurretBig: " + position;
     }
 
     @Override
@@ -59,7 +54,7 @@ public class Obstacle extends CollidingGameObject implements ShiftableGameObject
 
     @Override
     public void addToCanvas() {
-        gameView.addImageToCanvas("obstacle_1.png", position.getX(), position.getY(), 2.0, rotation);
+        gameView.addImageToCanvas("turret_right_big.png", position.getX(), position.getY(), 2.0, rotation);
     }
 
     @Override
