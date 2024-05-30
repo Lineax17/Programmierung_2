@@ -11,9 +11,14 @@ import thd.gameobjects.base.ShiftableGameObject;
  */
 public class SpaceFrog extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private enum State {
-        STANDARD, EXPLODING, SHOOTING
+        STANDARD, EXPLODING
     }
-    private final State currentState;
+
+    private State currentState;
+    private StandardState standardState;
+    private ExplodingState explodingState;
+    private String imageName;
+
     /**
      * Initializes a new spacefrog.
      *
@@ -31,6 +36,8 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
         super.speedInPixel = 2;
         distanceToBackground = 10;
         currentState = State.STANDARD;
+        standardState = StandardState.STANDARD_1;
+        explodingState = ExplodingState.EXPLODING_1;
         hitBoxOffsets(0, 0, -120, 0);
 
     }
@@ -38,8 +45,7 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
         if (other instanceof ShotBlockImages) {
-            gamePlayManager.destroyGameObject(this);
-            gamePlayManager.addPoints(10);
+            switchToExplosion();
         }
     }
 
@@ -54,15 +60,8 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
     }
 
     @Override
-    public void updatePosition() {
-        if (position.getY() > 720) {
-            gamePlayManager.destroyGameObject(this);
-        }
-    }
-
-    @Override
     public void addToCanvas() {
-        gameView.addImageToCanvas("space_frog_1.png", position.getX(), position.getY(), 2.0, rotation);
+        gameView.addImageToCanvas(imageName, position.getX(), position.getY(), 2.0, rotation);
     }
 
     @Override
@@ -70,13 +69,73 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
         return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
     }
 
+    private enum StandardState {
+        STANDARD_1("space_frog_1.png"),
+        STANDARD_2("space_frog_2.png"),
+        STANDARD_3("space_frog_3.png"),
+        STANDARD_4("space_frog_2.png"),
+        STANDARD_5("space_frog_1.png");
+
+        private final String display;
+
+        StandardState(String display) {
+            this.display = display;
+        }
+    }
+
+    private enum ExplodingState {
+        EXPLODING_1("explosion_1.png"),
+        EXPLODING_2("explosion_2.png"),
+        EXPLODING_3("explosion_3.png"),
+        EXPLODING_4("explosion_4.png");
+
+
+        private final String display;
+
+        ExplodingState(String display) {
+            this.display = display;
+        }
+    }
+
     @Override
     public void updateStatus() {
         super.updateStatus();
         switch (currentState) {
-            case STANDARD: break;
-            case EXPLODING: break;
-            case SHOOTING: break;
+            case STANDARD -> {
+                imageName = standardState.display;
+                if (gameView.timer(200, this)) {
+                    switchToNextStandardState();
+                }
+            }
+            case EXPLODING -> {
+                imageName = explodingState.display;
+                if (gameView.timer(80, this)) {
+                    switchToNextExplosionState();
+                }
+            }
+        }
+
+        if (position.getY() > 720) {
+            gamePlayManager.destroyGameObject(this);
+        }
+    }
+
+    private void switchToExplosion() {
+        currentState = State.EXPLODING;
+    }
+
+    private void switchToNextStandardState() {
+        int nextState = (standardState.ordinal() + 1) % SpaceFrog.StandardState.values().length;
+        standardState = SpaceFrog.StandardState.values()[nextState];
+    }
+
+    private void switchToNextExplosionState() {
+        int nextState = (explodingState.ordinal() + 1);
+        if (nextState < ExplodingState.values().length) {
+            explodingState = SpaceFrog.ExplodingState.values()[nextState];
+        } else {
+            gamePlayManager.destroyGameObject(this);
+            gamePlayManager.addPoints(10);
         }
     }
 }

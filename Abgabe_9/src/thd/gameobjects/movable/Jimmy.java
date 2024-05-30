@@ -7,21 +7,22 @@ import thd.gameobjects.base.GameObject;
 // Diese Klasse muss nicht mit Javadoc kommentiert werden.
 public class Jimmy extends GameObject {
 
-    private enum State {RUNNING, JUMPING, HOVERING}
+    enum State {RUNNING, JUMPING, HOVERING}
 
     private State currentState;
-    private String blockImage;
     private RunningState runningState;
     private JumpingState jumpingState;
+    private String blockImage;
+
 
     public Jimmy(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
-        currentState = State.RUNNING;
         size = 5;
         height = 21 * size;
         width = 15 * size;
         speedInPixel = 5;
         distanceToBackground = 10000;
+        currentState = State.RUNNING;
         runningState = RunningState.RUNNING_1;
         jumpingState = JumpingState.JUMPING_1;
         resetPosition();
