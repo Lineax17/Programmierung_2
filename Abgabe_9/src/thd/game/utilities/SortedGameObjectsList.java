@@ -3,25 +3,22 @@ package thd.game.utilities;
 import thd.gameobjects.base.GameObject;
 
 import java.util.LinkedList;
-import java.util.List;
 
+/**
+ * Manages sorting of game objects.
+ */
 public class SortedGameObjectsList extends LinkedList<GameObject> {
-    private final List<GameObject> gameObjects;
-
-    public SortedGameObjectsList(List<GameObject> gameObjects) {
-        this.gameObjects = gameObjects;
-    }
-
 
     @Override
-    public void add(int index, GameObject toAdd) {
-        int indexToSortIn = index;
-        for (GameObject gameObject : gameObjects) {
+    public boolean add(GameObject toAdd) {
+        int indexToSortIn = 0;
+        for (GameObject gameObject : this) {
             if (gameObject.getDistanceToBackground() >= toAdd.getDistanceToBackground()) {
                 break;
             }
             indexToSortIn++;
         }
-        gameObjects.add(indexToSortIn, toAdd);
+        add(indexToSortIn, toAdd);
+        return true;
     }
 }
