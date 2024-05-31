@@ -12,7 +12,7 @@ class UserControlledGameObjectPool {
     XWing xwing;
     private ShotBlockImages shotBlockImages;
     protected Level level;
-    Jimmy jimmy;
+
 
     protected final GameView gameView;
 

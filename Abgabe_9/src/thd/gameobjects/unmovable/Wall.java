@@ -11,15 +11,18 @@ import thd.gameobjects.movable.XWing;
  * This class represents the left border of the game world.
  */
 public class Wall extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
-    int[][] walls;
-    int line;
-    int column;
+    private final int[][] walls;
+    private final int line;
+    private final int column;
 
     /**
      * Initializes a new wall.
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @param walls           Array representaion of every wall.
+     * @param line            Line in the array.
+     * @param column          Column in the array.
      * @see GameView
      * @see GamePlayManager
      */

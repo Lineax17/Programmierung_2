@@ -3,10 +3,9 @@ package thd.gameobjects.movable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
-import thd.gameobjects.base.Position;
 import thd.gameobjects.unmovable.Wall;
 
-public class AlienShotBlockImages extends CollidingGameObject {
+class AlienShotBlockImages extends CollidingGameObject {
 
     private static final String SHOT = """
               W
@@ -17,7 +16,6 @@ public class AlienShotBlockImages extends CollidingGameObject {
             """;
     private final XWing xWing;
     private final Alien alien;
-    private final Position targetPosition;
 
     /**
      * Initializes a new Shot.
@@ -25,14 +23,17 @@ public class AlienShotBlockImages extends CollidingGameObject {
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @param xWing           Instance of {@link XWing}.
+     * @param alien           Instance of {@link Alien}.
      * @see GameView
      * @see GamePlayManager
+     * @see XWing
+     * @see Alien
      */
-    public AlienShotBlockImages(GameView gameView, GamePlayManager gamePlayManager, XWing xWing, Alien alien) {
+    AlienShotBlockImages(GameView gameView, GamePlayManager gamePlayManager, XWing xWing, Alien alien) {
         super(gameView, gamePlayManager);
         this.xWing = xWing;
         this.alien = alien;
-        targetPosition = new Position(xWing.getPosition().getX(), xWing.getPosition().getY());
+        super.targetPosition.updateCoordinates(xWing.getPosition().getX(), xWing.getPosition().getY());
         super.size = 2;
         position.updateCoordinates(alien.getPosition());
         super.rotation = 0;
