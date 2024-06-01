@@ -67,7 +67,7 @@ public class GamePlayManager extends WorldShiftManager {
     }
 
     private void gamePlayManagement() {
-        int speedInPixel = 2;
+        int speedInPixel = 4;
         moveWorldDown(speedInPixel);
     }
 }
