@@ -8,15 +8,23 @@ import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.movable.ShotBlockImages;
 import thd.gameobjects.movable.XWing;
 
+import java.util.Random;
+
 /**
  * Describing a static gameobject that looks like a turret.
  */
 public class TurretRight extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
+    String[] namesOfAssets;
+    Random random = new Random();
+    String imageName;
+    int randomIndex;
+
+
 
     /**
      * Initializes a new big turret.
      *
-     * @param gameView Instance of {@link GameView}.
+     * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
      * @see GamePlayManager
@@ -29,6 +37,9 @@ public class TurretRight extends CollidingGameObject implements ShiftableGameObj
         super.height = 33;
         super.speedInPixel = 2;
         distanceToBackground = 5;
+        namesOfAssets = new String[]{"turret_right_big.png", "turret_right_dual.png", "turret_right_single.png", "turret_right_small.png", "turret_right_weird.png"};
+        randomIndex = random.nextInt(namesOfAssets.length);
+        imageName = namesOfAssets[randomIndex];
         hitBoxOffsets(0, 0, -120, 0);
 
     }

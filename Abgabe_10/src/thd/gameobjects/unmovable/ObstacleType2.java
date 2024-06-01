@@ -8,27 +8,20 @@ import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.movable.ShotBlockImages;
 import thd.gameobjects.movable.XWing;
 
-import java.util.Random;
-
 /**
- * Describing a static gameobject that looks like a turret.
+ * Describing a static gameobject that looks like a pyramid obstacle.
  */
-public class TurretLeft extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
-    String[] namesOfAssets;
-    Random random = new Random();
-    String imageName;
-    int randomIndex;
-
+public class ObstacleType2 extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
 
     /**
-     * Initializes a new small turret.
+     * Initializes a new obstacle.
      *
      * @param gameView Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
      * @see GamePlayManager
      */
-    public TurretLeft(GameView gameView, GamePlayManager gamePlayManager) {
+    public ObstacleType2(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
         super.size = 30;
         super.rotation = 0;
@@ -36,9 +29,6 @@ public class TurretLeft extends CollidingGameObject implements ShiftableGameObje
         super.height = 33;
         super.speedInPixel = 2;
         distanceToBackground = 5;
-        namesOfAssets = new String[]{"turret_left_big.png", "turret_left_dual.png", "turret_left_single.png", "turret_left_small.png", "turret_left_weird.png"};
-        randomIndex = random.nextInt(namesOfAssets.length);
-        imageName = namesOfAssets[randomIndex];
         hitBoxOffsets(0, 0, -120, 0);
 
     }
@@ -50,9 +40,14 @@ public class TurretLeft extends CollidingGameObject implements ShiftableGameObje
         }
     }
 
+    /**
+     * Returns a string.
+     *
+     * @return name of object and position.
+     */
     @Override
     public String toString() {
-        return "TurretSmall: " + position;
+        return "Obstacle_1: " + position;
     }
 
     @Override
@@ -64,7 +59,7 @@ public class TurretLeft extends CollidingGameObject implements ShiftableGameObje
 
     @Override
     public void addToCanvas() {
-        gameView.addImageToCanvas(imageName, position.getX(), position.getY(), 2.0, rotation);
+        gameView.addImageToCanvas("obstacle_type_2.png", position.getX(), position.getY(), 2.0, rotation);
     }
 
     @Override

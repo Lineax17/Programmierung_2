@@ -97,19 +97,19 @@ public class Level3 extends Level {
                 WW                             G      WW\s
                 WW                                    WW\s
                 WW                                    WW\s
-                WW              O                     WW\s
-                WW              OOO                   WW\s
-                WW               OO                   WW\s
+                WW              1                     WW\s
+                WW              111                   WW\s
+                WW               11                   WW\s
                 WW                                   WWW\s
                 WW                    H              WWW\s
                 WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s
                 WWW                                  WWW\s
-                WWWW         G        A            BWWWW\s
+                WWWW         G        A            RWWWW\s
                 WWWW                                WWWW\s
                 WWW                                  WWW\s
-                WW             A                     SWW\s
+                WW             A                     RWW\s
                 WWW                       F           WW\s
                 WWW                                   WW\s
                 WW                                    WW\s
