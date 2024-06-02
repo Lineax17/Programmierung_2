@@ -104,7 +104,7 @@ class GameWorldManager extends GamePlayManager {
                     obstacle.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(obstacle);
                     activateGameObjects();
-                }else if (character == 'R') {
+                } else if (character == 'R') {
                     TurretRight turretBig = new TurretRight(gameView, this);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
@@ -117,6 +117,27 @@ class GameWorldManager extends GamePlayManager {
                     double y = (line - super.level.worldOffsetLines) * 32;
                     turretSmall.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(turretSmall);
+                    activateGameObjects();
+                } else if (character == 'U') {
+                    Ufo ufo = new Ufo(gameView, this);
+                    double x = (column - super.level.worldOffsetColumns) * 32;
+                    double y = (line - super.level.worldOffsetLines) * 32;
+                    ufo.getPosition().updateCoordinates(x, y);
+                    addActivatableGameObject(ufo);
+                    activateGameObjects();
+                } else if (character == 'w') {
+                    Worm worm = new Worm(gameView, this);
+                    double x = (column - super.level.worldOffsetColumns) * 32;
+                    double y = (line - super.level.worldOffsetLines) * 32;
+                    worm.getPosition().updateCoordinates(x, y);
+                    addActivatableGameObject(worm);
+                    activateGameObjects();
+                } else if (character == 'B') {
+                    Bat bat = new Bat(gameView, this);
+                    double x = (column - super.level.worldOffsetColumns) * 32;
+                    double y = (line - super.level.worldOffsetLines) * 32;
+                    bat.getPosition().updateCoordinates(x, y);
+                    addActivatableGameObject(bat);
                     activateGameObjects();
                 }
             }
@@ -165,7 +186,7 @@ class GameWorldManager extends GamePlayManager {
                     spawnGameObject(obstacle);
                     iterator.remove();
                 }
-            }else if (gameObject instanceof ObstacleType2 obstacle) {
+            } else if (gameObject instanceof ObstacleType2 obstacle) {
                 if (obstacle.tryToActivate(xwing)) {
                     spawnGameObject(obstacle);
                     iterator.remove();
@@ -188,6 +209,21 @@ class GameWorldManager extends GamePlayManager {
             } else if (gameObject instanceof Gem gem) {
                 if (gem.tryToActivate(xwing)) {
                     spawnGameObject(gem);
+                    iterator.remove();
+                }
+            } else if (gameObject instanceof Ufo ufo) {
+                if (ufo.tryToActivate(xwing)) {
+                    spawnGameObject(ufo);
+                    iterator.remove();
+                }
+            } else if (gameObject instanceof Worm worm) {
+                if (worm.tryToActivate(xwing)) {
+                    spawnGameObject(worm);
+                    iterator.remove();
+                }
+            } else if (gameObject instanceof Bat bat) {
+                if (bat.tryToActivate(xwing)) {
+                    spawnGameObject(bat);
                     iterator.remove();
                 }
             }

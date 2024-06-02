@@ -23,26 +23,26 @@ public class Level1 extends Level {
                 WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s
+                WW            w                       WW\s
                 WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
+                WW                      w             WW\s
                 WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s
                 WW             WW                     WW\s
-                WW             WW                     WW\s
+                WW      B      WW         U           WW\s
                 WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s
+                WW          B                         WW\s
                 WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
+                WW              U                     WW\s
                 WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s
