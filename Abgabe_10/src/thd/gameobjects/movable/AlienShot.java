@@ -4,11 +4,10 @@ import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.Position;
+import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.unmovable.Wall;
 
 class AlienShot extends CollidingGameObject {
-
-    private final XWing xWing;
     private final Alien alien;
     private final Position xwingPosition;
     boolean isAbove;
@@ -28,7 +27,6 @@ class AlienShot extends CollidingGameObject {
      */
     AlienShot(GameView gameView, GamePlayManager gamePlayManager, XWing xWing, Alien alien) {
         super(gameView, gamePlayManager);
-        this.xWing = xWing;
         xwingPosition = new Position(xWing.getPosition().getX(), xWing.getPosition().getY());
         this.alien = alien;
         super.size = 2;

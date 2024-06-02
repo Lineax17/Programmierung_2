@@ -140,7 +140,7 @@ public class Level3 extends Level {
                 WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s
-                WW           A                        WW\s
+                WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s
                 WW                                    WW\s

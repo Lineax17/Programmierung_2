@@ -103,8 +103,12 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
         switch (currentState) {
             case STANDARD -> {
                 imageName = standardState.display;
-                if (gameView.timer(200, this)) {
+
+                if (gameView.timer(300, this)) {
                     switchToNextStandardState();
+                    if (standardState == StandardState.STANDARD_3) {
+                        shoot();
+                    }
                 }
             }
             case EXPLODING -> {
@@ -137,5 +141,9 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
             gamePlayManager.destroyGameObject(this);
             gamePlayManager.addPoints(10);
         }
+    }
+
+    private void shoot() {
+        gamePlayManager.spawnGameObject(new SpaceFrogShot(gameView, gamePlayManager, this));
     }
 }

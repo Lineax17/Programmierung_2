@@ -3,9 +3,10 @@ package thd.gameobjects.movable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
+import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.unmovable.Wall;
 
-public class SpaceFrogShot extends CollidingGameObject {
+public class SpaceFrogShot extends CollidingGameObject implements ShiftableGameObject {
 
     private final SpaceFrog spaceFrog;
 
@@ -14,16 +15,16 @@ public class SpaceFrogShot extends CollidingGameObject {
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
-     * @param spaceFrog           Instance of {@link SpaceFrog}.
+     * @param spaceFrog       Instance of {@link SpaceFrog}.
      * @see GameView
      * @see GamePlayManager
      * @see SpaceFrog
      */
-    SpaceFrogShot(GameView gameView, GamePlayManager gamePlayManager,SpaceFrog spaceFrog) {
+    SpaceFrogShot(GameView gameView, GamePlayManager gamePlayManager, SpaceFrog spaceFrog) {
         super(gameView, gamePlayManager);
         this.spaceFrog = spaceFrog;
         super.size = 2;
-        position.updateCoordinates(this.spaceFrog.getPosition());
+        position.updateCoordinates(spaceFrog.getPosition().getX() + 8, spaceFrog.getPosition().getY() + 12);
         super.rotation = 0;
         super.width = 150;
         super.height = 33;
@@ -33,7 +34,6 @@ public class SpaceFrogShot extends CollidingGameObject {
     }
 
 
-
     @Override
     public String toString() {
         return "SpaceFrogShot: " + position;
@@ -41,7 +41,11 @@ public class SpaceFrogShot extends CollidingGameObject {
 
     @Override
     public void updatePosition() {
+        position.down();
 
+        if (position.getY() > 720) {
+            gamePlayManager.destroyGameObject(this);
+        }
     }
 
     @Override
@@ -56,6 +60,4 @@ public class SpaceFrogShot extends CollidingGameObject {
             gamePlayManager.destroyGameObject(this);
         }
     }
-
-
 }
