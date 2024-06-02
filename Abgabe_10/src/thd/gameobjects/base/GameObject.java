@@ -13,7 +13,7 @@ public abstract class GameObject {
     protected final GameView gameView;
     protected final Position position;
     protected final GamePlayManager gamePlayManager;
-    protected final Position targetPosition;
+    protected Position targetPosition;
     protected double speedInPixel;
     protected double rotation;
     protected double size;
