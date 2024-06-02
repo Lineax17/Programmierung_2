@@ -65,7 +65,7 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof ShotBlockImages) {
+        if (other instanceof XWingShot) {
             switchToExplosion();
         }
     }

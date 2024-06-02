@@ -93,7 +93,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
     @Override
     public void shoot() {
         if (gameView.timer(shotDurationInMilliseconds, this)) {
-            gamePlayManager.spawnGameObject(new ShotBlockImages(gameView, gamePlayManager, this));
+            gamePlayManager.spawnGameObject(new XWingShot(gameView, gamePlayManager, this));
         }
     }
 }

@@ -7,12 +7,8 @@ import thd.gameobjects.base.CollidingGameObject;
 /**
  * This element represents a shot which is fired by the main object.
  */
-public class ShotBlockImages extends CollidingGameObject {
-    private static final String SHOT = """
-            WW            WW
-            WW            WW
-            WW            WW
-            """;
+public class XWingShot extends CollidingGameObject {
+
     private final XWing xWing;
 
     /**
@@ -24,7 +20,7 @@ public class ShotBlockImages extends CollidingGameObject {
      * @see GameView
      * @see GamePlayManager
      */
-    public ShotBlockImages(GameView gameView, GamePlayManager gamePlayManager, XWing xWing) {
+    public XWingShot(GameView gameView, GamePlayManager gamePlayManager, XWing xWing) {
         super(gameView, gamePlayManager);
         this.xWing = xWing;
         super.size = 2;
@@ -49,7 +45,7 @@ public class ShotBlockImages extends CollidingGameObject {
 
     @Override
     public void addToCanvas() {
-        gameView.addBlockImageToCanvas(SHOT, position.getX(), position.getY(), size, rotation);
+        gameView.addBlockImageToCanvas(XWingShotBlockImages.XWINGSHOT, position.getX(), position.getY(), size, rotation);
     }
 
     @Override

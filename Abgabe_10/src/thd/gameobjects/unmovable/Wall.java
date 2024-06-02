@@ -7,6 +7,8 @@ import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.movable.XWing;
 
+import java.util.Random;
+
 /**
  * This class represents the left border of the game world.
  */
@@ -14,13 +16,14 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject, Ac
     private final int[][] walls;
     private final int line;
     private final int column;
-
+    Random random = new Random();
+    String formattedImageName;
     /**
      * Initializes a new wall.
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
-     * @param walls           Array representaion of every wall.
+     * @param walls           Array representation of every wall.
      * @param line            Line in the array.
      * @param column          Column in the array.
      * @see GameView
@@ -34,6 +37,7 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject, Ac
         super.width = 32;
         super.height = 32;
         hitBoxOffsets(0, 0, 0, 0);
+        formattedImageName = chooseWallAsset();
     }
 
     @Override
@@ -55,7 +59,6 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject, Ac
 
     @Override
     public void addToCanvas() {
-        String formattedImageName = chooseWallAsset();
         gameView.addImageToCanvas(formattedImageName, position.getX(), position.getY(), 1, rotation);
 
     }
@@ -95,13 +98,30 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject, Ac
             } else if (isLeft) {
                 imageName = "wall_left.png";
             } else if (isRightUpperCorner) {
-                imageName = "corner_right_top_1.png";
+                if (random.nextBoolean()) {
+                    imageName = "corner_right_top_1.png";
+                } else {
+                    imageName = "corner_right_top_2.png";
+                }
             } else if (isRightLowerCorner) {
-                imageName = "corner_right_bottom_1.png";
+                if (random.nextBoolean()) {
+                    imageName = "corner_right_bottom_1.png";
+                } else {
+                    imageName = "corner_right_bottom_2.png";
+                }
             } else if (isLeftUpperCorner) {
-                imageName = "corner_left_top_1.png";
+                if (random.nextBoolean()) {
+                    imageName = "corner_left_top_1.png";
+                } else {
+                    imageName = "corner_left_top_2.png";
+                }
             } else if (isLeftLowerCorner) {
-                imageName = "corner_left_bottom_1.png";
+                if (random.nextBoolean()) {
+                    imageName = "corner_left_bottom_1.png";
+                } else {
+                    imageName = "corner_left_bottom_2.png";
+                }
+                //troubleshooting case
             } else {
                 imageName = "explosion_1.png";
             }

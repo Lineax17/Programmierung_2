@@ -6,15 +6,8 @@ import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.Position;
 import thd.gameobjects.unmovable.Wall;
 
-class AlienShotBlockImages extends CollidingGameObject {
+class AlienShot extends CollidingGameObject {
 
-    private static final String SHOT = """
-              W
-             WWW
-             RWR
-            WWRWW
-            WWRWW
-            """;
     private final XWing xWing;
     private final Alien alien;
     private final Position xwingPosition;
@@ -33,7 +26,7 @@ class AlienShotBlockImages extends CollidingGameObject {
      * @see XWing
      * @see Alien
      */
-    AlienShotBlockImages(GameView gameView, GamePlayManager gamePlayManager, XWing xWing, Alien alien) {
+    AlienShot(GameView gameView, GamePlayManager gamePlayManager, XWing xWing, Alien alien) {
         super(gameView, gamePlayManager);
         this.xWing = xWing;
         xwingPosition = new Position(xWing.getPosition().getX(), xWing.getPosition().getY());
@@ -55,8 +48,6 @@ class AlienShotBlockImages extends CollidingGameObject {
         return "AlienShot: " + position;
     }
 
-
-    //try with two booleans in constructor (isAbove, isRight)
     @Override
     public void updatePosition() {
         if (isAbove){
@@ -79,7 +70,7 @@ class AlienShotBlockImages extends CollidingGameObject {
 
     @Override
     public void addToCanvas() {
-        gameView.addBlockImageToCanvas(SHOT, position.getX(), position.getY(), size, rotation);
+        gameView.addBlockImageToCanvas(EnemyShotBlockImages.ENEMYSHOT, position.getX(), position.getY(), size, rotation);
     }
 
 

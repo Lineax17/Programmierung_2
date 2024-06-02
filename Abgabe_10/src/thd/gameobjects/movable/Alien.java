@@ -52,7 +52,7 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof ShotBlockImages) {
+        if (other instanceof XWingShot) {
             switchToExplosion();
         }
     }
@@ -149,7 +149,7 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
     }
 
     private void shoot() {
-        gamePlayManager.spawnGameObject(new AlienShotBlockImages(gameView, gamePlayManager, xWing, this));
+        gamePlayManager.spawnGameObject(new AlienShot(gameView, gamePlayManager, xWing, this));
     }
 
     private void switchToExplosion() {
