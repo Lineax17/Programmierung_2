@@ -18,7 +18,7 @@ public class GameViewManager extends GameView {
         setWindowIcon("icon.png");
         changeBackgroundColor(Color.decode("#2f1088"));
         gameManager = new GameManager(this);
-        gameManager.initializeGame();
+        gameManager.startNewGame();
     }
 
     @Override

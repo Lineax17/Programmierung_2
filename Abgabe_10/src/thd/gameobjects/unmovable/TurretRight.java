@@ -15,10 +15,9 @@ import java.util.Random;
  */
 public class TurretRight extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     String[] namesOfAssets;
-    Random random = new Random();
+    Random random;
     String imageName;
     int randomIndex;
-
 
 
     /**
@@ -31,6 +30,7 @@ public class TurretRight extends CollidingGameObject implements ShiftableGameObj
      */
     public TurretRight(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
+        random = new Random();
         super.size = 30;
         super.rotation = 0;
         super.width = 150;

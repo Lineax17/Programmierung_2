@@ -16,8 +16,9 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject, Ac
     private final int[][] walls;
     private final int line;
     private final int column;
-    Random random = new Random();
+    Random random;
     String formattedImageName;
+
     /**
      * Initializes a new wall.
      *
@@ -31,6 +32,7 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject, Ac
      */
     public Wall(GameView gameView, GamePlayManager gamePlayManager, int[][] walls, int line, int column) {
         super(gameView, gamePlayManager);
+        random = new Random();
         this.walls = walls;
         this.line = line;
         this.column = column;

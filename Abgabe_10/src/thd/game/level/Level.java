@@ -24,4 +24,9 @@ public class Level {
      * Describes the length of the Area that is out of the players view.
      */
     public int worldOffsetColumns;
+
+    /**
+     * The Difficulty the game is played on.
+     */
+    public static Difficulty difficulty = Difficulty.STANDARD;
 }

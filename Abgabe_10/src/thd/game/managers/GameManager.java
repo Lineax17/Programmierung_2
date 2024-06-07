@@ -1,5 +1,7 @@
 package thd.game.managers;
 
+import thd.game.level.Level;
+import thd.game.level.Difficulty;
 import thd.game.utilities.GameView;
 
 class GameManager extends LevelManager {
@@ -28,10 +30,10 @@ class GameManager extends LevelManager {
 
     private void gameManagement() {
         if (endOfGame()) {
-            initializeGame();
+            startNewGame();
         } else if (endOfLevel()) {
             switchToNextLevel();
-            initializeLevel();
+            startNewGame();
         }
     }
 
@@ -42,4 +44,10 @@ class GameManager extends LevelManager {
     private boolean endOfLevel() {
         return gameView.timer(15000, this);
     }
+
+    public void startNewGame() {
+        Level.difficulty = Difficulty.EASY;
+        initializeGame();
+    }
+
 }
