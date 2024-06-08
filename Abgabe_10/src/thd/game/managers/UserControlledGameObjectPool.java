@@ -12,6 +12,7 @@ class UserControlledGameObjectPool {
     XWing xwing;
     private XWingShot shotBlockImages;
     protected Level level;
+    Overlay overlay;
 
 
     protected final GameView gameView;

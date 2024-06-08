@@ -20,6 +20,7 @@ class GameManager extends LevelManager {
     @Override
     protected void initializeLevel() {
         super.initializeLevel();
+            overlay.showMessage("Level " + levelNumber, 2);
     }
 
     @Override
@@ -30,10 +31,23 @@ class GameManager extends LevelManager {
 
     private void gameManagement() {
         if (endOfGame()) {
-            startNewGame();
+            if (!overlay.isMessageShown()) {
+                overlay.showMessage("Game Over");
+            }
+            if (gameView.timer(2000, this)) {
+                overlay.stopShowing();
+                startNewGame();
+            }
         } else if (endOfLevel()) {
-            switchToNextLevel();
-            startNewGame();
+            if (!overlay.isMessageShown()) {
+                overlay.showMessage("Great Job!");
+            }
+            if (gameView.timer(2000, this)) {
+                overlay.stopShowing();
+                switchToNextLevel();
+                initializeLevel();
+            }
+
         }
     }
 
@@ -50,4 +64,34 @@ class GameManager extends LevelManager {
         initializeGame();
     }
 
+    public Difficulty getDifficulty() {
+        return Level.difficulty;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

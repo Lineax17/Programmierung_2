@@ -21,11 +21,13 @@ class GameWorldManager extends GamePlayManager {
         wallsForPathDecision = new LinkedList<CollidingGameObject>();
         score = new Score(gameView, this);
         xwing = new XWing(gameView, this);
+        overlay = new Overlay(gameView, this);
     }
 
     private void spawnGameObjects() {
         spawnGameObject(score);
         spawnGameObject(xwing);
+        spawnGameObject(overlay);
     }
 
     private void spawnGameObjectsFromWorldString() {
