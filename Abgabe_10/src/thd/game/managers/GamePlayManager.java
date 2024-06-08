@@ -69,7 +69,6 @@ public class GamePlayManager extends WorldShiftManager {
 
     private void gamePlayManagement() {
         int speedInPixel;
-        GameManager gameManager = new GameManager(gameView);
         if (level.getDifficulty() == Difficulty.EASY) {
             speedInPixel = 3;
         } else {

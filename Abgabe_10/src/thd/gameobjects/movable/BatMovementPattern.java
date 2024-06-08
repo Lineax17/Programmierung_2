@@ -5,7 +5,7 @@ import thd.gameobjects.base.Position;
 
 import java.util.Random;
 
-public class BatMovementPattern extends MovementPattern {
+class BatMovementPattern extends MovementPattern {
     private final Bat bat;
 
     protected BatMovementPattern(Bat bat) {

@@ -16,8 +16,8 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject, Ac
     private final int[][] walls;
     private final int line;
     private final int column;
-    Random random;
-    String formattedImageName;
+    private Random random;
+    private String formattedImageName;
 
     /**
      * Initializes a new wall.

@@ -6,7 +6,7 @@ import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.unmovable.Wall;
 
-public class SpaceFrogShot extends CollidingGameObject implements ShiftableGameObject {
+class SpaceFrogShot extends CollidingGameObject implements ShiftableGameObject {
 
     private final SpaceFrog spaceFrog;
 
@@ -26,11 +26,11 @@ public class SpaceFrogShot extends CollidingGameObject implements ShiftableGameO
         super.size = 2;
         position.updateCoordinates(spaceFrog.getPosition().getX() + 8, spaceFrog.getPosition().getY() + 12);
         super.rotation = 0;
-        super.width = 150;
-        super.height = 33;
+        super.width = 10;
+        super.height = 10;
         super.speedInPixel = 2;
         distanceToBackground = 50;
-        hitBoxOffsets(0, 0, -120, 0);
+        hitBoxOffsets(0, 0, 0, 0);
     }
 
 

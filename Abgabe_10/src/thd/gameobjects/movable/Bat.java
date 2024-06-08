@@ -6,6 +6,9 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
+/**
+ * Describes a game object that looks like a bat.
+ */
 public class Bat extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private final BatMovementPattern batMovementPattern;
     private boolean stop;

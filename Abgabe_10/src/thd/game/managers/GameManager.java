@@ -59,7 +59,7 @@ class GameManager extends LevelManager {
         return gameView.timer(15000, this);
     }
 
-    public void startNewGame() {
+    void startNewGame() {
         Level.difficulty = Difficulty.EASY;
         initializeGame();
     }

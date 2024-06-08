@@ -44,7 +44,7 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
         collidingGameObjectsForPathDecision = new LinkedList<>();
         super.width = 150;
         super.height = 33;
-        super.speedInPixel = 1;
+        super.speedInPixel = 0.5;
         distanceToBackground = 20;
         currentState = State.STANDARD;
         standardState = StandardState.STANDARD_1;
@@ -53,14 +53,8 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
 
     }
 
-    private boolean decideDirection() {
-        double randomDouble = random.nextDouble() * 10;
-        if (randomDouble <= 5) {
-            directionIsRight = false;
-        } else {
-            directionIsRight = true;
-        }
-        return directionIsRight;
+    private void decideDirection() {
+        directionIsRight = random.nextBoolean();
     }
 
     @Override
@@ -97,7 +91,6 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
                 directionIsRight = !directionIsRight;
             }
         }
-
 
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);
@@ -147,6 +140,8 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
                 }
             }
         }
+
+
     }
 
     private void switchToExplosion() {

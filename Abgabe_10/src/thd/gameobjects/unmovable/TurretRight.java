@@ -14,10 +14,10 @@ import java.util.Random;
  * Describing a static gameobject that looks like a turret.
  */
 public class TurretRight extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
-    String[] namesOfAssets;
-    Random random;
-    String imageName;
-    int randomIndex;
+    private String[] namesOfAssets;
+    private Random random;
+    private String imageName;
+    private int randomIndex;
 
 
     /**

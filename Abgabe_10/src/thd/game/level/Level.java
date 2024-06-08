@@ -11,7 +11,7 @@ public class Level {
     /**
      * The number of the level.
      */
-    public int number;
+    int number;
     /**
      * The String representation of the element in the level.
      */
@@ -30,7 +30,12 @@ public class Level {
      */
     public static Difficulty difficulty = Difficulty.STANDARD;
 
+    /**
+     * Returns the value of difficulty variable.
+     *
+     * @return The difficulty value.
+     */
     public Difficulty getDifficulty() {
-        return Level.difficulty;
+        return difficulty;
     }
 }

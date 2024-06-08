@@ -9,8 +9,8 @@ import thd.gameobjects.unmovable.Wall;
 class AlienShot extends CollidingGameObject {
     private final Alien alien;
     private final Position xwingPosition;
-    boolean isAbove;
-    boolean isRight;
+    private boolean isAbove;
+    private boolean isRight;
 
     /**
      * Initializes a new Shot.
@@ -31,13 +31,13 @@ class AlienShot extends CollidingGameObject {
         super.size = 2;
         position.updateCoordinates(this.alien.getPosition());
         super.rotation = 0;
-        super.width = 150;
-        super.height = 33;
+        super.width = 10;
+        super.height = 10;
         super.speedInPixel = 2;
         distanceToBackground = 50;
         isAbove = xwingPosition.getY() > position.getY();
         isRight = xwingPosition.getX() > position.getX();
-        hitBoxOffsets(0, 0, -120, 0);
+        hitBoxOffsets(0, 0, 0, 0);
     }
 
     @Override

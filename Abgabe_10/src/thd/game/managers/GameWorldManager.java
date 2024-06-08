@@ -18,7 +18,7 @@ class GameWorldManager extends GamePlayManager {
     protected GameWorldManager(GameView gameView) {
         super(gameView);
         activatableGameObjects = new LinkedList<>();
-        wallsForPathDecision = new LinkedList<CollidingGameObject>();
+        wallsForPathDecision = new LinkedList<>();
         score = new Score(gameView, this);
         xwing = new XWing(gameView, this);
         overlay = new Overlay(gameView, this);

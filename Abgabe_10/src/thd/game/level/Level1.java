@@ -11,266 +11,149 @@ public class Level1 extends Level {
         //Standard length = 139
         //Easy length = 111
         super.world = """
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW            w                       WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                      w             WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW             WW                     WW\s
-                WW      B      WW         U           WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW          B                         WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW              U                     WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWWW                                  WW\s
-                WWWW                                  WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWWW         A                        WW\s
-                WWWW                                  WW\s
-                WWW                                   WW\s
-                WWW                         F         WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWWW                                  WW\s
-                WWWWW                                 WW\s
-                WWWWWW         F                      WW\s
-                WWWWWWW                               WW\s
-                WWWWWWW                               WW\s
-                WWWWWWW                               WW\s
-                WWWWWW                                WW\s
-                WWWWW                                 WW\s
-                WWWW                                  WW\s
-                WWW                                   WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                 A                  WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW       G                            WW\s
-                WW                             G      WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW              1                     WW\s
-                WW              111                   WW\s
-                WW               11                   WW\s
-                WW                                   WWW\s
-                WWL                   H              WWW\s
-                WW                                    WW\s
-                WW               22                   WW\s
-                WW                22                  WW\s
-                WWW                                  WWW\s
-                WWWW         G        A            RWWWW\s
-                WWWW                                WWWW\s
-                WWW                                  WWW\s
-                WW             A                     RWW\s
-                WWW                       F           WW\s
-                WWW                                   WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WWL                                   WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                   RWW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WWL                                   WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s""";
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWWW                             WWWWW\s
+                WWWWWWW                            WWWWW\s
+                WWWWWWWW              G            WWWWW\s
+                WWWWWWWWW                          WWWWW\s
+                WWWWWWWWWW                         WWWWW\s
+                WWWWWWWWWWW                       WWWWWW\s
+                WWWWWWWWWWWW                     WWWWWWW\s
+                WWWWWWWWWWWW                    WWWWWWWW\s
+                WWWWWWWWWWW                    WWWWWWWWW\s
+                WWWWWWWWWW                    RWWWWWWWWW\s
+                WWWWWWWWW           F          WWWWWWWWW\s
+                WWWWWWWW                        WWWWWWWW\s
+                WWWWWWWW                         WWWWWWW\s
+                WWWWWWW                           WWWWWW\s
+                WWWWWW                             WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW             A                WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWWW                            WWWWWW\s
+                WWWWWWW                          WWWWWWW\s
+                WWWWWWWW                        WWWWWWWW\s
+                WWWWWWWWW                      WWWWWWWWW\s
+                WWWWWWWWWW                    WWWWWWWWWW\s
+                WWWWWWWWWWW                   WWWWWWWWWW\s
+                WWWWWWWWWWWW                 WWWWWWWWWWW\s
+                WWWWWWWWWWWWW               WWWWWWWWWWWW\s
+                WWWWWWWWWWWWW              WWWWWWWWWWWWW\s
+                WWWWWWWWWWWW              WWWWWWWWWWWWWW\s
+                WWWWWWWWWWW               WWWWWWWWWWWWWW\s
+                WWWWWWWWWW                 WWWWWWWWWWWWW\s
+                WWWWWWWWWW           F      WWWWWWWWWWWW\s
+                WWWWWWWWWW                   WWWWWWWWWWW\s
+                WWWWWWWWW                    WWWWWWWWWWW\s
+                WWWWWWWWWL                    WWWWWWWWWW\s
+                WWWWWWWWW      F               WWWWWWWWW\s
+                WWWWWWWWW                       WWWWWWWW\s
+                WWWWWWWW                       RWWWWWWWW\s
+                WWWWWWWW                        WWWWWWWW\s
+                WWWWWWW                          WWWWWWW\s
+                WWWWWW                            WWWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWWW                             WWWWW\s
+                WWWWWWW                            WWWWW\s
+                WWWWWWWW              G            WWWWW\s
+                WWWWWWWWW                          WWWWW\s
+                WWWWWWWWWW                         WWWWW\s
+                WWWWWWWWWWW                       WWWWWW\s
+                WWWWWWWWWWWW                     WWWWWWW\s
+                WWWWWWWWWWWW                    WWWWWWWW\s
+                WWWWWWWWWWW                    WWWWWWWWW\s
+                WWWWWWWWWW                    RWWWWWWWWW\s
+                WWWWWWWWW                      WWWWWWWWW\s
+                WWWWWWWW                        WWWWWWWW\s
+                WWWWWWWW                         WWWWWWW\s
+                WWWWWWW                           WWWWWW\s
+                WWWWWW                             WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                """;
         number = 1;
         name = "Level 1";
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
-
-
-
-        if (difficulty == Difficulty.EASY) {
-            super.world = """
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWWW                                  WW\s
-                WWWW                                  WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWWW         A                        WW\s
-                WWWW                                  WW\s
-                WWW                                   WW\s
-                WWW                         F         WW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WWWW                                  WW\s
-                WWWWW                                 WW\s
-                WWWWWW                                WW\s
-                WWWWWWW                               WW\s
-                WWWWWWW                               WW\s
-                WWWWWWW                               WW\s
-                WWWWWW                                WW\s
-                WWWWW                                 WW\s
-                WWWW                                  WW\s
-                WWW                                   WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW       G                            WW\s
-                WW                             G      WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW              1                     WW\s
-                WW              111                   WW\s
-                WW               11                   WW\s
-                WW                                   WWW\s
-                WWL                   H              WWW\s
-                WW                                    WW\s
-                WW               22                   WW\s
-                WW                22                  WW\s
-                WWW                                  WWW\s
-                WWWW                  A            RWWWW\s
-                WWWW                                WWWW\s
-                WWW                                  WWW\s
-                WW             A                     RWW\s
-                WWW                                   WW\s
-                WWW                                   WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WWL                                   WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                   RWW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WWL                                   WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s
-                WW                                    WW\s""";
-            worldOffsetLines = world.split("\\R").length - 23;
-        }
     }
 }

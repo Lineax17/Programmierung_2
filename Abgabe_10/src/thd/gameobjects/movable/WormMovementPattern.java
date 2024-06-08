@@ -5,7 +5,7 @@ import thd.gameobjects.base.Position;
 
 import java.util.Random;
 
-public class WormMovementPattern extends MovementPattern {
+class WormMovementPattern extends MovementPattern {
     private final Worm worm;
 
     protected WormMovementPattern(Worm worm) {

@@ -6,6 +6,9 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
+/**
+ * Describes a game object that looks like an alien ship.
+ */
 public class Ufo extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private final UfoMovementPattern ufoMovementPattern;
     private boolean stop;

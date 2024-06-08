@@ -6,6 +6,9 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
+/**
+ * Describes a game object that looks like a worm.
+ */
 public class Worm extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private final WormMovementPattern wormMovementPattern;
     private boolean stop;

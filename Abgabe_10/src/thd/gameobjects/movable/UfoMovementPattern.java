@@ -5,7 +5,7 @@ import thd.gameobjects.base.Position;
 
 import java.util.Random;
 
-public class UfoMovementPattern extends MovementPattern {
+class UfoMovementPattern extends MovementPattern {
     private final Ufo ufo;
 
     protected UfoMovementPattern(Ufo ufo) {
