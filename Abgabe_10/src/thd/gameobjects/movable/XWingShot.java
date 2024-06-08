@@ -3,6 +3,7 @@ package thd.gameobjects.movable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
+import thd.gameobjects.unmovable.Wall;
 
 /**
  * This element represents a shot which is fired by the main object.
@@ -57,6 +58,8 @@ public class XWingShot extends CollidingGameObject {
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-
+        if (other instanceof Wall) {
+            gamePlayManager.destroyGameObject(this);
+        }
     }
 }
