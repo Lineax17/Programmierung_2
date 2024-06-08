@@ -46,11 +46,14 @@ class LevelManager extends GameWorldManager {
         levels = List.of(new Level1(), new Level2(), new Level3(), new Level4());
         level = levels.get(0);
         //test if working properly
+        /*
         if (level.getDifficulty() == Difficulty.EASY) {
             lives = 30;
         } else {
             lives = LIVES;
         }
+         */
+        lives = LIVES;
         points = 0;
     }
 }

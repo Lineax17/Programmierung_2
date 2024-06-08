@@ -30,12 +30,9 @@ public class Level {
      */
     public static Difficulty difficulty = Difficulty.STANDARD;
 
-    /**
-     * Returns the value of difficulty variable.
-     *
-     * @return The difficulty value.
-     */
+    /*
     public Difficulty getDifficulty() {
         return difficulty;
     }
+     */
 }
