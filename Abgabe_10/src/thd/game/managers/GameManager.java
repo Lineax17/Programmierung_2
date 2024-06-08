@@ -20,7 +20,7 @@ class GameManager extends LevelManager {
     @Override
     protected void initializeLevel() {
         super.initializeLevel();
-            overlay.showMessage("Level " + levelNumber, 2);
+        overlay.showMessage("Level " + level.number, 2);
     }
 
     @Override

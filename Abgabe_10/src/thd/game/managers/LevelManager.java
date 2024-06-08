@@ -9,12 +9,10 @@ class LevelManager extends GameWorldManager {
     private List<Level> levels;
     int index;
     private static final int LIVES = 5;
-    int levelNumber;
 
 
     protected LevelManager(GameView gameView) {
         super(gameView);
-        levelNumber = index + 1;
     }
 
     @Override
@@ -37,7 +35,6 @@ class LevelManager extends GameWorldManager {
     protected void switchToNextLevel() {
         if (hasNextLevel()) {
             index++;
-            levelNumber++;
             super.level = levels.get(index);
         } else {
             throw new NoMoreLevelsAvailableException("No more levels available");
