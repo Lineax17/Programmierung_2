@@ -29,4 +29,8 @@ public class Level {
      * The Difficulty the game is played on.
      */
     public static Difficulty difficulty = Difficulty.STANDARD;
+
+    public Difficulty getDifficulty() {
+        return Level.difficulty;
+    }
 }

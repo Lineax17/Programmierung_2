@@ -20,7 +20,7 @@ class GameManager extends LevelManager {
     @Override
     protected void initializeLevel() {
         super.initializeLevel();
-        overlay.showMessage("Level " + level.number, 2);
+        overlay.showMessage(level.name, 2);
     }
 
     @Override
@@ -64,9 +64,7 @@ class GameManager extends LevelManager {
         initializeGame();
     }
 
-    public Difficulty getDifficulty() {
-        return Level.difficulty;
-    }
+
 
 }
 

@@ -150,6 +150,7 @@ public class Level3 extends Level {
                 WW                                    WW\s
                 WW                                    WW\s""";
         number = 3;
+        name = "Level 3";
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
     }

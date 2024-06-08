@@ -151,6 +151,7 @@ public class Level1 extends Level {
                 WW                                    WW\s
                 WW                                    WW\s""";
         number = 1;
+        name = "Level 1";
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
 
