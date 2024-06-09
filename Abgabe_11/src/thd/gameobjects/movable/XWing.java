@@ -13,6 +13,15 @@ import thd.gameobjects.unmovable.Wall;
 public class XWing extends CollidingGameObject implements MainCharacter {
 
     private final int shotDurationInMilliseconds;
+    private State currentState;
+    private StandardState standardState;
+    private ExplodingState explodingState;
+    private BlinkingState blinkingState;
+    private String imageName;
+
+    private enum State {
+        STANDARD, EXPLODING, BLINKING
+    }
 
     /**
      * Initializes a new XWing.
@@ -32,14 +41,116 @@ public class XWing extends CollidingGameObject implements MainCharacter {
         speedInPixel = 4;
         shotDurationInMilliseconds = 300;
         distanceToBackground = 50;
+        currentState = State.STANDARD;
+        standardState = StandardState.STANDARD_1;
+        explodingState = ExplodingState.EXPLODING_1;
+        blinkingState = BlinkingState.BLinking_1;
         hitBoxOffsets(0, 0, -120, 0);
+    }
+
+    private enum StandardState {
+        STANDARD_1("xwing.png");
+
+        private final String display;
+
+        StandardState(String display) {
+            this.display = display;
+        }
+    }
+
+    private enum ExplodingState {
+        EXPLODING_1("explosion_1.png"),
+        EXPLODING_2("explosion_2.png"),
+        EXPLODING_3("explosion_3.png"),
+        EXPLODING_4("explosion_4.png");
+
+
+        private final String display;
+
+        ExplodingState(String display) {
+            this.display = display;
+        }
+    }
+
+    private enum BlinkingState {
+        BLinking_1("xwing.png"),
+        BLINKING_2("xwing_blinking.png"),
+        BLINKING_3("xwing.png"),
+        BLINKING_4("xwing_blinking.png"),
+        BLINKING_5("xwing.png"),
+        BLINKING_6("xwing_blinking.png"),
+        BLINKING_7("xwing.png");
+
+        private final String display;
+
+        BlinkingState(String display) {
+            this.display = display;
+        }
+
     }
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof Wall || other instanceof AlienShot || other instanceof SpaceFrogShot) {
-           gamePlayManager.decreaseLive();
-           position.updateCoordinates((double) GameView.WIDTH / 2, 600);
+        if (other instanceof Wall) {
+            switchToExplosion();
+            gamePlayManager.decreaseLive();
+            position.updateCoordinates((double) GameView.WIDTH / 2, 600);
+        }
+
+        if (other instanceof AlienShot || other instanceof SpaceFrogShot) {
+            switchToExplosion();
+            gamePlayManager.decreaseLive();
+        }
+    }
+
+    @Override
+    public void updateStatus() {
+        switch (currentState) {
+            case STANDARD -> {
+                imageName = standardState.display;
+            }
+            case EXPLODING -> {
+                imageName = explodingState.display;
+                if (gameView.timer(80, this)) {
+                    switchToNextExplosionState();
+                }
+            }
+            case BLINKING -> {
+                imageName = blinkingState.display;
+                if (gameView.timer(150, this)) {
+                    switchToNextBlinkingState();
+                }
+            }
+        }
+    }
+
+    private void switchToExplosion() {
+        currentState = State.EXPLODING;
+    }
+
+    private void switchToStandard() {
+        currentState = State.STANDARD;
+    }
+
+    private void switchToNextExplosionState() {
+        int nextState = (explodingState.ordinal() + 1);
+        if (nextState < ExplodingState.values().length) {
+            explodingState = ExplodingState.values()[nextState];
+        } else {
+            switchToBlinking();
+        }
+    }
+
+    private void switchToBlinking() {
+        currentState = State.BLINKING;
+    }
+
+    private void switchToNextBlinkingState() {
+        int nextState = (blinkingState.ordinal() + 1);
+        if (nextState < BlinkingState.values().length) {
+            blinkingState = BlinkingState.values()[nextState];
+        } else {
+            switchToStandard();
         }
     }
 
@@ -53,14 +164,10 @@ public class XWing extends CollidingGameObject implements MainCharacter {
         return "XWing: " + position;
     }
 
-    @Override
-    public void updatePosition() {
-
-    }
 
     @Override
     public void addToCanvas() {
-        gameView.addImageToCanvas("xwing.png", position.getX(), position.getY(), size, rotation);
+        gameView.addImageToCanvas(imageName, position.getX(), position.getY(), size, rotation);
     }
 
     /**

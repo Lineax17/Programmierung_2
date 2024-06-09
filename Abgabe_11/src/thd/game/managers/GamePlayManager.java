@@ -29,7 +29,7 @@ public class GamePlayManager extends WorldShiftManager {
      * Decreases the Lives-Counter of the main object by 1 if it's hitting a projectile or wall.
      */
     public void decreaseLive() {
-        lives = lives - 1;
+        lives--;
     }
 
     /**

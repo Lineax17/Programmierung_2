@@ -33,21 +33,20 @@ class GameManager extends LevelManager {
         if (endOfGame()) {
             if (!overlay.isMessageShown()) {
                 overlay.showMessage("Game Over");
-            }
-            if (gameView.timer(2000, this)) {
-                overlay.stopShowing();
-                startNewGame();
+                if (gameView.timer(2000, this)) {
+                    overlay.stopShowing();
+                    startNewGame();
+                }
             }
         } else if (endOfLevel()) {
             if (!overlay.isMessageShown()) {
                 overlay.showMessage("Great Job!");
+                if (gameView.timer(500, this)) {
+                    overlay.stopShowing();
+                    switchToNextLevel();
+                    initializeLevel();
+                }
             }
-            if (gameView.timer(2000, this)) {
-                overlay.stopShowing();
-                switchToNextLevel();
-                initializeLevel();
-            }
-
         }
     }
 
