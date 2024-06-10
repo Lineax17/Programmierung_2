@@ -42,7 +42,7 @@ class GameManager extends LevelManager {
             if (!overlay.isMessageShown()) {
                 overlay.showMessage("Great Job!");
             }
-            if (gameView.timer(2000, this)) {
+            if (gameView.timer(500, this)) {
                 overlay.stopShowing();
                 switchToNextLevel();
                 initializeLevel();
@@ -55,16 +55,13 @@ class GameManager extends LevelManager {
     }
 
     private boolean endOfLevel() {
-        return gameView.timer(20000, this);
+        return gameView.timer(15000, this);
     }
 
     void startNewGame() {
         Level.difficulty = Difficulty.EASY;
         initializeGame();
     }
-
-
-
 }
 
 

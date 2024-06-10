@@ -5,6 +5,7 @@ import thd.game.utilities.GameView;
 import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
+import thd.gameobjects.unmovable.Wall;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -86,11 +87,16 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
         double y = position.getY() + 5;
         position.updateCoordinates(x, y);
 
-        for (CollidingGameObject collidingGameObject : collidingGameObjectsForPathDecision) {
-            if (collidesWith(collidingGameObject)) {
+
+        //Pathdecision
+        for(int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
+            if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
+                System.out.println("colliding with " + collidingGameObjectsForPathDecision.get(i));
                 directionIsRight = !directionIsRight;
+                break;
             }
         }
+        
 
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);
@@ -140,8 +146,6 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
                 }
             }
         }
-
-
     }
 
     private void switchToExplosion() {
@@ -181,6 +185,10 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
     @Override
     public boolean tryToActivate(XWing xWing) {
         return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
+    }
+
+    public List<CollidingGameObject> getCollidingGameObjectsForPathDecision() {
+        return collidingGameObjectsForPathDecision;
     }
 }
 

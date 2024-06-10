@@ -34,7 +34,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
     public XWing(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
         size = 2;
-        position.updateCoordinates((double) GameView.WIDTH / 2, 600);
+        position.updateCoordinates(GameView.WIDTH / 2, 600);
         rotation = 0;
         width = 150;
         height = 33;
@@ -91,20 +91,17 @@ public class XWing extends CollidingGameObject implements MainCharacter {
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof Wall ) {
-            gamePlayManager.decreaseLive();
+        if (other instanceof Wall) {
             switchToExplosion();
-            position.updateCoordinates((double) GameView.WIDTH / 2, 600);
-        } else if (other instanceof AlienShot) {
             gamePlayManager.decreaseLive();
-            switchToExplosion();
-            position.updateCoordinates((double) GameView.WIDTH / 2, 600);
-        } else if (other instanceof GeneralEnemyShot) {
-            gamePlayManager.decreaseLive();
-            switchToExplosion();
             position.updateCoordinates((double) GameView.WIDTH / 2, 600);
         }
 
+        if (other instanceof AlienShot || other instanceof SpaceFrogShot) {
+            switchToExplosion();
+            gamePlayManager.decreaseLive();
+            position.updateCoordinates((double) GameView.WIDTH / 2, 600);
+        }
     }
 
     @Override
