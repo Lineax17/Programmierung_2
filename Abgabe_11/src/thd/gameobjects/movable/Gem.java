@@ -91,7 +91,6 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
         //Pathdecision
         for(int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
             if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
-                System.out.println("colliding with " + collidingGameObjectsForPathDecision.get(i));
                 directionIsRight = !directionIsRight;
                 break;
             }

@@ -91,13 +91,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof Wall) {
-            switchToExplosion();
-            gamePlayManager.decreaseLive();
-            position.updateCoordinates((double) GameView.WIDTH / 2, 600);
-        }
-
-        if (other instanceof AlienShot || other instanceof SpaceFrogShot) {
+        if (other instanceof Wall || other instanceof AlienShot || other instanceof GeneralEnemyShot) {
             switchToExplosion();
             gamePlayManager.decreaseLive();
             position.updateCoordinates((double) GameView.WIDTH / 2, 600);
