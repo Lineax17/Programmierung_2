@@ -1,5 +1,7 @@
 package thd.gameobjects.base;
 
+import thd.game.utilities.GameView;
+
 import java.util.Random;
 
 /**
@@ -8,6 +10,7 @@ import java.util.Random;
 public abstract class MovementPattern {
     protected final Random random;
     protected int currentIndex;
+    protected GameView gameView;
 
     /**
      * Initializes a new movementpattern.

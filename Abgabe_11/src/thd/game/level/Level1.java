@@ -108,11 +108,11 @@ public class Level1 extends Level {
                 WWWWWWWWWW                    RWWWWWWWWW\s
                 WWWWWWWWW                      WWWWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
-                WWWWWWWW                         WWWWWWW\s
+                WWWWWWWW   U                     WWWWWWW\s
                 WWWWWWW                           WWWWWW\s
                 WWWWWW                             WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW                    U         WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s

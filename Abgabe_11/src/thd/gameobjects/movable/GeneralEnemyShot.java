@@ -3,26 +3,27 @@ package thd.gameobjects.movable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.CollidingGameObject;
+import thd.gameobjects.base.GameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.unmovable.Wall;
 
-class SpaceFrogShot extends CollidingGameObject implements ShiftableGameObject {
+class GeneralEnemyShot extends CollidingGameObject implements ShiftableGameObject {
 
-    private final SpaceFrog spaceFrog;
+    private final GameObject spaceFrog;
 
     /**
      * Initializes a new Shot.
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
-     * @param spaceFrog       Instance of {@link SpaceFrog}.
+     * @param gameObject       Instance of {@link GameObject}.
      * @see GameView
      * @see GamePlayManager
      * @see SpaceFrog
      */
-    SpaceFrogShot(GameView gameView, GamePlayManager gamePlayManager, SpaceFrog spaceFrog) {
+    GeneralEnemyShot(GameView gameView, GamePlayManager gamePlayManager, GameObject gameObject) {
         super(gameView, gamePlayManager);
-        this.spaceFrog = spaceFrog;
+        this.spaceFrog = gameObject;
         super.size = 2;
         position.updateCoordinates(spaceFrog.getPosition().getX() + 8, spaceFrog.getPosition().getY() + 12);
         super.rotation = 0;

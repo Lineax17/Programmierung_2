@@ -23,7 +23,7 @@ public class Ufo extends CollidingGameObject implements ShiftableGameObject, Act
     private String imageName;
 
     /**
-     * Initializes a new alien.
+     * Initializes a new ufo.
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
@@ -32,7 +32,7 @@ public class Ufo extends CollidingGameObject implements ShiftableGameObject, Act
      */
     public Ufo(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
-        this.ufoMovementPattern = new UfoMovementPattern(this);
+        this.ufoMovementPattern = new UfoMovementPattern(this, gameView);
         stop = false;
         super.size = 30;
         super.rotation = 0;
@@ -65,8 +65,17 @@ public class Ufo extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public void updatePosition() {
-        if (!stop) {
+        if (stop) {
             position.moveToPosition(ufoMovementPattern.nextTargetPosition(), speedInPixel);
+            if (gameView.timer(2000, this)) {
+                stop = false;
+            }
+        } else {
+            position.moveToPosition(ufoMovementPattern.downwardPosition(), speedInPixel);
+            if (gameView.timer(500, this)) {
+                shoot();
+                stop = true;
+            }
         }
 
 
@@ -128,7 +137,9 @@ public class Ufo extends CollidingGameObject implements ShiftableGameObject, Act
     }
 
     private void shoot() {
+        gamePlayManager.spawnGameObject(new GeneralEnemyShot(gameView, gamePlayManager, this));
     }
+
 
     private void switchToExplosion() {
         currentState = State.EXPLODING;

@@ -144,6 +144,6 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
     }
 
     private void shoot() {
-        gamePlayManager.spawnGameObject(new SpaceFrogShot(gameView, gamePlayManager, this));
+        gamePlayManager.spawnGameObject(new GeneralEnemyShot(gameView, gamePlayManager, this));
     }
 }
