@@ -20,7 +20,7 @@ class GameManager extends LevelManager {
     @Override
     protected void initializeLevel() {
         super.initializeLevel();
-        overlay.showMessage(level.name, 2);
+        overlay.showMessage("FTL JUMP TO: " + level.name, 2);
     }
 
     @Override
@@ -31,6 +31,7 @@ class GameManager extends LevelManager {
 
     private void gameManagement() {
         if (endOfGame()) {
+            /*
             if (!overlay.isMessageShown()) {
                 overlay.showMessage("Game Over");
             }
@@ -38,12 +39,25 @@ class GameManager extends LevelManager {
                 overlay.stopShowing();
                 startNewGame();
             }
+             */
+            overlay.showMessage("GAME OVER", 2);
+            if (gameView.timer(3000, this)) {
+                startNewGame();
+            }
         } else if (endOfLevel()) {
+            /*
             if (!overlay.isMessageShown()) {
                 overlay.showMessage("Great Job!");
             }
-            if (gameView.timer(500, this)) {
+            if (gameView.timer(2000, this)) {
                 overlay.stopShowing();
+                switchToNextLevel();
+                initializeLevel();
+            }
+             */
+
+            if (!endOfGame()) {
+
                 switchToNextLevel();
                 initializeLevel();
             }
@@ -55,7 +69,7 @@ class GameManager extends LevelManager {
     }
 
     private boolean endOfLevel() {
-        return gameView.timer(15000, this);
+        return gameView.timer(20000, this);
     }
 
     void startNewGame() {

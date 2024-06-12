@@ -36,7 +36,7 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
     public Alien(GameView gameView, GamePlayManager gamePlayManager, XWing xWing) {
         super(gameView, gamePlayManager);
         this.xWing = xWing;
-        this.alienMovementPattern = new AlienMovementPattern(this);
+        this.alienMovementPattern = new AlienMovementPattern(this, gameView);
         stop = false;
         super.size = 30;
         super.rotation = 0;
@@ -71,7 +71,7 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
     public void updatePosition() {
         if (xWing.getPosition().getY() - position.getY() < 300) {
             if (!stop) {
-                position.moveToPosition(alienMovementPattern.nextTargetPosition(), speedInPixel);
+                alienMovementPattern.horizontalMove();
             }
         } else {
             position.down(speedInPixel);

@@ -6,12 +6,17 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Describes a game object that looks like a bat.
  */
 public class Bat extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private final BatMovementPattern batMovementPattern;
     private boolean stop;
+    private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
+
 
     private enum State {
         STANDARD, EXPLODING
@@ -33,13 +38,14 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     public Bat(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
         this.batMovementPattern = new BatMovementPattern(this);
-        stop = false;
+        super.targetPosition = batMovementPattern.nextTargetPosition();
         super.size = 30;
         super.rotation = 0;
         super.width = 150;
         super.height = 33;
         super.speedInPixel = 2;
         distanceToBackground = 10;
+        collidingGameObjectsForPathDecision = new LinkedList<>();
         currentState = State.STANDARD;
         standardState = StandardState.STANDARD_1;
         explodingState = ExplodingState.EXPLODING_1;
@@ -65,8 +71,25 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public void updatePosition() {
-        if (!stop) {
+        position.moveToPosition(targetPosition, speedInPixel);
+        if (position.similarTo(targetPosition)) {
             position.moveToPosition(batMovementPattern.nextTargetPosition(), speedInPixel);
+        }
+
+
+        for (int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
+            if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
+                if (position.getX() < 640) {
+                    position.right(3);
+                    position.down();
+                    break;
+                } else {
+                    position.left(3);
+                    position.down();
+                    break;
+                }
+
+            }
         }
 
 
@@ -115,6 +138,10 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
                 }
             }
         }
+    }
+
+    public void addWallsToCollisionList(List<CollidingGameObject> wallsForPathDecision) {
+        collidingGameObjectsForPathDecision.addAll(wallsForPathDecision);
     }
 
     @Override

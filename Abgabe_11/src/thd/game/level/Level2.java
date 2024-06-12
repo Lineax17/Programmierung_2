@@ -36,7 +36,7 @@ public class Level2 extends Level {
                 WWWWWWWW                        WWWWWWWW\s
                 WWWWWWWW                          WWWWWW\s
                 WWWWWWW                            WWWWW\s
-                WWWWWW                             WWWWW\s
+                WWWWWW         A                   WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -53,7 +53,7 @@ public class Level2 extends Level {
                 WWWWW            WW                WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW           A                  WWWWW\s
+                WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                   WW         WWWWW\s
                 WWWWW                   WW         WWWWW\s

@@ -88,6 +88,10 @@ public abstract class GameObject {
 
     }
 
+    public GameView getGameView() {
+        return gameView;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this) {

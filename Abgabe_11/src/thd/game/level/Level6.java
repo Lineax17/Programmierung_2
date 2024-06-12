@@ -1,15 +1,13 @@
 package thd.game.level;
 
 /**
- * The first Level of the game.
+ * The sixth level of the game.
  */
-public class Level1 extends Level {
+public class Level6 extends Level{
     /**
      * Initializes the level.
      */
-    public Level1() {
-        //Standard length = 139
-        //Easy length = 111
+    public Level6() {
         super.world = """
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -38,23 +36,23 @@ public class Level1 extends Level {
                 WWWWWWWWWWWW                    WWWWWWWW\s
                 WWWWWWWWWWW                    WWWWWWWWW\s
                 WWWWWWWWWW                    RWWWWWWWWW\s
-                WWWWWWWWW           F          WWWWWWWWW\s
+                WWWWWWWWW           B          WWWWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
                 WWWWWWWW                         WWWWWWW\s
                 WWWWWWW                           WWWWWW\s
                 WWWWWW                             WWWWW\s
-                WWWWW            G                 WWWWW\s
+                WWWWW            B                 WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW         WW                   WWWWW\s
+                WWWWW         WW                   WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWW             w                WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW             A                WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW             11               WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -72,33 +70,33 @@ public class Level1 extends Level {
                 WWWWWWWWWWW                   WWWWWWWWWW\s
                 WWWWWWWWWWWW                 WWWWWWWWWWW\s
                 WWWWWWWWWWWWW               WWWWWWWWWWWW\s
-                WWWWWWWWWWWWW              WWWWWWWWWWWWW\s
+                WWWWWWWWWWWWW      F       WWWWWWWWWWWWW\s
                 WWWWWWWWWWWW              WWWWWWWWWWWWWW\s
                 WWWWWWWWWWW               WWWWWWWWWWWWWW\s
                 WWWWWWWWWW                 WWWWWWWWWWWWW\s
-                WWWWWWWWWW           F      WWWWWWWWWWWW\s
+                WWWWWWWWWWL                 WWWWWWWWWWWW\s
                 WWWWWWWWWW                   WWWWWWWWWWW\s
                 WWWWWWWWW                    WWWWWWWWWWW\s
                 WWWWWWWWWL                    WWWWWWWWWW\s
-                WWWWWWWWW      F               WWWWWWWWW\s
-                WWWWWWWWW                       WWWWWWWW\s
+                WWWWWWWWW                      WWWWWWWWW\s
+                WWWWWWWWW            w          WWWWWWWW\s
                 WWWWWWWW                       RWWWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
                 WWWWWWW                          WWWWWWW\s
                 WWWWWW                            WWWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWW        WW                    WWWWW\s
+                WWWWW        WW                    WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW                             RWWWWW\s
+                WWWWW            w                 WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWWW                             WWWWW\s
-                WWWWWWW                            WWWWW\s
-                WWWWWWWW                           WWWWW\s
+                WWWWWWW          22                WWWWW\s
+                WWWWWWWW          hh               WWWWW\s
                 WWWWWWWWW                          WWWWW\s
                 WWWWWWWWWW                         WWWWW\s
                 WWWWWWWWWWW                       WWWWWW\s
@@ -106,18 +104,18 @@ public class Level1 extends Level {
                 WWWWWWWWWWWW       G            WWWWWWWW\s
                 WWWWWWWWWWW                    WWWWWWWWW\s
                 WWWWWWWWWW                    RWWWWWWWWW\s
-                WWWWWWWWW            B         WWWWWWWWW\s
+                WWWWWWWWW                      WWWWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
-                WWWWWWWW   U                     WWWWWWW\s
-                WWWWWWW                           WWWWWW\s
+                WWWWWWWW                         WWWWWWW\s
+                WWWWWWW                 B         WWWWWW\s
                 WWWWWW                             WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                    B         WWWWW\s
+                WWWWW       B                      WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWW             2112             WWWWW\s
+                WWWWW              HH              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWWL                             WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -151,8 +149,8 @@ public class Level1 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 """;
-        number = 1;
-        name = "Level 1";
+        number = 6;
+        name = "Level 6";
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
     }

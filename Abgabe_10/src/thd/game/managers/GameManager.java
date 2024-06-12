@@ -39,6 +39,7 @@ class GameManager extends LevelManager {
                 startNewGame();
             }
         } else if (endOfLevel()) {
+            /*
             if (!overlay.isMessageShown()) {
                 overlay.showMessage("Great Job!");
             }
@@ -47,6 +48,11 @@ class GameManager extends LevelManager {
                 switchToNextLevel();
                 initializeLevel();
             }
+             */
+
+            overlay.showMessage("Warping to next Level", 2);
+            switchToNextLevel();
+            initializeLevel();
 
         }
     }

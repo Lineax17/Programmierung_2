@@ -33,6 +33,7 @@ public class Ufo extends CollidingGameObject implements ShiftableGameObject, Act
     public Ufo(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
         this.ufoMovementPattern = new UfoMovementPattern(this, gameView);
+        super.targetPosition = ufoMovementPattern.nextTargetPosition();
         stop = false;
         super.size = 30;
         super.rotation = 0;

@@ -140,6 +140,8 @@ class GameWorldManager extends GamePlayManager {
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     bat.getPosition().updateCoordinates(x, y);
+                    bat.addWallsToCollisionList(wallsForPathDecision);
+
                     addActivatableGameObject(bat);
                     activateGameObjects();
                 }
