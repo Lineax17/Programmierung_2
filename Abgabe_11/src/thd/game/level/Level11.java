@@ -1,35 +1,23 @@
 package thd.game.level;
 
 /**
- * The first Level of the game.
+ * The sixth level of the game.
  */
-public class Level1 extends Level {
+public class Level11 extends Level{
     /**
      * Initializes the level.
      */
-    public Level1() {
-        //Standard length = 140/2 = 70
-        //Easy length = 110/2 = 55
+    public Level11() {
         super.world = """
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW                             RWWWWW\s
+                WWWWW            w                 WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWWW                             WWWWW\s
-                WWWWWWW                            WWWWW\s
-                WWWWWWWW                           WWWWW\s
+                WWWWWWW          22                WWWWW\s
+                WWWWWWWW          hh               WWWWW\s
                 WWWWWWWWW                          WWWWW\s
                 WWWWWWWWWW                         WWWWW\s
                 WWWWWWWWWWW                       WWWWWW\s
@@ -37,18 +25,18 @@ public class Level1 extends Level {
                 WWWWWWWWWWWW       G            WWWWWWWW\s
                 WWWWWWWWWWW                    WWWWWWWWW\s
                 WWWWWWWWWW                    RWWWWWWWWW\s
-                WWWWWWWWW            B         WWWWWWWWW\s
+                WWWWWWWWW                      WWWWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
-                WWWWWWWW   U                     WWWWWWW\s
-                WWWWWWW                           WWWWWW\s
+                WWWWWWWW                         WWWWWWW\s
+                WWWWWWW                 B         WWWWWW\s
                 WWWWWW                             WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                    B         WWWWW\s
+                WWWWW       B                      WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWW             2112             WWWWW\s
+                WWWWW              HH              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWWL                             WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -82,8 +70,8 @@ public class Level1 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 """;
-        number = 1;
-        name = "Level 1";
+        number = 11;
+        name = "Level 11";
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
     }

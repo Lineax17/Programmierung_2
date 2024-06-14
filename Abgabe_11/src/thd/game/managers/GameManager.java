@@ -20,7 +20,7 @@ class GameManager extends LevelManager {
     @Override
     protected void initializeLevel() {
         super.initializeLevel();
-        overlay.showMessage("FTL JUMP TO: " + level.name, 2);
+        overlay.showMessage("WARP TO: " + level.name, 2);
     }
 
     @Override
@@ -69,7 +69,7 @@ class GameManager extends LevelManager {
     }
 
     private boolean endOfLevel() {
-        return gameView.timer(20000, this);
+        return gameView.timer(10000, this);
     }
 
     void startNewGame() {

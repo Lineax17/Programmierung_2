@@ -2987,18 +2987,18 @@ public abstract class GameView {
                     }
                 }
             }
-            if (pngs > 5_000_000) {
-                System.err.println("Alle Bild-Dateien dürfen zusammen nicht mehr als 5 MB haben: Ihre Bild-Dateien haben zusammen: " + pngs + " MB");
+            if (pngs > 9_000_000) {
+                System.err.println("Alle Bild-Dateien dürfen zusammen nicht mehr als 9 MB haben: Ihre Bild-Dateien haben zusammen: " + pngs / 1_000_000d + " MB");
             }
-            if (wavs > 8_000_000) {
-                System.err.println("Alle Sound-Dateien dürfen zusammen nicht mehr als 8 MB haben: Ihre Sound-Dateien haben zusammen: " + wavs + " MB");
+            if (wavs > 10_000_000) {
+                System.err.println("Alle Sound-Dateien dürfen zusammen nicht mehr als 10 MB haben: Ihre Sound-Dateien haben zusammen: " + wavs / 1_000_000d + " MB");
             }
-            if (ttfs > 500_000) {
-                System.err.println("Alle Font-dateien dürfen zusammen nicht mehr als 500 KB haben: Ihre Font-Dateien haben zusammen: " + ttfs + " KB");
+            if (ttfs > 1_000_000) {
+                System.err.println("Alle Font-dateien dürfen zusammen nicht mehr als 1 MB haben: Ihre Font-Dateien haben zusammen: " + ttfs / 1_000_000d + " KB");
             }
 
-            if (all > 9_500_000) {
-                System.err.println("Alle Dateien im Ordner \"resources\" dürfen zusammen nicht mehr als 9,5 MB haben: Ihre Dateien haben zusammen: " + all + " MB");
+            if (all > 20_000_000) {
+                System.err.println("Alle Dateien im Ordner \"resources\" dürfen zusammen nicht mehr als 20 MB haben: Ihre Dateien haben zusammen: " + all / 1_000_000d + " MB");
             }
         }
 
@@ -3019,7 +3019,7 @@ public abstract class GameView {
     private static class Version {
         private static final int MAJOR = 2;
         private static final int MINOR = 3;
-        private static final int UPDATE = 3;
+        private static final int UPDATE = 4;
 
         private static final String VERSION = MAJOR + "." + MINOR + "." + UPDATE;
 
