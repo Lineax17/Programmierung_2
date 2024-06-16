@@ -13,20 +13,4 @@ class WormMovementPattern extends MovementPattern {
         this.worm = worm;
     }
 
-    @Override
-    protected Position nextTargetPosition(Position... referencePositions) {
-        Random random = new Random();
-        double x;
-
-        if (random.nextBoolean()) {
-            double min = 200;
-            double max = 400;
-            x = worm.getPosition().getX() + (random.nextDouble(max - min + 1) + min);
-        } else {
-            double min = 200;
-            double max = 400;
-            x = worm.getPosition().getX() - (random.nextDouble(max - min + 1) + min);
-        }
-        return new Position(x, worm.getPosition().getY());
-    }
 }

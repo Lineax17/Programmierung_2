@@ -37,13 +37,12 @@ public class Level1 extends Level {
                 WWWWWWWWWWWW       G            WWWWWWWW\s
                 WWWWWWWWWWW                    WWWWWWWWW\s
                 WWWWWWWWWW                    RWWWWWWWWW\s
-                WWWWWWWWW            B         WWWWWWWWW\s
+                WWWWWWWWW                     wWWWWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
-                WWWWWWWW   U                     WWWWWWW\s
+                WWWWWWWW                         WWWWWWW\s
                 WWWWWWW                           WWWWWW\s
                 WWWWWW                             WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                    B         WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -53,6 +52,7 @@ public class Level1 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWWw                            wWWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s

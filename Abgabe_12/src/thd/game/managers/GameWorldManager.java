@@ -129,7 +129,7 @@ class GameWorldManager extends GamePlayManager {
                     addActivatableGameObject(ufo);
                     activateGameObjects();
                 } else if (character == 'w') {
-                    Worm worm = new Worm(gameView, this);
+                    Worm worm = new Worm(gameView, this, wallsForPathDecision);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     worm.getPosition().updateCoordinates(x, y);

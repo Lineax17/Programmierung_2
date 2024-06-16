@@ -6,12 +6,16 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
+import java.util.List;
+
 /**
  * Describes a game object that looks like a worm.
  */
 public class Worm extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private final WormMovementPattern wormMovementPattern;
     private boolean stop;
+    private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
+
 
     private enum State {
         STANDARD, EXPLODING
@@ -21,6 +25,7 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
     private StandardState standardState;
     private ExplodingState explodingState;
     private String imageName;
+    private boolean movementIsDownwards;
 
     /**
      * Initializes a new alien.
@@ -30,8 +35,9 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
      * @see GameView
      * @see GamePlayManager
      */
-    public Worm(GameView gameView, GamePlayManager gamePlayManager) {
+    public Worm(GameView gameView, GamePlayManager gamePlayManager, List<CollidingGameObject> collidingGameObjectsForPathDecision) {
         super(gameView, gamePlayManager);
+        this.collidingGameObjectsForPathDecision = collidingGameObjectsForPathDecision;
         this.wormMovementPattern = new WormMovementPattern(this);
         stop = false;
         super.size = 30;
@@ -40,6 +46,7 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
         super.height = 33;
         super.speedInPixel = 2;
         distanceToBackground = 10;
+        movementIsDownwards = false;
         currentState = State.STANDARD;
         standardState = StandardState.STANDARD_1;
         explodingState = ExplodingState.EXPLODING_1;
@@ -65,13 +72,65 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
 
     @Override
     public void updatePosition() {
-        if (!stop) {
-            position.moveToPosition(wormMovementPattern.nextTargetPosition(), speedInPixel);
+        if (!movementIsDownwards) {
+            sidewardsShift();
+        } else {
+            sidewardsShift();
+            position.down(speedInPixel);
+        }
+
+
+        if (gameView.timer(3000, this)) {
+            movementIsDownwards = true;
+        }
+        if (gameView.timer(2000, this)) {
+            movementIsDownwards = false;
+        }
+
+        for (int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
+            if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
+                if (position.getX() < 640) {
+                    position.right(33);
+                    break;
+                } else {
+                    position.left(33);
+                    break;
+                }
+
+            }
         }
 
 
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);
+        }
+    }
+
+    private void sidewardsShift() {
+        if (position.getX() > 640) {
+            if (!stop) {
+                position.left(speedInPixel);
+                if (gameView.timer(1500, this)) {
+                    stop = true;
+                }
+            } else {
+                position.right(speedInPixel);
+                if (gameView.timer(1500, this)) {
+                    stop = false;
+                }
+            }
+        } else {
+            if (!stop) {
+                position.right(speedInPixel);
+                if (gameView.timer(1000, this)) {
+                    stop = true;
+                }
+            } else {
+                position.left(speedInPixel);
+                if (gameView.timer(1000, this)) {
+                    stop = false;
+                }
+            }
         }
     }
 
