@@ -12,7 +12,6 @@ import java.util.List;
  * Describes a game object that looks like a worm.
  */
 public class Worm extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
-    private final WormMovementPattern wormMovementPattern;
     private boolean stop;
     private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
 
@@ -32,13 +31,13 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @param collidingGameObjectsForPathDecision The list needed for collision detection.
      * @see GameView
      * @see GamePlayManager
      */
     public Worm(GameView gameView, GamePlayManager gamePlayManager, List<CollidingGameObject> collidingGameObjectsForPathDecision) {
         super(gameView, gamePlayManager);
         this.collidingGameObjectsForPathDecision = collidingGameObjectsForPathDecision;
-        this.wormMovementPattern = new WormMovementPattern(this);
         stop = false;
         super.size = 30;
         super.rotation = 0;

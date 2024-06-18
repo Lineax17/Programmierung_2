@@ -10,6 +10,10 @@ public class Level11 extends Level{
     public Level11() {
         super.world = """
                 WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
                 WWWWW                             RWWWWW\s
                 WWWWW            w                 WWWWW\s
                 WWWWW                              WWWWW\s

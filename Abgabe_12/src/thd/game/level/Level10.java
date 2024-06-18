@@ -22,6 +22,14 @@ public class Level10 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
                 WWWWW              WW              WWWWW\s
                 WWWWWW             WW              WWWWW\s
                 WWWWWWW                           WWWWWW\s
@@ -72,8 +80,8 @@ public class Level10 extends Level {
                 WWWWWWWWWW                    RWWWWWWWWW\s
                 WWWWWWWWW                      WWWWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
-                WWWWWWWW                          WWWWWW\s
-                WWWWWWW                            WWWWW\s
+                WWWWWWWW                         WWWWWWW\s
+                WWWWWWW                           WWWWWW\s
                 WWWWWW         A                   WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s

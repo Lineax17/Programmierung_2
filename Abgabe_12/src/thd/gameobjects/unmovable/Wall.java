@@ -133,6 +133,6 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject, Ac
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
+        return (xWing.getPosition().getY() - this.getPosition().getY()) < 600;
     }
 }

@@ -26,6 +26,14 @@ public class Level12 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
                 WWWWWW                             WWWWW\s
                 WWWWWWW                            WWWWW\s
                 WWWWWWWW                           WWWWW\s
@@ -89,8 +97,8 @@ public class Level12 extends Level {
                 WWWWW        WW                    WWWWW\s
                 WWWWW        WW                    WWWWW\s
                 """;
-        number = 11;
-        name = "Level 11";
+        number = 12;
+        name = "Level 12";
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
     }

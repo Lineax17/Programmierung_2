@@ -15,7 +15,7 @@ public class Score extends GameObject {
     /**
      * Initializes a new score.
      *
-     * @param gameView Instance of {@link GameView}.
+     * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
      * @see GamePlayManager
@@ -40,10 +40,6 @@ public class Score extends GameObject {
         return "Score: " + position;
     }
 
-    @Override
-    public void updatePosition() {
-
-    }
 
     @Override
     public void addToCanvas() {
@@ -55,5 +51,14 @@ public class Score extends GameObject {
     @Override
     public void updateStatus() {
         score = gamePlayManager.getPoints();
+    }
+
+    /**
+     * Returns the Score of the Player.
+     *
+     * @return The Score of the Player.
+     */
+    public int getScore() {
+        return score;
     }
 }
