@@ -1,6 +1,7 @@
 package thd.game.managers;
 
 import thd.game.utilities.GameView;
+import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.GameObject;
 import thd.gameobjects.movable.*;
@@ -55,8 +56,9 @@ class GameWorldManager extends GamePlayManager {
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     wall.getPosition().updateCoordinates(x, y);
-                    spawnGameObject(wall);
+                    //spawnGameObject(wall);
                     wallsForPathDecision.add(wall);
+                    addActivatableGameObject(wall);
                 }
             }
         }
@@ -85,65 +87,64 @@ class GameWorldManager extends GamePlayManager {
                     double y = (line - super.level.worldOffsetLines) * 32;
                     spaceFrog.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(spaceFrog);
-                    activateGameObjects();
+                    //activateGameObjects();
                 } else if (character == 'H') {
                     Head head = new Head(gameView, this);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     head.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(head);
-                    activateGameObjects();
+                    //activateGameObjects();
                 } else if (character == '1') {
                     ObstacleType1 obstacle = new ObstacleType1(gameView, this);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     obstacle.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(obstacle);
-                    activateGameObjects();
+                    //activateGameObjects();
                 } else if (character == '2') {
                     ObstacleType2 obstacle = new ObstacleType2(gameView, this);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     obstacle.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(obstacle);
-                    activateGameObjects();
+                    //activateGameObjects();
                 } else if (character == 'R') {
                     TurretRight turretBig = new TurretRight(gameView, this);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     turretBig.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(turretBig);
-                    activateGameObjects();
+                    //activateGameObjects();
                 } else if (character == 'L') {
                     TurretLeft turretSmall = new TurretLeft(gameView, this);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     turretSmall.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(turretSmall);
-                    activateGameObjects();
+                    //activateGameObjects();
                 } else if (character == 'U') {
                     Ufo ufo = new Ufo(gameView, this);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     ufo.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(ufo);
-                    activateGameObjects();
+                    //activateGameObjects();
                 } else if (character == 'w') {
                     Worm worm = new Worm(gameView, this, wallsForPathDecision);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     worm.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(worm);
-                    activateGameObjects();
+                    //activateGameObjects();
                 } else if (character == 'B') {
                     Bat bat = new Bat(gameView, this);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     bat.getPosition().updateCoordinates(x, y);
                     bat.addWallsToCollisionList(wallsForPathDecision);
-
                     addActivatableGameObject(bat);
-                    activateGameObjects();
+                    //activateGameObjects();
                 }
             }
         }
@@ -176,14 +177,30 @@ class GameWorldManager extends GamePlayManager {
         ListIterator<GameObject> iterator = activatableGameObjects.listIterator();
         while (iterator.hasNext()) {
             GameObject gameObject = iterator.next();
-            if (gameObject instanceof SpaceFrog spaceFrog) {
-                if (spaceFrog.tryToActivate(xwing)) {
-                    spawnGameObject(spaceFrog);
+            /*
+            if (gameObject instanceof ActivatableGameObject<?> activatableGameObject) {
+                if (activatableGameObject instanceof ActivatableGameObject<XWing>)
+                if(activatableGameObject.tryToActivate(xwing)) {
+                    spawnGameObject(gameObject);
+                    iterator.remove();
+
+                }
+            }
+             */
+
+            if (gameObject instanceof Wall wall) {
+                if (wall.tryToActivate(xwing)) {
+                    spawnGameObject(wall);
                     iterator.remove();
                 }
             } else if (gameObject instanceof Head head) {
                 if (head.tryToActivate(xwing)) {
                     spawnGameObject(head);
+                    iterator.remove();
+                }
+            } else if (gameObject instanceof SpaceFrog spaceFrog) {
+                if (spaceFrog.tryToActivate(xwing)) {
+                    spawnGameObject(spaceFrog);
                     iterator.remove();
                 }
             } else if (gameObject instanceof ObstacleType1 obstacle) {

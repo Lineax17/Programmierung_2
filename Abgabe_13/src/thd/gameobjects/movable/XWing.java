@@ -6,6 +6,8 @@ import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.MainCharacter;
 import thd.gameobjects.unmovable.Wall;
 
+import java.awt.*;
+
 /**
  * Describing the main game object, which is controlled by the player.
  * The force is strong in this one.
@@ -164,6 +166,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
     @Override
     public void addToCanvas() {
         gameView.addImageToCanvas(imageName, position.getX(), position.getY(), size, rotation);
+        gameView.addTextToCanvas(toString(), position.getX(), position.getY(), 10, false, Color.WHITE, 0);
     }
 
     /**
