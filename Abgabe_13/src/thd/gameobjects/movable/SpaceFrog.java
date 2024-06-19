@@ -66,7 +66,7 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
+        return position.getY() > - 100;
     }
 
     private enum StandardState {

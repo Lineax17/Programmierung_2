@@ -76,7 +76,7 @@ class GameManager extends LevelManager {
     }
 
     private boolean endOfLevel() {
-        return gameView.timer(10000, this);
+        return gameView.timer(60000, this);
     }
 
     void startNewGame() {

@@ -182,7 +182,7 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
+        return position.getY() > - 100;
     }
 
     private void shoot() {

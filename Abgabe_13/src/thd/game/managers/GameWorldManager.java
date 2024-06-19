@@ -73,14 +73,14 @@ class GameWorldManager extends GamePlayManager {
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     alien.getPosition().updateCoordinates(x, y);
-                    spawnGameObject(alien);
+                    //spawnGameObject(alien);
                 } else if (character == 'G') {
                     Gem gem = new Gem(gameView, this);
                     double x = (column - super.level.worldOffsetColumns) * 32;
                     double y = (line - super.level.worldOffsetLines) * 32;
                     gem.getPosition().updateCoordinates(x, y);
                     gem.addWallsToCollisionList(wallsForPathDecision);
-                    spawnGameObject(gem);
+                    //spawnGameObject(gem);
                 } else if (character == 'F') {
                     SpaceFrog spaceFrog = new SpaceFrog(gameView, this);
                     double x = (column - super.level.worldOffsetColumns) * 32;
