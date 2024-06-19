@@ -5,37 +5,33 @@ import thd.game.utilities.GameView;
 import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
-import thd.gameobjects.movable.XWingShot;
 import thd.gameobjects.movable.XWing;
+import thd.gameobjects.movable.XWingShot;
 
-/**
- * Describing a static gameobject that looks like a pyramid obstacle.
- */
-public class ObstacleType1 extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
-
+public class Booster extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
+    XWing xWing;
     /**
-     * Initializes a new obstacle.
+     * Initializes a new booster.
      *
      * @param gameView Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
      * @see GamePlayManager
      */
-    public ObstacleType1(GameView gameView, GamePlayManager gamePlayManager) {
+    public Booster(GameView gameView, GamePlayManager gamePlayManager, XWing xWing) {
         super(gameView, gamePlayManager);
-        super.size = 30;
-        super.rotation = 0;
-        super.width = 150;
-        super.height = 33;
-        super.speedInPixel = 2;
+        super.width = 64;
+        super.height = 64;
         distanceToBackground = 5;
-        hitBoxOffsets(0, 0, -120, 0);
+        this.xWing = xWing;
+        hitBoxOffsets(0, 0, 0, 0);
 
     }
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
         if (other instanceof XWingShot) {
+            xWing.applyBoost();
             gamePlayManager.destroyGameObject(this);
         }
     }
@@ -47,7 +43,7 @@ public class ObstacleType1 extends CollidingGameObject implements ShiftableGameO
      */
     @Override
     public String toString() {
-        return "Obstacle_1: " + position;
+        return "Booster: " + position;
     }
 
     @Override
@@ -59,7 +55,7 @@ public class ObstacleType1 extends CollidingGameObject implements ShiftableGameO
 
     @Override
     public void addToCanvas() {
-        gameView.addImageToCanvas("obstacle_type_1.png", position.getX(), position.getY(), 2.0, rotation);
+        gameView.addImageToCanvas("booster.png", position.getX(), position.getY(), 2.0, rotation);
     }
 
     @Override

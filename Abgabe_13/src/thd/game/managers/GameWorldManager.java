@@ -94,7 +94,12 @@ class GameWorldManager extends GamePlayManager {
                     double y = (line - super.level.worldOffsetLines) * 32;
                     head.getPosition().updateCoordinates(x, y);
                     addActivatableGameObject(head);
-                    //activateGameObjects();
+                } else if (character == '+') {
+                    Bonus bonus = new Bonus(gameView, this);
+                    double x = (column - super.level.worldOffsetColumns) * 32;
+                    double y = (line - super.level.worldOffsetLines) * 32;
+                    bonus.getPosition().updateCoordinates(x, y);
+                    addActivatableGameObject(bonus);
                 } else if (character == '1') {
                     ObstacleType1 obstacle = new ObstacleType1(gameView, this);
                     double x = (column - super.level.worldOffsetColumns) * 32;
@@ -145,6 +150,12 @@ class GameWorldManager extends GamePlayManager {
                     bat.addWallsToCollisionList(wallsForPathDecision);
                     addActivatableGameObject(bat);
                     //activateGameObjects();
+                } else if (character == 'b') {
+                    Booster booster = new Booster(gameView, this, xwing);
+                    double x = (column - super.level.worldOffsetColumns) * 32;
+                    double y = (line - super.level.worldOffsetLines) * 32;
+                    booster.getPosition().updateCoordinates(x, y);
+                    addActivatableGameObject(booster);
                 }
             }
         }
@@ -246,6 +257,16 @@ class GameWorldManager extends GamePlayManager {
             } else if (gameObject instanceof Bat bat) {
                 if (bat.tryToActivate(xwing)) {
                     spawnGameObject(bat);
+                    iterator.remove();
+                }
+            } else if (gameObject instanceof Bonus bonus) {
+                if (bonus.tryToActivate(xwing)) {
+                    spawnGameObject(bonus);
+                    iterator.remove();
+                }
+            } else if (gameObject instanceof Booster booster) {
+                if (booster.tryToActivate(xwing)) {
+                    spawnGameObject(booster);
                     iterator.remove();
                 }
             }

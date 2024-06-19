@@ -70,6 +70,6 @@ public class TurretLeft extends CollidingGameObject implements ShiftableGameObje
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
+        return position.getY() > - 100;
     }
 }

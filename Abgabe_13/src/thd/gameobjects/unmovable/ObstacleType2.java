@@ -64,6 +64,6 @@ public class ObstacleType2 extends CollidingGameObject implements ShiftableGameO
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
+        return position.getY() > - 100;
     }
 }

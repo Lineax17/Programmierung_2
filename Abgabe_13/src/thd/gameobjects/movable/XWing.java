@@ -14,12 +14,13 @@ import java.awt.*;
  */
 public class XWing extends CollidingGameObject implements MainCharacter {
 
-    private final int shotDurationInMilliseconds;
+    private int shotDurationInMilliseconds;
     private State currentState;
     private StandardState standardState;
     private ExplodingState explodingState;
     private BlinkingState blinkingState;
     private String imageName;
+    private boolean boostIsApplied;
 
     private enum State {
         STANDARD, EXPLODING, BLINKING
@@ -43,6 +44,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
         speedInPixel = 4;
         shotDurationInMilliseconds = 300;
         distanceToBackground = 50;
+        boostIsApplied = false;
         currentState = State.STANDARD;
         standardState = StandardState.STANDARD_1;
         explodingState = ExplodingState.EXPLODING_1;
@@ -119,6 +121,13 @@ public class XWing extends CollidingGameObject implements MainCharacter {
                 }
             }
         }
+
+        if (boostIsApplied) {
+            if (gameView.timer(5000, this)) {
+                takeAwayBoost();
+            }
+        }
+
     }
 
     private void switchToExplosion() {
@@ -203,5 +212,15 @@ public class XWing extends CollidingGameObject implements MainCharacter {
             gamePlayManager.spawnGameObject(new XWingShot(gameView, gamePlayManager, this));
             gameView.playSound("shot.wav", false);
         }
+    }
+
+    public void applyBoost() {
+        boostIsApplied = true;
+        shotDurationInMilliseconds = 150;
+    }
+
+    private void takeAwayBoost() {
+        boostIsApplied = false;
+        shotDurationInMilliseconds = 300;
     }
 }
