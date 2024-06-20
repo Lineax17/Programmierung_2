@@ -15,9 +15,11 @@ class BatMovementPattern extends MovementPattern {
 
     @Override
     protected Position nextTargetPosition(Position... referencePositions) {
+
         Random random = new Random();
-        double x = 0;
-        double y = 0;
+        double x = 600;
+        double y = 600;
+        /*
         if (random.nextBoolean()) {
             x = 0;
             y = 0;
@@ -26,6 +28,8 @@ class BatMovementPattern extends MovementPattern {
             y = 0;
         }
 
+
+         */
 
         return new Position(x, y);
     }

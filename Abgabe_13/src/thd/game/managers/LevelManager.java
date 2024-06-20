@@ -43,7 +43,7 @@ class LevelManager extends GameWorldManager {
 
     protected void initializeGame() {
         index = 0;
-        levels = List.of(new Level1(), new Level2());
+        levels = List.of(new Level3(), new Level1(), new Level2());
         level = levels.get(0);
         //test if working properly
         /*
