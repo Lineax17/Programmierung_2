@@ -8,6 +8,8 @@ public class Level1 extends Level {
      * Initializes the level.
      */
     public Level1() {
+        //Standard length = 140/2 = 70
+        //Easy length = 110/2 = 55
         super.world = """
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -17,40 +19,40 @@ public class Level1 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWW             WW  WW           WWWWW\s
+                WWWWW             WW  WW           WWWWW\s
+                WWWWW            WWWWWWWW          WWWWW\s
+                WWWWW            WWWWWWWW          WWWWW\s
+                WWWWW             WWWWWW           WWWWW\s
+                WWWWW              WWWW            WWWWW\s
+                WWWWW               WW             WWWWW\s
+                WWWWWW                            WWWWWW\s
+                WWWWWWW                          WWWWWWW\s
+                WWWWWWWW                        WWWWWWWW\s
+                WWWWWWWW                        WWWWWWWW\s
+                WWWWWWW      G                   WWWWWWW\s
+                WWWWWW                            WWWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                WW            WWWWW\s
-                WWWWW                WW            WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW      G                       WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW       WW         WW          WWWWW\s
+                WWWWW       WW         WW          WWWWW\s
+                WWWWW            WW                WWWWW\s
+                WWWWW            WW                WWWWW\s
+                WWWWW     WW             WW        WWWWW\s
+                WWWWW     WW             WW        WWWWW\s
+                WWWWW         WW  WW  WW           WWWWW\s
                 WWWWW                             RWWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWWW                             WWWWW\s
-                WWWWWWW                           WWWWWW\s
+                WWWWW                             WWWWWW\s
+                WWWWW                            WWWWWWW\s
+                WWWWW                           WWWWWWWW\s
+                WWWWW                          WWWWWWWWW\s
+                WWWWW                         WWWWWWWWWW\s
+                WWWWW                        WWWWWWWWWWW\s
+                WWWWW                        WWWWWWWWWWW\s
+                WWWWW                         WWWWWWWWWW\s
+                WWWWW                          WWWWWWWWW\s
+                WWWWWW                          WWWWWWWW\s
+                WWWWWWW                          WWWWWWW\s
                 WWWWWWWW                          WWWWWW\s
                 WWWWWWWWW                          WWWWW\s
                 WWWWWWWWWL                         WWWWW\s
@@ -75,33 +77,33 @@ public class Level1 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW      WW                      WWWWW\s
-                WWWWW      WW                      WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW               WW             WWWWW\s
+                WWWWW               WW             WWWWW\s
+                WWWWW            WW    WW          WWWWW\s
+                WWWWW            WW    WW          WWWWW\s
+                WWWWW          WW        WW        WWWWW\s
+                WWWWW          WW        WW        WWWWW\s
+                WWWWW        WW            WW      WWWWW\s
+                WWWWW        WW            WW      WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWWL                             WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                   F          WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW    WW                        WWWWW\s
-                WWWWW    WW                        WWWWW\s
+                WWWWW               F              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW       WW            WW       WWWWW\s
+                WWWWW       WW            WW       WWWWW\s
+                WWWWW         WW        WW         WWWWW\s
+                WWWWW         WW        WW         WWWWW\s
+                WWWWW           WW    WW           WWWWW\s
+                WWWWW           WW    WW           WWWWW\s
+                WWWWW              WW              WWWWW\s
+                WWWWW              WW              WWWWW\s
                 WWWWWW                            WWWWWW\s
                 WWWWWWW                          WWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
@@ -128,43 +130,43 @@ public class Level1 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWW             WW               WWWWW\s
+                WWWWW             WW               WWWWW\s
+                WWWWW           WW  WW             WWWWW\s
+                WWWWW           WW  WW             WWWWW\s
+                WWWWW         WW      WW           WWWWW\s
+                WWWWW         WW      WW           WWWWW\s
+                WWWWW       WW          WW         WWWWW\s
+                WWWWW       WW          WW         WWWWW\s
+                WWWWW         WW      WW           WWWWW\s
+                WWWWW         WW      WW           WWWWW\s
+                WWWWW           WW  WW             WWWWW\s
+                WWWWW           WW  WW             WWWWW\s
+                WWWWW             WW               WWWWW\s
+                WWWWW             WW               WWWWW\s
+                WWWWW             WW               WWWWW\s
+                WWWWW             WW               WWWWW\s
+                WWWWW             WW               WWWWW\s
+                WWWWW             WW               WWWWW\s
+                WWWWW             WW               WWWWW\s
+                WWWWW             WW               WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWWW                             WWWWW\s
-                WWWWWWW                            WWWWW\s
-                WWWWWWWW              G            WWWWW\s
-                WWWWWWWWW                         WWWWWW\s
-                WWWWWWWWWW                       WWWWWWW\s
+                WWWWW                             WWWWWW\s
+                WWWWW                            WWWWWWW\s
+                WWWWW                           WWWWWWWW\s
+                WWWWW                          WWWWWWWWW\s
+                WWWWW                         WWWWWWWWWW\s
+                WWWWW                        WWWWWWWWWWW\s
+                WWWWW                       WWWWWWWWWWWW\s
+                WWWWWW                      WWWWWWWWWWWW\s
+                WWWWWWW                      WWWWWWWWWWW\s
+                WWWWWWWW              G       WWWWWWWWWW\s
+                WWWWWWWWW                      WWWWWWWWW\s
+                WWWWWWWWWW                      WWWWWWWW\s
                 WWWWWWWWWWW                      WWWWWWW\s
-                WWWWWWWWWWW                     WWWWWWWW\s
-                WWWWWWWWWWWL                   WWWWWWWWW\s
+                WWWWWWWWWWW                      WWWWWWW\s
+                WWWWWWWWWWWL                    WWWWWWWW\s
                 WWWWWWWWWWW       F            WWWWWWWWW\s
                 WWWWWWWWWW                    RWWWWWWWWW\s
                 WWWWWWWWW                      WWWWWWWWW\s
@@ -175,16 +177,16 @@ public class Level1 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW                WW            WWWWW\s
+                WWWWW                WW            WWWWW\s
+                WWWWW              WW  WW          WWWWW\s
+                WWWWW              WW  WW          WWWWW\s
+                WWWWW            WW  WW  WW        WWWWW\s
+                WWWWW            WW  WW  WW        WWWWW\s
+                WWWWW              WW  WW          WWWWW\s
+                WWWWW              WW  WW          WWWWW\s
+                WWWWW                WW            WWWWW\s
+                WWWWW                WW            WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW              2HH             WWWWW\s
                 WWWWW                2             WWWWW\s
@@ -193,34 +195,34 @@ public class Level1 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW            WW                WWWWW\s
-                WWWWW            WW                WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW          WW                  WWWWW\s
-                WWWWW          WW                  WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                   WW         WWWWW\s
-                WWWWW                   WW         WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWWW                             WWWWW\s
-                WWWWWWW                            WWWWW\s
-                WWWWWWWW              G            WWWWW\s
+                WWWWW            WW               WWWWWW\s
+                WWWWW                            WWWWWWW\s
+                WWWWW                           WWWWWWWW\s
+                WWWWWW                         WWWWWWWWW\s
+                WWWWWWW                       WWWWWWWWWW\s
+                WWWWWWWW                     WWWWWWWWWWW\s
+                WWWWWWWWW                    WWWWWWWWWWW\s
+                WWWWWWWWWW                    WWWWWWWWWW\s
+                WWWWWWWWWWW                    WWWWWWWWW\s
+                WWWWWWWWWWWW                    WWWWWWWW\s
+                WWWWWWWWWWWWW                    WWWWWWW\s
+                WWWWWWWWWWWWWW                    WWWWWW\s
+                WWWWWWWWWWWWWW                     WWWWW\s
+                WWWWWWWWWWWWW                      WWWWW\s
+                WWWWWWWWWWWW                       WWWWW\s
+                WWWWWWWWWWW                        WWWWW\s
+                WWWWWWWWWW              WW         WWWWW\s
+                WWWWWWWWW               WW         WWWWW\s
+                WWWWWWWW                          WWWWWW\s
+                WWWWWWW                          WWWWWWW\s
+                WWWWWW                          WWWWWWWW\s
+                WWWWW                          WWWWWWWWW\s
+                WWWWW                         WWWWWWWWWW\s
+                WWWWW                         WWWWWWWWWW\s
+                WWWWW                          WWWWWWWWW\s
+                WWWWWW                          WWWWWWWW\s
+                WWWWWWW                          WWWWWWW\s
+                WWWWWWWW             G            WWWWWW\s
                 WWWWWWWWW                          WWWWW\s
                 WWWWWWWWWW                         WWWWW\s
                 WWWWWWWWWWW                       WWWWWW\s
@@ -366,86 +368,7 @@ public class Level1 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWWW                             WWWWW\s
-                WWWWWWW                            WWWWW\s
-                WWWWWWWW                           WWWWW\s
-                WWWWWWWWW                          WWWWW\s
-                WWWWWWWWWW                         WWWWW\s
-                WWWWWWWWWWW                       WWWWWW\s
-                WWWWWWWWWWWW                     WWWWWWW\s
-                WWWWWWWWWWWW       G            WWWWWWWW\s
-                WWWWWWWWWWW                    WWWWWWWWW\s
-                WWWWWWWWWW                    RWWWWWWWWW\s
-                WWWWWWWWW  w                  wWWWWWWWWW\s
-                WWWWWWWW                        WWWWWWWW\s
-                WWWWWWWW                         WWWWWWW\s
-                WWWWWWW                           WWWWWW\s
-                WWWWWW                             WWWWW\s
-                WWWWW                   B          WWWWW\s
-                WWWWW                          -   WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW        F                     WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW  +                           WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                    b         WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW       B                      WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                
                 """;
         number = 1;
         name = "Level 1";
