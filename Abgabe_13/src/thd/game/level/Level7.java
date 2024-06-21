@@ -85,8 +85,8 @@ public class Level7 extends Level{
                  WWWWW                              WWWWW\s
                  WWWWW                              WWWWW\s
                  """;
-        number = 6;
-        name = "Level 6";
+        number = 7;
+        name = "Level 7";
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
     }
