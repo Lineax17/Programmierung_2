@@ -76,7 +76,7 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
             position.moveToPosition(batMovementPattern.nextTargetPosition(), speedInPixel);
         }
 
-
+        /*
         for (int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
             if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
                 if (position.getX() < 640) {
@@ -91,6 +91,8 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
 
             }
         }
+
+         */
 
 
         if (position.getY() > 720) {

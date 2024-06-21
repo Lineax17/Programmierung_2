@@ -194,24 +194,24 @@ public class Level5 extends Level {
                 WWWWWWWWWWWW              WWWWWWWWWWWWWW\s
                 WWWWWWWWWWW               WWWWWWWWWWWWWW\s
                 WWWWWWWWWW                 WWWWWWWWWWWWW\s
-                WWWWWWWWWWL                 WWWWWWWWWWWW\s
+                WWWWWWWWWWL     U           WWWWWWWWWWWW\s
                 WWWWWWWWWW                   WWWWWWWWWWW\s
                 WWWWWWWWW                    WWWWWWWWWWW\s
                 WWWWWWWWWL                    WWWWWWWWWW\s
                 WWWWWWWWW                      WWWWWWWWW\s
-                WWWWWWWWW            w          WWWWWWWW\s
+                WWWWWWWWW                 w     WWWWWWWW\s
                 WWWWWWWW                       RWWWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
                 WWWWWWW                          WWWWWWW\s
-                WWWWWW                            WWWWWW\s
+                WWWWWW      B                     WWWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWWW                             WWWWW\s
+                WWWWWW                   U         WWWWW\s
                 WWWWWWW                           WWWWWW\s
                 WWWWWWWW                         WWWWWWW\s
                 WWWWWWWWW                       WWWWWWWW\s
                 WWWWWWWWWW                     WWWWWWWWW\s
                 WWWWWWWWWW                     WWWWWWWWW\s
-                WWWWWWWWWW                     WWWWWWWWW\s
+                WWWWWWWWWW          A          WWWWWWWWW\s
                 WWWWWWWWWWW                   WWWWWWWWWW\s
                 WWWWWWWWWWWW                 WWWWWWWWWWW\s
                 WWWWWWWWWWWWW               WWWWWWWWWWWW\s
@@ -227,7 +227,7 @@ public class Level5 extends Level {
                 WWWWWWWWWWWWWWWW            WWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWWW            WWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWW              WWWWWWWWWWW\s
-                WWWWWWWWWWWWWW               WWWWWWWWWWW\s
+                WWWWWWWWWWWWWW       F       WWWWWWWWWWW\s
                 WWWWWWWWWWWWWW                WWWWWWWWWW\s
                 WWWWWWWWWWWWW                 WWWWWWWWWW\s
                 WWWWWWWWWWWW                  WWWWWWWWWW\s
@@ -260,10 +260,10 @@ public class Level5 extends Level {
                 WWWWWWWWW                            WWW\s
                 WWWWWWWWWL                           WWW\s
                 WWWWWWWWW                           WWWW\s
-                WWWWWWWW                           WWWWW\s
+                WWWWWWWW                        w  WWWWW\s
                 WWWWWWW                            WWWWW\s
                 WWWWWW                             WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW        B                     WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWWW                            WWWWWW\s
                 WWWWWWW                          WWWWWWW\s
@@ -289,7 +289,7 @@ public class Level5 extends Level {
                 WWWWWW                            WWWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW       B                      WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -308,7 +308,7 @@ public class Level5 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW                   B          WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -337,6 +337,13 @@ public class Level5 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWW                   B          WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW                              WWWWW\s
+                WWWWW           B                  WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -346,14 +353,7 @@ public class Level5 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW      B                       WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
