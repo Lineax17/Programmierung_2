@@ -146,7 +146,7 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return position.getY() > - 100;
+        return (xWing.getPosition().getY() - this.getPosition().getY()) < 720;
     }
 
     private void shoot() {

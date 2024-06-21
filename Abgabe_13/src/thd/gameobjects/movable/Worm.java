@@ -148,7 +148,12 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
     }
 
     private enum StandardState {
-        STANDARD_1("worm_1.png");
+        STANDARD_1("worm_1.png"),
+        STANDARD_2("worm_2.png"),
+        STANDARD_3("worm_3.png"),
+        STANDARD_4("worm_4.png"),
+        STANDARD_5("worm_3.png"),
+        STANDARD_6("worm_2.png");
 
         private final String display;
 

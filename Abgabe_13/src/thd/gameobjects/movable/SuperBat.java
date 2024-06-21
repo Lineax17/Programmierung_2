@@ -9,10 +9,7 @@ import thd.gameobjects.base.ShiftableGameObject;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Describes a game object that looks like a bat.
- */
-public class Bat extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
+public class SuperBat extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private final BatMovementPattern batMovementPattern;
     private boolean stop;
     private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
@@ -35,7 +32,7 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
      * @see GameView
      * @see GamePlayManager
      */
-    public Bat(GameView gameView, GamePlayManager gamePlayManager) {
+    public SuperBat(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
         this.batMovementPattern = new BatMovementPattern(this);
         super.targetPosition = batMovementPattern.nextTargetPosition();
@@ -115,10 +112,10 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     }
 
     private enum StandardState {
-        STANDARD_1("bat_1.png"),
-        STANDARD_2("bat_2.png"),
-        STANDARD_3("bat_3.png"),
-        STANDARD_4("bat_2.png");
+        STANDARD_1("super_bat_1.png"),
+        STANDARD_2("super_bat_2.png"),
+        STANDARD_3("super_bat_3.png"),
+        STANDARD_4("super_bat_2.png");
 
 
         private final String display;

@@ -6,16 +6,12 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
-import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Describes a game object that looks like a bat.
- */
-public class Bat extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
-    private final BatMovementPattern batMovementPattern;
+public class SuperWorm extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private boolean stop;
     private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
+
 
 
     private enum State {
@@ -26,26 +22,28 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     private StandardState standardState;
     private ExplodingState explodingState;
     private String imageName;
+    private boolean movementIsDownwards;
 
     /**
      * Initializes a new alien.
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @param collidingGameObjectsForPathDecision The list needed for collision detection.
      * @see GameView
      * @see GamePlayManager
      */
-    public Bat(GameView gameView, GamePlayManager gamePlayManager) {
+    public SuperWorm(GameView gameView, GamePlayManager gamePlayManager, List<CollidingGameObject> collidingGameObjectsForPathDecision) {
         super(gameView, gamePlayManager);
-        this.batMovementPattern = new BatMovementPattern(this);
-        super.targetPosition = batMovementPattern.nextTargetPosition();
+        this.collidingGameObjectsForPathDecision = collidingGameObjectsForPathDecision;
+        stop = false;
         super.size = 30;
         super.rotation = 0;
         super.width = 150;
         super.height = 33;
-        super.speedInPixel = 2.5;
+        super.speedInPixel = 2;
         distanceToBackground = 10;
-        collidingGameObjectsForPathDecision = new LinkedList<>();
+        movementIsDownwards = false;
         currentState = State.STANDARD;
         standardState = StandardState.STANDARD_1;
         explodingState = ExplodingState.EXPLODING_1;
@@ -71,32 +69,65 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public void updatePosition() {
-        position.moveToPosition(targetPosition, speedInPixel);
-        if (position.similarTo(targetPosition)) {
-            position.moveToPosition(batMovementPattern.nextTargetPosition(), speedInPixel);
+        if (!movementIsDownwards) {
+            sidewardsShift();
+        } else {
+            sidewardsShift();
+            position.down(speedInPixel);
         }
 
-        /*
+
+        if (gameView.timer(3000, this)) {
+            movementIsDownwards = true;
+        }
+        if (gameView.timer(2000, this)) {
+            movementIsDownwards = false;
+        }
+
         for (int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
             if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
                 if (position.getX() < 640) {
-                    position.right(3);
-                    position.down();
+                    position.right(33);
                     break;
                 } else {
-                    position.left(3);
-                    position.down();
+                    position.left(33);
                     break;
                 }
 
             }
         }
 
-         */
-
 
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);
+        }
+    }
+
+    private void sidewardsShift() {
+        if (position.getX() > 640) {
+            if (!stop) {
+                position.left(speedInPixel);
+                if (gameView.timer(1500, this)) {
+                    stop = true;
+                }
+            } else {
+                position.right(speedInPixel);
+                if (gameView.timer(1500, this)) {
+                    stop = false;
+                }
+            }
+        } else {
+            if (!stop) {
+                position.right(speedInPixel);
+                if (gameView.timer(1000, this)) {
+                    stop = true;
+                }
+            } else {
+                position.left(speedInPixel);
+                if (gameView.timer(1000, this)) {
+                    stop = false;
+                }
+            }
         }
     }
 
@@ -115,11 +146,12 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     }
 
     private enum StandardState {
-        STANDARD_1("bat_1.png"),
-        STANDARD_2("bat_2.png"),
-        STANDARD_3("bat_3.png"),
-        STANDARD_4("bat_2.png");
-
+        STANDARD_1("super_worm_1.png"),
+        STANDARD_2("super_worm_2.png"),
+        STANDARD_3("super_worm_3.png"),
+        STANDARD_4("super_worm_4.png"),
+        STANDARD_5("super_worm_3.png"),
+        STANDARD_6("super_worm_2.png");
 
         private final String display;
 
@@ -130,7 +162,6 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public void updateStatus() {
-        shoot();
         switch (currentState) {
             case STANDARD -> {
                 imageName = standardState.display;
@@ -147,15 +178,6 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
         }
     }
 
-    /**
-     * Adds wall to collision list to manage collisons.
-     *
-     * @param wallsForPathDecision The List with the walls.
-     */
-    public void addWallsToCollisionList(List<CollidingGameObject> wallsForPathDecision) {
-        collidingGameObjectsForPathDecision.addAll(wallsForPathDecision);
-    }
-
     @Override
     public void addToCanvas() {
         gameView.addImageToCanvas(imageName, position.getX(), position.getY(), 2.0, rotation);
@@ -167,12 +189,6 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     }
 
     private void shoot() {
-        if(gameView.timer(4000, this)) {
-            ShotUpwards shotUpwards = new ShotUpwards(gameView, gamePlayManager, this);
-            shotUpwards.setShotSpeed(4);
-            gamePlayManager.spawnGameObject(shotUpwards);
-
-        }
     }
 
     private void switchToExplosion() {

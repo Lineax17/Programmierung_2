@@ -6,17 +6,10 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
-import java.util.LinkedList;
-import java.util.List;
-
-/**
- * Describes a game object that looks like a bat.
- */
-public class Bat extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
-    private final BatMovementPattern batMovementPattern;
+public class SuperAlien extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
+    private final XWing xWing;
+    private final AlienMovementPattern alienMovementPattern;
     private boolean stop;
-    private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
-
 
     private enum State {
         STANDARD, EXPLODING
@@ -32,20 +25,23 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @param xWing           Instance of {@link XWing}
      * @see GameView
      * @see GamePlayManager
+     * @see XWing
      */
-    public Bat(GameView gameView, GamePlayManager gamePlayManager) {
+    public SuperAlien(GameView gameView, GamePlayManager gamePlayManager, XWing xWing) {
         super(gameView, gamePlayManager);
-        this.batMovementPattern = new BatMovementPattern(this);
-        super.targetPosition = batMovementPattern.nextTargetPosition();
+        this.xWing = xWing;
+        this.alienMovementPattern = new AlienMovementPattern(this, gameView);
+        super.targetPosition = alienMovementPattern.nextTargetPosition();
+        stop = false;
         super.size = 30;
         super.rotation = 0;
         super.width = 150;
         super.height = 33;
-        super.speedInPixel = 2.5;
+        super.speedInPixel = 2;
         distanceToBackground = 10;
-        collidingGameObjectsForPathDecision = new LinkedList<>();
         currentState = State.STANDARD;
         standardState = StandardState.STANDARD_1;
         explodingState = ExplodingState.EXPLODING_1;
@@ -66,33 +62,18 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
      */
     @Override
     public String toString() {
-        return "Ufo: " + position;
+        return "Alien: " + position;
     }
 
     @Override
     public void updatePosition() {
-        position.moveToPosition(targetPosition, speedInPixel);
-        if (position.similarTo(targetPosition)) {
-            position.moveToPosition(batMovementPattern.nextTargetPosition(), speedInPixel);
-        }
-
-        /*
-        for (int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
-            if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
-                if (position.getX() < 640) {
-                    position.right(3);
-                    position.down();
-                    break;
-                } else {
-                    position.left(3);
-                    position.down();
-                    break;
-                }
-
+        if (xWing.getPosition().getY() - position.getY() < 300) {
+            if (!stop) {
+                position.moveToPosition(targetPosition, speedInPixel);
             }
+        } else {
+            position.down(speedInPixel);
         }
-
-         */
 
 
         if (position.getY() > 720) {
@@ -115,11 +96,8 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     }
 
     private enum StandardState {
-        STANDARD_1("bat_1.png"),
-        STANDARD_2("bat_2.png"),
-        STANDARD_3("bat_3.png"),
-        STANDARD_4("bat_2.png");
-
+        STANDARD_1("super_alien_1.png"),
+        STANDARD_2("super_alien_2.png");
 
         private final String display;
 
@@ -130,7 +108,18 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public void updateStatus() {
-        shoot();
+        if (xWing.getPosition().getY() - position.getY() < 500) {
+            if (stop) {
+                if (gameView.timer(1000, this)) {
+                    stop = false;
+                    shoot();
+                }
+            } else {
+                if (gameView.timer(1000, this)) {
+                    stop = true;
+                }
+            }
+        }
         switch (currentState) {
             case STANDARD -> {
                 imageName = standardState.display;
@@ -147,15 +136,6 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
         }
     }
 
-    /**
-     * Adds wall to collision list to manage collisons.
-     *
-     * @param wallsForPathDecision The List with the walls.
-     */
-    public void addWallsToCollisionList(List<CollidingGameObject> wallsForPathDecision) {
-        collidingGameObjectsForPathDecision.addAll(wallsForPathDecision);
-    }
-
     @Override
     public void addToCanvas() {
         gameView.addImageToCanvas(imageName, position.getX(), position.getY(), 2.0, rotation);
@@ -167,16 +147,13 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     }
 
     private void shoot() {
-        if(gameView.timer(4000, this)) {
-            ShotUpwards shotUpwards = new ShotUpwards(gameView, gamePlayManager, this);
-            shotUpwards.setShotSpeed(4);
-            gamePlayManager.spawnGameObject(shotUpwards);
-
-        }
+        gamePlayManager.spawnGameObject(new AlienShot(gameView, gamePlayManager, xWing, this));
+        gameView.playSound("laser.wav", false);
     }
 
     private void switchToExplosion() {
         currentState = State.EXPLODING;
+        gameView.playSound("explosion.wav", false);
     }
 
     private void switchToNextStandardState() {

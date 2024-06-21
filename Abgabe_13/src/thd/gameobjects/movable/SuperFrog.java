@@ -6,18 +6,7 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
-import java.util.LinkedList;
-import java.util.List;
-
-/**
- * Describes a game object that looks like a bat.
- */
-public class Bat extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
-    private final BatMovementPattern batMovementPattern;
-    private boolean stop;
-    private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
-
-
+public class SuperFrog extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private enum State {
         STANDARD, EXPLODING
     }
@@ -28,28 +17,26 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     private String imageName;
 
     /**
-     * Initializes a new alien.
+     * Initializes a new superfrog.
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
      * @see GamePlayManager
      */
-    public Bat(GameView gameView, GamePlayManager gamePlayManager) {
+    public SuperFrog(GameView gameView, GamePlayManager gamePlayManager) {
         super(gameView, gamePlayManager);
-        this.batMovementPattern = new BatMovementPattern(this);
-        super.targetPosition = batMovementPattern.nextTargetPosition();
         super.size = 30;
         super.rotation = 0;
         super.width = 150;
         super.height = 33;
-        super.speedInPixel = 2.5;
+        super.speedInPixel = 2;
         distanceToBackground = 10;
-        collidingGameObjectsForPathDecision = new LinkedList<>();
         currentState = State.STANDARD;
         standardState = StandardState.STANDARD_1;
         explodingState = ExplodingState.EXPLODING_1;
         hitBoxOffsets(0, 0, -120, 0);
+
     }
 
     @Override
@@ -66,37 +53,30 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
      */
     @Override
     public String toString() {
-        return "Ufo: " + position;
+        return "SpaceFrog: " + position;
     }
 
     @Override
-    public void updatePosition() {
-        position.moveToPosition(targetPosition, speedInPixel);
-        if (position.similarTo(targetPosition)) {
-            position.moveToPosition(batMovementPattern.nextTargetPosition(), speedInPixel);
-        }
+    public void addToCanvas() {
+        gameView.addImageToCanvas(imageName, position.getX(), position.getY(), 2.0, rotation);
+    }
 
-        /*
-        for (int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
-            if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
-                if (position.getX() < 640) {
-                    position.right(3);
-                    position.down();
-                    break;
-                } else {
-                    position.left(3);
-                    position.down();
-                    break;
-                }
+    @Override
+    public boolean tryToActivate(XWing xWing) {
+        return position.getY() > - 100;
+    }
 
-            }
-        }
+    private enum StandardState {
+        STANDARD_1("super_frog_1.png"),
+        STANDARD_2("super_frog_2.png"),
+        STANDARD_3("super_frog_3.png"),
+        STANDARD_4("super_frog_2.png"),
+        STANDARD_5("super_frog_1.png");
 
-         */
+        private final String display;
 
-
-        if (position.getY() > 720) {
-            gamePlayManager.destroyGameObject(this);
+        StandardState(String display) {
+            this.display = display;
         }
     }
 
@@ -114,28 +94,18 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
         }
     }
 
-    private enum StandardState {
-        STANDARD_1("bat_1.png"),
-        STANDARD_2("bat_2.png"),
-        STANDARD_3("bat_3.png"),
-        STANDARD_4("bat_2.png");
-
-
-        private final String display;
-
-        StandardState(String display) {
-            this.display = display;
-        }
-    }
-
     @Override
     public void updateStatus() {
-        shoot();
+        super.updateStatus();
         switch (currentState) {
             case STANDARD -> {
                 imageName = standardState.display;
-                if (gameView.timer(200, this)) {
+
+                if (gameView.timer(300, this)) {
                     switchToNextStandardState();
+                    if (standardState == StandardState.STANDARD_3) {
+                        shoot();
+                    }
                 }
             }
             case EXPLODING -> {
@@ -145,38 +115,15 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
                 }
             }
         }
-    }
 
-    /**
-     * Adds wall to collision list to manage collisons.
-     *
-     * @param wallsForPathDecision The List with the walls.
-     */
-    public void addWallsToCollisionList(List<CollidingGameObject> wallsForPathDecision) {
-        collidingGameObjectsForPathDecision.addAll(wallsForPathDecision);
-    }
-
-    @Override
-    public void addToCanvas() {
-        gameView.addImageToCanvas(imageName, position.getX(), position.getY(), 2.0, rotation);
-    }
-
-    @Override
-    public boolean tryToActivate(XWing xWing) {
-        return position.getY() > - 100;
-    }
-
-    private void shoot() {
-        if(gameView.timer(4000, this)) {
-            ShotUpwards shotUpwards = new ShotUpwards(gameView, gamePlayManager, this);
-            shotUpwards.setShotSpeed(4);
-            gamePlayManager.spawnGameObject(shotUpwards);
-
+        if (position.getY() > 720) {
+            gamePlayManager.destroyGameObject(this);
         }
     }
 
     private void switchToExplosion() {
         currentState = State.EXPLODING;
+        gameView.playSound("explosion.wav", false);
     }
 
     private void switchToNextStandardState() {
@@ -192,5 +139,10 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
             gamePlayManager.destroyGameObject(this);
             gamePlayManager.addPoints(10);
         }
+    }
+
+    private void shoot() {
+        gamePlayManager.spawnGameObject(new ShotDownwards(gameView, gamePlayManager, this));
+        gameView.playSound("laser2.wav", false);
     }
 }

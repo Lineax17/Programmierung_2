@@ -5,6 +5,7 @@ import thd.game.utilities.GameView;
 import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
+import thd.gameobjects.movable.ShotRightwards;
 import thd.gameobjects.movable.XWingShot;
 import thd.gameobjects.movable.XWing;
 
@@ -53,7 +54,7 @@ public class TurretLeft extends CollidingGameObject implements ShiftableGameObje
 
     @Override
     public String toString() {
-        return "TurretSmall: " + position;
+        return "TurretLeft: " + position;
     }
 
     @Override
@@ -64,8 +65,19 @@ public class TurretLeft extends CollidingGameObject implements ShiftableGameObje
     }
 
     @Override
+    public void updateStatus() {
+        shoot();
+    }
+
+    @Override
     public void addToCanvas() {
         gameView.addImageToCanvas(imageName, position.getX(), position.getY(), 2.0, rotation);
+    }
+
+    private void shoot() {
+        if (gameView.timer(3000, this)) {
+            gamePlayManager.spawnGameObject(new ShotRightwards(gameView, gamePlayManager, this));
+        }
     }
 
     @Override

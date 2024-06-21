@@ -1,14 +1,15 @@
 package thd.gameobjects.movable;
 
+import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.MovementPattern;
 import thd.gameobjects.base.Position;
 
 import java.util.Random;
 
 class BatMovementPattern extends MovementPattern {
-    private final Bat bat;
+    private final CollidingGameObject bat;
 
-    protected BatMovementPattern(Bat bat) {
+    protected BatMovementPattern(CollidingGameObject bat) {
         super();
         this.bat = bat;
     }

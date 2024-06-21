@@ -138,7 +138,7 @@ public class Ufo extends CollidingGameObject implements ShiftableGameObject, Act
     }
 
     private void shoot() {
-        gamePlayManager.spawnGameObject(new GeneralEnemyShot(gameView, gamePlayManager, this));
+        gamePlayManager.spawnGameObject(new ShotDownwards(gameView, gamePlayManager, this));
         gameView.playSound("blaster.wav", false);
     }
 

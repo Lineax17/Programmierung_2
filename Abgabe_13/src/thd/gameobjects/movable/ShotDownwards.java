@@ -7,9 +7,9 @@ import thd.gameobjects.base.GameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.unmovable.Wall;
 
-class GeneralEnemyShot extends CollidingGameObject implements ShiftableGameObject {
+class ShotDownwards extends CollidingGameObject implements ShiftableGameObject {
 
-    private final GameObject spaceFrog;
+    private final GameObject gameObject;
 
     /**
      * Initializes a new Shot.
@@ -21,11 +21,11 @@ class GeneralEnemyShot extends CollidingGameObject implements ShiftableGameObjec
      * @see GamePlayManager
      * @see SpaceFrog
      */
-    GeneralEnemyShot(GameView gameView, GamePlayManager gamePlayManager, GameObject gameObject) {
+    ShotDownwards(GameView gameView, GamePlayManager gamePlayManager, GameObject gameObject) {
         super(gameView, gamePlayManager);
-        this.spaceFrog = gameObject;
+        this.gameObject = gameObject;
         super.size = 2;
-        position.updateCoordinates(spaceFrog.getPosition().getX() + 8, spaceFrog.getPosition().getY() + 12);
+        position.updateCoordinates(gameObject.getPosition().getX() + 8, gameObject.getPosition().getY() + 12);
         super.rotation = 0;
         super.width = 10;
         super.height = 10;
@@ -42,7 +42,7 @@ class GeneralEnemyShot extends CollidingGameObject implements ShiftableGameObjec
 
     @Override
     public void updatePosition() {
-        position.down();
+        position.down(speedInPixel);
 
         if (position.getY() > 720) {
             gamePlayManager.destroyGameObject(this);
@@ -60,5 +60,9 @@ class GeneralEnemyShot extends CollidingGameObject implements ShiftableGameObjec
         if (other instanceof Wall) {
             gamePlayManager.destroyGameObject(this);
         }
+    }
+
+    public void setShotSpeed(int speed) {
+        this.speedInPixel = speed;
     }
 }

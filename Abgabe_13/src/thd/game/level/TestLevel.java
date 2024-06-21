@@ -1,13 +1,7 @@
 package thd.game.level;
 
-/**
- * The first Level of the game.
- */
-public class Level1 extends Level {
-    /**
-     * Initializes the level.
-     */
-    public Level1() {
+public class TestLevel extends Level{
+    public TestLevel() {
         super.world = """
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -381,20 +375,20 @@ public class Level1 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWW                             RWWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWWL                             WWWWW\s
+                WWWWW                    a         WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW       a                      WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWWW                             WWWWW\s
-                WWWWWWW                            WWWWW\s
-                WWWWWWWW                           WWWWW\s
+                WWWWWWW           34               WWWWW\s
+                WWWWWWWW           hh              WWWWW\s
                 WWWWWWWWW                          WWWWW\s
                 WWWWWWWWWW                         WWWWW\s
                 WWWWWWWWWWW                       WWWWWW\s
@@ -402,23 +396,23 @@ public class Level1 extends Level {
                 WWWWWWWWWWWW       G            WWWWWWWW\s
                 WWWWWWWWWWW                    WWWWWWWWW\s
                 WWWWWWWWWW                    RWWWWWWWWW\s
-                WWWWWWWWW  w                  wWWWWWWWWW\s
-                WWWWWWWW                        WWWWWWWW\s
+                WWWWWWWWW         b           SWWWWWWWWW\s
+                WWWWWWWW               hh       WWWWWWWW\s
                 WWWWWWWW                         WWWWWWW\s
                 WWWWWWW                           WWWWWW\s
-                WWWWWW                             WWWWW\s
+                WWWWWW          f                  WWWWW\s
                 WWWWW                   B          WWWWW\s
-                WWWWW                          -   WWWWW\s
+                WWWWWL                         -   WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW        F                     WWWWW\s
+                WWWWW        F           A         WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW                             RWWWWW\s
                 WWWWW  +                           WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                    b         WWWWW\s
+                WWWWW                    #         WWWWW\s
+                WWWWW      s                       WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW       B                      WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -447,8 +441,8 @@ public class Level1 extends Level {
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 """;
-        number = 1;
-        name = "Level 1";
+        number = 0;
+        name = "Test";
         worldOffsetLines = world.split("\\R").length - 23;
         worldOffsetColumns = 0;
     }
