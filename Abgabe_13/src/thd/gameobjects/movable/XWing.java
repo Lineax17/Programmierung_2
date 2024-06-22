@@ -7,6 +7,8 @@ import thd.gameobjects.base.MainCharacter;
 import thd.gameobjects.unmovable.Wall;
 
 import java.awt.*;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Describing the main game object, which is controlled by the player.
@@ -16,11 +18,13 @@ public class XWing extends CollidingGameObject implements MainCharacter {
 
     private int shotDurationInMilliseconds;
     private State currentState;
-    private StandardState standardState;
+    private final StandardState standardState;
     private ExplodingState explodingState;
     private BlinkingState blinkingState;
     private String imageName;
     private boolean boostIsApplied;
+    private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
+
 
     private enum State {
         STANDARD, EXPLODING, BLINKING
@@ -34,10 +38,10 @@ public class XWing extends CollidingGameObject implements MainCharacter {
      * @see GameView
      * @see GamePlayManager
      */
-    public XWing(GameView gameView, GamePlayManager gamePlayManager) {
+    public XWing(GameView gameView, GamePlayManager gamePlayManager, List<CollidingGameObject> collidingGameObjectsForPathDecision) {
         super(gameView, gamePlayManager);
         size = 2;
-        position.updateCoordinates(GameView.WIDTH / 2, 600);
+        position.updateCoordinates((double) GameView.WIDTH / 2, 600);
         rotation = 0;
         width = 150;
         height = 33;
@@ -45,6 +49,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
         shotDurationInMilliseconds = 300;
         distanceToBackground = 50;
         boostIsApplied = false;
+        this.collidingGameObjectsForPathDecision = collidingGameObjectsForPathDecision;
         currentState = State.STANDARD;
         standardState = StandardState.STANDARD_1;
         explodingState = ExplodingState.EXPLODING_1;
@@ -95,11 +100,27 @@ public class XWing extends CollidingGameObject implements MainCharacter {
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof Wall || other instanceof AlienShot || other instanceof ShotDownwards) {
-            switchToExplosion();
-            gamePlayManager.decreaseLive();
-            position.updateCoordinates((double) GameView.WIDTH / 2, 600);
+        if (currentState == State.STANDARD) {
+            if (other instanceof Wall || other instanceof AlienShot || other instanceof ShotDownwards) {
+                switchToExplosion();
+                gamePlayManager.decreaseLive();
+                respawn();
+            }
         }
+    }
+
+    private void respawn() {
+        position.updateCoordinates((double) GameView.WIDTH / 2, 600);
+        /*
+        for (int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
+            if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
+                position.updateCoordinates((double) GameView.WIDTH / 4, 600);
+                break;
+            }
+        }
+
+         */
+
     }
 
     @Override
@@ -113,14 +134,21 @@ public class XWing extends CollidingGameObject implements MainCharacter {
                 if (gameView.timer(80, this)) {
                     switchToNextExplosionState();
                 }
+                if (gameView.timer(320, this)) {
+                    switchToBlinking();
+                }
             }
             case BLINKING -> {
                 imageName = blinkingState.display;
                 if (gameView.timer(150, this)) {
                     switchToNextBlinkingState();
                 }
+                if (gameView.timer(900, this)) {
+                    switchToStandard();
+                }
             }
         }
+        System.out.println(currentState);
 
         if (boostIsApplied) {
             if (gameView.timer(5000, this)) {
@@ -143,8 +171,6 @@ public class XWing extends CollidingGameObject implements MainCharacter {
         int nextState = (explodingState.ordinal() + 1);
         if (nextState < ExplodingState.values().length) {
             explodingState = ExplodingState.values()[nextState];
-        } else {
-            switchToBlinking();
         }
     }
 
@@ -156,8 +182,6 @@ public class XWing extends CollidingGameObject implements MainCharacter {
         int nextState = (blinkingState.ordinal() + 1);
         if (nextState < BlinkingState.values().length) {
             blinkingState = BlinkingState.values()[nextState];
-        } else {
-            switchToStandard();
         }
     }
 
@@ -208,7 +232,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
 
     @Override
     public void shoot() {
-        if (gameView.timer(shotDurationInMilliseconds, this) ) {
+        if (gameView.timer(shotDurationInMilliseconds, this)) {
             gamePlayManager.spawnGameObject(new XWingShot(gameView, gamePlayManager, this));
             gameView.playSound("shot.wav", false);
         }

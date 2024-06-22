@@ -11,6 +11,7 @@ class UserControlledGameObjectPool {
     Score score;
     XWing xwing;
     Background background;
+    LiveCounter liveCounter;
     private XWingShot shotBlockImages;
     protected Level level;
     Overlay overlay;

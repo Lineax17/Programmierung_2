@@ -263,7 +263,7 @@ public class Level6 extends Level {
                 WWWWW                             WWWWWW\s
                 WWWWW                            WWWWWWW\s
                 WWWWW                           WWWWWWWW\s
-                WWWWW                           WWWWWWWW\s
+                WWWWW       33                  WWWWWWWW\s
                 WWWWW                            WWWWWWW\s
                 WWWWW                             WWWWWW\s
                 WWWWWW                            WWWWWW\s
@@ -298,8 +298,8 @@ public class Level6 extends Level {
                 WWWWW                   WW         WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW      WW                      WWWWW\s
-                WWWWW      WW                      WWWWW\s
+                WWWWW      WW          444         WWWWW\s
+                WWWWW      WW          44h         WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -319,8 +319,8 @@ public class Level6 extends Level {
                 WWWWWWWWWWWWWWW               WWWWWWWWWW\s
                 WWWWWWWWWWWWWW                 WWWWWWWWW\s
                 WWWWWWWWWWWWW                   WWWWWWWW\s
-                WWWWWWWWWWWW                     WWWWWWW\s
-                WWWWWWWWWWW                       WWWWWW\s
+                WWWWWWWWWWWW       333           WWWWWWW\s
+                WWWWWWWWWWW         333           WWWWWW\s
                 WWWWWWWWWW                         WWWWW\s
                 WWWWWWWWW                          WWWWW\s
                 WWWWWWWW                           WWWWW\s

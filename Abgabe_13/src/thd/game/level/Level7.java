@@ -20,13 +20,13 @@ public class Level7 extends Level {
                 WWWWWWWWWWW                       WWWWWW\s
                 WWWWWWWWWWW                        WWWWW\s
                 WWWWWWWWWW                          WWWW\s
-                WWWWWWWWW              11            WWW\s
-                WWWWWWWWWL              HH           WWW\s
+                WWWWWWWWW              33            WWW\s
+                WWWWWWWWWL              hh           WWW\s
                 WWWWWWWWW                           WWWW\s
                 WWWWWWWW                           WWWWW\s
                 WWWWWWW                            WWWWW\s
                 WWWWWW                             WWWWW\s
-                WWWWW           F                  WWWWW\s
+                WWWWW           f                  WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWWW                            WWWWWW\s
                 WWWWWWW                          WWWWWWW\s
@@ -36,7 +36,7 @@ public class Level7 extends Level {
                 WWWWWWWWWWW                   WWWWWWWWWW\s
                 WWWWWWWWWWWW                 WWWWWWWWWWW\s
                 WWWWWWWWWWWWW               WWWWWWWWWWWW\s
-                WWWWWWWWWWWWW      F       WWWWWWWWWWWWW\s
+                WWWWWWWWWWWWW      f       WWWWWWWWWWWWW\s
                 WWWWWWWWWWWW              WWWWWWWWWWWWWW\s
                 WWWWWWWWWWW               WWWWWWWWWWWWWW\s
                 WWWWWWWWWW                 WWWWWWWWWWWWW\s
@@ -45,11 +45,11 @@ public class Level7 extends Level {
                 WWWWWWWWW                    WWWWWWWWWWW\s
                 WWWWWWWWWL                    WWWWWWWWWW\s
                 WWWWWWWWW                      WWWWWWWWW\s
-                WWWWWWWWW                 w     WWWWWWWW\s
+                WWWWWWWWW                    s  WWWWWWWW\s
                 WWWWWWWW                       RWWWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
                 WWWWWWW                          WWWWWWW\s
-                WWWWWW      B                     WWWWWW\s
+                WWWWWW      b                     WWWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWWW                   U         WWWWW\s
                 WWWWWWW                           WWWWWW\s
@@ -57,7 +57,7 @@ public class Level7 extends Level {
                 WWWWWWWWW                       WWWWWWWW\s
                 WWWWWWWWWW                     WWWWWWWWW\s
                 WWWWWWWWWW                     WWWWWWWWW\s
-                WWWWWWWWWW          A          WWWWWWWWW\s
+                WWWWWWWWWW          a          WWWWWWWWW\s
                 WWWWWWWWWWW                   WWWWWWWWWW\s
                 WWWWWWWWWWWW                 WWWWWWWWWWW\s
                 WWWWWWWWWWWWW               WWWWWWWWWWWW\s
@@ -73,15 +73,15 @@ public class Level7 extends Level {
                 WWWWWWWWWWWWWWWW            WWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWWW            WWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWW              WWWWWWWWWWW\s
-                WWWWWWWWWWWWWW       F       WWWWWWWWWWW\s
+                WWWWWWWWWWWWWW       f       WWWWWWWWWWW\s
                 WWWWWWWWWWWWWW                WWWWWWWWWW\s
                 WWWWWWWWWWWWW                 WWWWWWWWWW\s
                 WWWWWWWWWWWW                  WWWWWWWWWW\s
                 WWWWWWWWWWW                    WWWWWWWWW\s
                 WWWWWWWWWWW                     WWWWWWWW\s
                 WWWWWWWWWW                       WWWWWWW\s
-                WWWWWWWWWW                        WWWWWW\s
-                WWWWWWWWW                          WWWWW\s
+                WWWWWWWWWW       hhh              WWWWWW\s
+                WWWWWWWWW        33                WWWWW\s
                 WWWWWWWW                           WWWWW\s
                 WWWWWWW                            WWWWW\s
                 WWWWWW                             WWWWW\s
@@ -101,8 +101,8 @@ public class Level7 extends Level {
                 WWWWWWWWW                        WWWWWWW\s
                 WWWWWWWWWW                       WWWWWWW\s
                 WWWWWWWWWWW                       WWWWWW\s
-                WWWWWWWWWWW         222            WWWWW\s
-                WWWWWWWWWW           11             WWWW\s
+                WWWWWWWWWWW         444            WWWWW\s
+                WWWWWWWWWW           33             WWWW\s
                 WWWWWWWWW                            WWW\s
                 WWWWWWWWWL                           WWW\s
                 WWWWWWWWW                           WWWW\s
@@ -120,14 +120,14 @@ public class Level7 extends Level {
                 WWWWWWWWWWW                       WWWWWW\s
                 WWWWWWWWWWW                        WWWWW\s
                 WWWWWWWWWW                          WWWW\s
-                WWWWWWWWW              11            WWW\s
-                WWWWWWWWWL              HH           WWW\s
+                WWWWWWWWW              33            WWW\s
+                WWWWWWWWWL              hh           WWW\s
                 WWWWWWWWW                           WWWW\s
                 WWWWWWWW                           WWWWW\s
                 WWWWWWW                            WWWWW\s
                 WWWWWW                             WWWWW\s
-                WWWWW           F                  WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW           f                  WWWWW\s
+                WWWWW                   U          WWWWW\s
                 WWWWWW                            WWWWWW\s
                 WWWWWWW                          WWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
@@ -136,7 +136,7 @@ public class Level7 extends Level {
                 WWWWWWWWWWW                   WWWWWWWWWW\s
                 WWWWWWWWWWWW                 WWWWWWWWWWW\s
                 WWWWWWWWWWWWW               WWWWWWWWWWWW\s
-                WWWWWWWWWWWWW      F       WWWWWWWWWWWWW\s
+                WWWWWWWWWWWWW      f       WWWWWWWWWWWWW\s
                 WWWWWWWWWWWW              WWWWWWWWWWWWWW\s
                 WWWWWWWWWWW               WWWWWWWWWWWWWW\s
                 WWWWWWWWWW                 WWWWWWWWWWWWW\s
@@ -144,20 +144,20 @@ public class Level7 extends Level {
                 WWWWWWWWWW                   WWWWWWWWWWW\s
                 WWWWWWWWW                    WWWWWWWWWWW\s
                 WWWWWWWWWL                    WWWWWWWWWW\s
-                WWWWWWWWW                      WWWWWWWWW\s
-                WWWWWWWWW                 w     WWWWWWWW\s
+                WWWWWWWWW         a            WWWWWWWWW\s
+                WWWWWWWWW                 s     WWWWWWWW\s
                 WWWWWWWW                       RWWWWWWWW\s
                 WWWWWWWW                        WWWWWWWW\s
                 WWWWWWW                          WWWWWWW\s
-                WWWWWW      B                     WWWWWW\s
+                WWWWWW      b                     WWWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWWW                   U         WWWWW\s
                 WWWWWWW                           WWWWWW\s
                 WWWWWWWW                         WWWWWWW\s
                 WWWWWWWWW                       WWWWWWWW\s
+                WWWWWWWWWW                 -   WWWWWWWWW\s
                 WWWWWWWWWW                     WWWWWWWWW\s
-                WWWWWWWWWW                     WWWWWWWWW\s
-                WWWWWWWWWW          A          WWWWWWWWW\s
+                WWWWWWWWWW          a          WWWWWWWWW\s
                 WWWWWWWWWWW                   WWWWWWWWWW\s
                 WWWWWWWWWWWW                 WWWWWWWWWWW\s
                 WWWWWWWWWWWWW               WWWWWWWWWWWW\s
@@ -165,7 +165,7 @@ public class Level7 extends Level {
                 WWWWWWWWWWWWWWW            WWWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWWW          WWWWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWWW          WWWWWWWWWWWWWW\s
-                WWWWWWWWWWWWWWW           WWWWWWWWWWWWWW\s
+                WWWWWWWWWWWWWWW     #     WWWWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWW            WWWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWW             WWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWWW             WWWWWWWWWWW\s
@@ -173,7 +173,7 @@ public class Level7 extends Level {
                 WWWWWWWWWWWWWWWW            WWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWWW            WWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWW              WWWWWWWWWWW\s
-                WWWWWWWWWWWWWW       F       WWWWWWWWWWW\s
+                WWWWWWWWWWWWWW       f       WWWWWWWWWWW\s
                 WWWWWWWWWWWWWW                WWWWWWWWWW\s
                 WWWWWWWWWWWWW                 WWWWWWWWWW\s
                 WWWWWWWWWWWW                  WWWWWWWWWW\s
@@ -182,8 +182,8 @@ public class Level7 extends Level {
                 WWWWWWWWWW                       WWWWWWW\s
                 WWWWWWWWWW                        WWWWWW\s
                 WWWWWWWWW                          WWWWW\s
-                WWWWWWWW                           WWWWW\s
-                WWWWWWW                            WWWWW\s
+                WWWWWWWW                 WW        WWWWW\s
+                WWWWWWW                  WW        WWWWW\s
                 WWWWWW                             WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
@@ -201,8 +201,8 @@ public class Level7 extends Level {
                 WWWWWWWWW                        WWWWWWW\s
                 WWWWWWWWWW                       WWWWWWW\s
                 WWWWWWWWWWW                       WWWWWW\s
-                WWWWWWWWWWW         222            WWWWW\s
-                WWWWWWWWWW           11             WWWW\s
+                WWWWWWWWWWW         444            WWWWW\s
+                WWWWWWWWWW           333            WWWW\s
                 WWWWWWWWW                            WWW\s
                 WWWWWWWWWL                           WWW\s
                 WWWWWWWWW              WW           WWWW\s
@@ -212,7 +212,7 @@ public class Level7 extends Level {
                 WWWWWWWWWWWWW         WWWW        WWWWWW\s
                 WWWWWWWWWWWWWW        WWWW       WWWWWWW\s
                 WWWWWWWWWWWWWWW      WWWWWW     WWWWWWWW\s
-                WWWWWWWWWWWWWWWW  F  WWWWWW   WWWWWWWWW\s
+                WWWWWWWWWWWWWWWW  f  WWWWWW   WWWWWWWWW\s
                 WWWWWWWWWWWWWWWWW    WWWWWW   WWWWWWWWWW\s
                 WWWWWWWWWWWWWWWWW     WWWW    WWWWWWWWWW\s
                 WWWWWWWWWWWWWWWW       WW      WWWWWWWWW\s
@@ -223,7 +223,7 @@ public class Level7 extends Level {
                 WWWWWWWWWWW          WW            WWWWW\s
                 WWWWWWWWWW                         WWWWW\s
                 WWWWWWWWWW                         WWWWW\s
-                WWWWWWWWW                          WWWWW\s
+                WWWWWWWWW                 a        WWWWW\s
                 WWWWWWWW                          WWWWWW\s
                 WWWWWWW      G                   WWWWWWW\s
                 WWWWWW                          WWWWWWWW\s
@@ -235,7 +235,7 @@ public class Level7 extends Level {
                 WWWWWWWW                  WWWWWWWWWWWWWW\s
                 WWWWWWWW                 WWWWWWWWWWWWWWW\s
                 WWWWWWW                 WWWWWWWWWWWWWWWW\s
-                WWWWWW                 WWWWWWWWWWWWWWWWW\s
+                WWWWWW             s   WWWWWWWWWWWWWWWWW\s
                 WWWWW                 WWWWWWWWWWWWWWWWWW\s
                 WWWWW                WWWWWWWWWWWWWWWWWWW\s
                 WWWWW               WWWWWWWWWWWWWWWWWWWW\s
@@ -244,7 +244,7 @@ public class Level7 extends Level {
                 WWWWW   WW       WWWWWWWWWWWWWWWWWWWWWWW\s
                 WWWWW            WWWWWWWWWWWWWWWWWWWWWWW\s
                 WWWWW             WWWWWWWWWWWWWWWWWWWWWW\s
-                WWWWW              WWWWWWWWWWWWWWWWWWWWW\s
+                WWWWW      a       WWWWWWWWWWWWWWWWWWWWW\s
                 WWWWWW              WWWWWWWWWWWWWWWWWWWW\s
                 WWWWWWW              WWWWWWWWWWWWWWWWWWW\s
                 WWWWWWWW              WWWWWWWWWWWWWWWWWW\s
@@ -253,7 +253,7 @@ public class Level7 extends Level {
                 WWWWWWWWWWW              WWWWWWWWWWWWWWW\s
                 WWWWWWWWWWWW      WW      WWWWWWWWWWWWWW\s
                 WWWWWWWWWWWWW    WWWW      WWWWWWWWWWWWW\s
-                WWWWWWWWWWWWWW   WWWW       WWWWWWWWWWWW\s
+                WWWWWWWWWWWWWW   WWWW  f    WWWWWWWWWWWW\s
                 WWWWWWWWWWWWWWW   WW         WWWWWWWWWWW\s
                 WWWWWWWWWWWWWWWW              WWWWWWWWWW\s
                 WWWWWWWWWWWWWWWWW              WWWWWWWWW\s
@@ -262,21 +262,21 @@ public class Level7 extends Level {
                 WWWWWWWWWWWWWWWWWWWW              WWWWWW\s
                 WWWWWWWWWWWWWWWWWWWWW              WWWWW\s
                 WWWWWWWWWWWWWWWWWWWWW               WWWW\s
-                WWWWWWWWWWWWWWWWWWWW                 WWW\s
+                WWWWWWWWWWWWWWWWWWWW              s  WWW\s
                 WWWWWWWWWWWWWWWWWWW                  WWW\s
                 WWWWWWWWWWWWWWWWWW                  WWWW\s
                 WWWWWWWWWWWWWWWWW                  WWWWW\s
                 WWWWWWWWWWWWWWWW                  WWWWWW\s
                 WWWWWWWWWWWWWWW                  WWWWWWW\s
                 WWWWWWWWWWWWWW                  WWWWWWWW\s
-                WWWWWWWWWWWWW                   WWWWWWWW\s
+                WWWWWWWWWWWWW         a         WWWWWWWW\s
                 WWWWWWWWWWWW                     WWWWWWW\s
                 WWWWWWWWWWW                       WWWWWW\s
                 WWWWWWWWWW                         WWWWW\s
                 WWWWWWWWW                          WWWWW\s
                 WWWWWWWW      WW           WW      WWWWW\s
                 WWWWWWW      WWWW         WWWW     WWWWW\s
-                WWWWWW       WWWW         WWWW     WWWWW\s
+                WWWWWW       WWWW    f    WWWW     WWWWW\s
                 WWWWW         WW           WW      WWWWW\s
                 WWWWW                             WWWWWW\s
                 WWWWW                WW          WWWWWWW\s
@@ -288,12 +288,12 @@ public class Level7 extends Level {
                 WWWWWWW      G             WW      WWWWW\s
                 WWWWWWWW            WW             WWWWW\s
                 WWWWWWWW           WWWW            WWWWW\s
-                WWWWWWW            WWWW      WW    WWWWW\s
+                WWWWWWW     f      WWWW  f   WW    WWWWW\s
                 WWWWWW              WW      WWWW   WWWWW\s
                 WWWWW       WW              WWWW   WWWWW\s
                 WWWWW      WWWW              WW    WWWWW\s
                 WWWWW      WWWW       WW           WWWWW\s
-                WWWWW       WW       WWWW          WWWWW\s
+                WWWWW       WW   f   WWWW          WWWWW\s
                 WWWWW                WWWW          WWWWW\s
                 WWWWWW                WW           WWWWW\s
                 WWWWWWW                            WWWWW\s
@@ -308,12 +308,12 @@ public class Level7 extends Level {
                 WWWWWWW                    WWWWWWWWWWWWW\s
                 WWWWWW                     WWWWWWWWWWWWW\s
                 WWWWW                       WWWWWWWWWWWW\s
-                WWWWW                        WWWWWWWWWWW\s
-                WWWWW                W        WWWWWWWWWW\s
+                WWWWW    U                   WWWWWWWWWWW\s
+                WWWWW                WW       WWWWWWWWWW\s
                 WWWWW                WW        WWWWWWWWW\s
                 WWWWW                           WWWWWWWW\s
                 WWWWWW                           WWWWWWW\s
-                WWWWWWW                           WWWWWW\s
+                WWWWWWW                  U        WWWWWW\s
                 WWWWWWWW                           WWWWW\s
                 WWWWWWWWW      G                   WWWWW\s
                 WWWWWWWWWW                        WWWWWW\s
@@ -326,7 +326,7 @@ public class Level7 extends Level {
                 WWWWWWWWWWWWWWWWW                 WWWWWW\s
                 WWWWWWWWWWWWWWWWWW                 WWWWW\s
                 WWWWWWWWWWWWWWWWWW                 WWWWW\s
-                WWWWWWWWWWWWWWWWW                 RWWWWW\s
+                WWWWWWWWWWWWWWWWW       a         RWWWWW\s
                 WWWWWWWWWWWWWWWW                   WWWWW\s
                 WWWWWWWWWWWWWWW                    WWWWW\s
                 WWWWWWWWWWWWWW         WW          WWWWW\s
@@ -335,7 +335,7 @@ public class Level7 extends Level {
                 WWWWWWWWWWW          WWWWWW        WWWWW\s
                 WWWWWWWWWW          WWWWWWWW       WWWWW\s
                 WWWWWWWWW          WWWWWWWWWW      WWWWW\s
-                WWWWWWWW           WWWWWWWWWW      WWWWW\s
+                WWWWWWWW    f      WWWWWWWWWW      WWWWW\s
                 WWWWWWW             WWWWWWWW       WWWWW\s
                 WWWWWWW              WWWWWW       WWWWWW\s
                 WWWWWWWW              WWWW        WWWWWW\s
@@ -349,8 +349,8 @@ public class Level7 extends Level {
                 WWWWWWWWW                        WWWWWWW\s
                 WWWWWWWWWW                       WWWWWWW\s
                 WWWWWWWWWWW                       WWWWWW\s
-                WWWWWWWWWWW         222            WWWWW\s
-                WWWWWWWWWW           22             WWWW\s
+                WWWWWWWWWWW         444            WWWWW\s
+                WWWWWWWWWW           44             WWWW\s
                 WWWWWWWWW                            WWW\s
                 WWWWWWWWWL                           WWW\s
                 WWWWWWWWW                           WWWW\s
@@ -358,7 +358,7 @@ public class Level7 extends Level {
                 WWWWWWW                            WWWWW\s
                 WWWWWW                             WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                  F           WWWWW\s
+                WWWWW                  f           WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s

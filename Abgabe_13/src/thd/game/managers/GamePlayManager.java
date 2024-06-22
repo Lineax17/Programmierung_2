@@ -1,5 +1,7 @@
 package thd.game.managers;
 
+import thd.game.level.Difficulty;
+import thd.game.level.Level;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
@@ -68,14 +70,16 @@ public class GamePlayManager extends WorldShiftManager {
 
     private void gamePlayManagement() {
         int speedInPixel;
-        /*
-        if (level.getDifficulty() == Difficulty.EASY) {
+
+        if (Level.difficulty == Difficulty.EASY) {
             speedInPixel = 3;
         } else {
             speedInPixel = 4;
         }
-         */
-        speedInPixel = 3;
         moveWorldDown(speedInPixel);
+    }
+
+    public int getLives() {
+        return lives;
     }
 }

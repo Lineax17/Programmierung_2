@@ -1,5 +1,6 @@
 package thd.game.managers;
 
+import org.w3c.dom.css.Counter;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
@@ -21,9 +22,10 @@ class GameWorldManager extends GamePlayManager {
         activatableGameObjects = new LinkedList<>();
         wallsForPathDecision = new LinkedList<>();
         score = new Score(gameView, this);
-        xwing = new XWing(gameView, this);
+        xwing = new XWing(gameView, this, wallsForPathDecision);
         overlay = new Overlay(gameView, this);
         background = new Background(gameView, this);
+        liveCounter = new LiveCounter(gameView, this);
     }
 
     private void spawnGameObjects() {
@@ -31,6 +33,7 @@ class GameWorldManager extends GamePlayManager {
         spawnGameObject(xwing);
         spawnGameObject(overlay);
         spawnGameObject(background);
+        spawnGameObject(liveCounter);
     }
 
     private void spawnGameObjectsFromWorldString() {

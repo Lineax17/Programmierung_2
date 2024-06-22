@@ -36,6 +36,7 @@ public class ObstacleType1 extends CollidingGameObject implements ShiftableGameO
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
         if (other instanceof XWingShot) {
+            gamePlayManager.addPoints(20);
             gamePlayManager.destroyGameObject(this);
         }
     }

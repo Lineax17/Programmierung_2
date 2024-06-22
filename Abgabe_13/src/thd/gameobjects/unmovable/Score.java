@@ -27,6 +27,7 @@ public class Score extends GameObject {
         super.size = 30;
         position.updateCoordinates(GameView.WIDTH / 2 - 50, -8);
         super.rotation = 0;
+        distanceToBackground = 50;
         score = gamePlayManager.getPoints();
     }
 
