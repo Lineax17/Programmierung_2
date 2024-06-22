@@ -12,10 +12,12 @@ public class GamePlayManager extends WorldShiftManager {
     private final GameObjectManager gameObjectManager;
     protected int points;
     protected int lives;
+    private int speedInPixel;
 
     protected GamePlayManager(GameView gameView) {
         super(gameView);
         gameObjectManager = new GameObjectManager();
+        speedInPixel = 3;
     }
 
     /**
@@ -69,13 +71,6 @@ public class GamePlayManager extends WorldShiftManager {
     }
 
     private void gamePlayManagement() {
-        int speedInPixel;
-
-        if (Level.difficulty == Difficulty.EASY) {
-            speedInPixel = 3;
-        } else {
-            speedInPixel = 4;
-        }
         moveWorldDown(speedInPixel);
     }
 

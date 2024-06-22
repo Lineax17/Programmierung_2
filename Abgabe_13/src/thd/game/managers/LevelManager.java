@@ -8,7 +8,7 @@ import java.util.List;
 class LevelManager extends GameWorldManager {
     private List<Level> levels;
     private int index;
-    private static final int STANDARDLIVES = 5;
+    private static final int STANDARDLIVES = 15;
     private static final int EASYLIVES = 50;
 
 
@@ -45,7 +45,7 @@ class LevelManager extends GameWorldManager {
     protected void initializeGame() {
         index = 0;
         points = 0;
-        levels = List.of(new Level10() ,new Level1(), new Level2());
+        levels = List.of(new Level2() ,new Level1(), new Level2());
         level = levels.get(0);
         //Difficulty
         if (Level.difficulty == Difficulty.EASY) {

@@ -104,7 +104,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
             if (other instanceof Wall || other instanceof AlienShot || other instanceof ShotDownwards) {
                 switchToExplosion();
                 gamePlayManager.decreaseLive();
-                respawn();
+                //respawn();
             }
         }
     }
