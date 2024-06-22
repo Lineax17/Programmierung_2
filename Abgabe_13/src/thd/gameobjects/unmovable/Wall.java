@@ -38,6 +38,7 @@ public class Wall extends CollidingGameObject implements ShiftableGameObject, Ac
         this.column = column;
         super.width = 32;
         super.height = 32;
+        distanceToBackground = 1;
         hitBoxOffsets(0, 0, 0, 0);
         formattedImageName = chooseWallAsset();
     }

@@ -23,12 +23,14 @@ class GameWorldManager extends GamePlayManager {
         score = new Score(gameView, this);
         xwing = new XWing(gameView, this);
         overlay = new Overlay(gameView, this);
+        background = new Background(gameView, this);
     }
 
     private void spawnGameObjects() {
         spawnGameObject(score);
         spawnGameObject(xwing);
         spawnGameObject(overlay);
+        spawnGameObject(background);
     }
 
     private void spawnGameObjectsFromWorldString() {
@@ -85,6 +87,7 @@ class GameWorldManager extends GamePlayManager {
                     double y = (line - super.level.worldOffsetLines) * 32;
                     gem.getPosition().updateCoordinates(x, y);
                     gem.addWallsToCollisionList(wallsForPathDecision);
+                    addActivatableGameObject(gem);
                     //spawnGameObject(gem);
                 } else if (character == 'F') {
                     SpaceFrog spaceFrog = new SpaceFrog(gameView, this);

@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 class UserControlledGameObjectPool {
     Score score;
     XWing xwing;
+    Background background;
     private XWingShot shotBlockImages;
     protected Level level;
     Overlay overlay;
