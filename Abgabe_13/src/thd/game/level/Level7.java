@@ -675,7 +675,7 @@ public class Level7 extends Level {
                     WWWWWWWW                           WWWWW\s
                     WWWWWWWWW                         WWWWWW\s
                     WWWWWWWWWW                       WWWWWWW\s
-                    WWWWWWWWWWW                     WWWWWWWW\s
+                    WWWWWWWWWWW    U                WWWWWWWW\s
                     WWWWWWWWWWW                    WWWWWWWWW\s
                     WWWWWWWWWW                    WWWWWWWWWW\s
                     WWWWWWWWW                    WWWWWWWWWWW\s
@@ -693,7 +693,7 @@ public class Level7 extends Level {
                     WWWWWWWWW      G                   WWWWW\s
                     WWWWWWWWWW                        WWWWWW\s
                     WWWWWWWWWWW                      WWWWWWW\s
-                    WWWWWWWWWWWW                    WWWWWWWW\s
+                    WWWWWWWWWWWW                s   WWWWWWWW\s
                     WWWWWWWWWWWWW                  WWWWWWWWW\s
                     WWWWWWWWWWWWWW                 WWWWWWWWW\s
                     WWWWWWWWWWWWWWW                 WWWWWWWW\s
@@ -719,7 +719,7 @@ public class Level7 extends Level {
                     WWWWWWWWWW                        WWWWWW\s
                     WWWWWWWWWW                        WWWWWW\s
                     WWWWWWWWW          G               WWWWW\s
-                    WWWWWWWW                           WWWWW\s
+                    WWWWWWWW                  b        WWWWW\s
                     WWWWWWWW                          WWWWWW\s
                     WWWWWWWWW                        WWWWWWW\s
                     WWWWWWWWWW                       WWWWWWW\s
@@ -729,7 +729,7 @@ public class Level7 extends Level {
                     WWWWWWWWW                            WWW\s
                     WWWWWWWWWL                           WWW\s
                     WWWWWWWWW                           WWWW\s
-                    WWWWWWWW                           WWWWW\s
+                    WWWWWWWW        a                  WWWWW\s
                     WWWWWWW                            WWWWW\s
                     WWWWWW                             WWWWW\s
                     WWWWW                              WWWWW\s

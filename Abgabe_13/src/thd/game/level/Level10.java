@@ -649,11 +649,11 @@ public class Level10 extends Level {
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW       b                      WWWWW\s
+                    WWWWW                          s   WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
-                    WWWWW                              WWWWW\s
-                    WWWWW                              WWWWW\s
+                    WWWWW               a              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWWL                             WWWWW\s
                     WWWWW                              WWWWW\s
@@ -671,7 +671,7 @@ public class Level10 extends Level {
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
-                    WWWWWW                            WWWWWW\s
+                    WWWWWW          a                 WWWWWW\s
                     WWWWWWW                          WWWWWWW\s
                     WWWWWWWW                        WWWWWWWW\s
                     WWWWWWWWW                      WWWWWWWWW\s
@@ -696,20 +696,20 @@ public class Level10 extends Level {
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
-                    WWWWW                   b          WWWWW\s
+                    WWWWW        f          b          WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW           b                  WWWWW\s
+                    WWWWW                    U         WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
+                    WWWWW              #               WWWWW\s
                     WWWWW                              WWWWW\s
-                    WWWWW                              WWWWW\s
-                    WWWWW                              WWWWW\s
-                    WWWWW                              WWWWW\s
+                    WWWWW                a             WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW      b                       WWWWW\s

@@ -655,9 +655,9 @@ public class Level9 extends Level {
                     WWWWW                 WW           WWWWW\s
                     WWWWW                 WW          RWWWWW\s
                     WWWWW                              WWWWW\s
+                    WWWWW    U                         WWWWW\s
                     WWWWW                              WWWWW\s
-                    WWWWW                              WWWWW\s
-                    WWWWW                              WWWWW\s
+                    WWWWW                    f         WWWWW\s
                     WWWWWW                             WWWWW\s
                     WWWWWWW          44                WWWWW\s
                     WWWWWWWW          hh               WWWWW\s
@@ -685,11 +685,11 @@ public class Level9 extends Level {
                     WWWWW        WW                    WWWWW\s
                     WWWWW        WW                    WWWWW\s
                     WWWWW                              WWWWW\s
+                    WWWWW                  b           WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
                     WWWWW                              WWWWW\s
-                    WWWWW                              WWWWW\s
-                    WWWWW                              WWWWW\s
+                    WWWWW      f                       WWWWW\s
                     WWWWW                  WW          WWWWW\s
                     WWWWW                  WW          WWWWW\s
                     WWWWWW                             WWWWW\s
@@ -705,13 +705,13 @@ public class Level9 extends Level {
                     WWWWWWWWW                    WWWWWWWWWWW\s
                     WWWWWWWWW                   WWWWWWWWWWWW\s
                     WWWWWWWW                    WWWWWWWWWWWW\s
-                    WWWWWWWW                   WWWWWWWWWWWWW\s
+                    WWWWWWWW       U           WWWWWWWWWWWWW\s
                     WWWWWWWWL                  WWWWWWWWWWWWW\s
                     WWWWWWWW                    WWWWWWWWWWWW\s
                     WWWWWWWWW                    WWWWWWWWWWW\s
                     WWWWWWWWW                     WWWWWWWWWW\s
                     WWWWWWWWW                      WWWWWWWWW\s
-                    WWWWWWWWW                       WWWWWWWW\s
+                    WWWWWWWWW         a             WWWWWWWW\s
                     WWWWWWWW                         WWWWWWW\s
                     WWWWWWW                           WWWWWW\s
                     WWWWWW                             WWWWW\s
