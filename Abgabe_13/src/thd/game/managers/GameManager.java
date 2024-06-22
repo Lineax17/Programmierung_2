@@ -72,7 +72,7 @@ class GameManager extends LevelManager {
     }
 
     private boolean endOfGame() {
-        return lives == 0 || (!hasNextLevel() && endOfLevel());
+        return lives < 1 || (!hasNextLevel() && endOfLevel());
     }
 
     private boolean endOfLevel() {

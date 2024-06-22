@@ -23,7 +23,7 @@ class LevelManager extends GameWorldManager {
 
     private void initializeGameObjects() {
         //Hintergrund ändern
-        //Lebensanzeige aktualiesieren
+        //Lebensanzeige aktualisieren
         //Punktestand übernehmen
         //Einen Countdown neu starten
     }
@@ -43,6 +43,7 @@ class LevelManager extends GameWorldManager {
 
     protected void initializeGame() {
         index = 0;
+        points = 0;
         levels = List.of(new TestLevel() ,new Level1(), new Level2());
         level = levels.get(0);
         //test if working properly
@@ -54,6 +55,5 @@ class LevelManager extends GameWorldManager {
         }
          */
         lives = LIVES;
-        points = 0;
     }
 }

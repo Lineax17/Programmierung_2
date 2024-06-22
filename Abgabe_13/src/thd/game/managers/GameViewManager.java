@@ -17,6 +17,7 @@ public class GameViewManager extends GameView {
         setStatusText("Philipp Hartmann - Java Programmierung SS 2024");
         setWindowIcon("icon.png");
         changeBackgroundColor(Color.decode("#2f1088"));
+
         gameManager = new GameManager(this);
         gameManager.startNewGame();
         showStatistic(true);
