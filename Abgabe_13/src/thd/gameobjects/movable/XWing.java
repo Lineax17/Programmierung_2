@@ -148,7 +148,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
                 }
             }
         }
-        System.out.println(currentState);
+        //System.out.println(currentState);
 
         if (boostIsApplied) {
             if (gameView.timer(5000, this)) {
@@ -199,7 +199,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
     @Override
     public void addToCanvas() {
         gameView.addImageToCanvas(imageName, position.getX(), position.getY(), size, rotation);
-        gameView.addTextToCanvas(toString(), position.getX(), position.getY(), 10, false, Color.WHITE, 0);
+        //gameView.addTextToCanvas(toString(), position.getX(), position.getY(), 10, false, Color.WHITE, 0);
     }
 
     /**

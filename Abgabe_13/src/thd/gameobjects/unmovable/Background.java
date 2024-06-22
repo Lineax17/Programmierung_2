@@ -48,7 +48,7 @@ public class Background extends GameObject {
     @Override
     public void updateStatus() {
         imageName = standardState.display;
-        if (gameView.timer(300000, this)) {
+        if (gameView.timer(301000, this)) {
             standardState = StandardState.STANDARD_2;
         }
     }
