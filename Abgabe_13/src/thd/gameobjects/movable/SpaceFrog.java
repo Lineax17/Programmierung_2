@@ -44,8 +44,11 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof XWingShot) {
-            switchToExplosion();
+        if (currentState == State.STANDARD) {
+
+            if (other instanceof XWingShot) {
+                switchToExplosion();
+            }
         }
     }
 
@@ -66,7 +69,7 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return position.getY() > - 100;
+        return position.getY() > -100;
     }
 
     private enum StandardState {
@@ -145,7 +148,10 @@ public class SpaceFrog extends CollidingGameObject implements ShiftableGameObjec
     }
 
     private void shoot() {
-        gamePlayManager.spawnGameObject(new ShotDownwards(gameView, gamePlayManager, this));
-        gameView.playSound("laser2.wav", false);
+        if (currentState == State.STANDARD) {
+
+            gamePlayManager.spawnGameObject(new ShotDownwards(gameView, gamePlayManager, this));
+            gameView.playSound("laser2.wav", false);
+        }
     }
 }

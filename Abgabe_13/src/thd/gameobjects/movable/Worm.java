@@ -29,8 +29,8 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
     /**
      * Initializes a new alien.
      *
-     * @param gameView        Instance of {@link GameView}.
-     * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @param gameView                            Instance of {@link GameView}.
+     * @param gamePlayManager                     Instance of {@link GamePlayManager}.
      * @param collidingGameObjectsForPathDecision The list needed for collision detection.
      * @see GameView
      * @see GamePlayManager
@@ -54,8 +54,11 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof XWingShot) {
-            switchToExplosion();
+        if (currentState == State.STANDARD) {
+
+            if (other instanceof XWingShot) {
+                switchToExplosion();
+            }
         }
     }
 
@@ -187,7 +190,7 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return position.getY() > - 100;
+        return position.getY() > -100;
     }
 
     private void shoot() {

@@ -101,7 +101,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
         if (currentState == State.STANDARD) {
-            if (other instanceof Wall || other instanceof AlienShot || other instanceof ShotDownwards) {
+            if (other instanceof Wall || other instanceof AlienShot || other instanceof ShotDownwards || other instanceof ShotUpwards || other instanceof ShotRightwards || other instanceof ShotLeftwards) {
                 switchToExplosion();
                 gamePlayManager.decreaseLive();
                 //respawn();

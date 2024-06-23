@@ -50,8 +50,11 @@ public class SuperAlien extends CollidingGameObject implements ShiftableGameObje
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof XWingShot) {
-            switchToExplosion();
+        if (currentState == State.STANDARD) {
+
+            if (other instanceof XWingShot) {
+                switchToExplosion();
+            }
         }
     }
 
@@ -143,12 +146,15 @@ public class SuperAlien extends CollidingGameObject implements ShiftableGameObje
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return position.getY() > - 100;
+        return position.getY() > -100;
     }
 
     private void shoot() {
-        gamePlayManager.spawnGameObject(new AlienShot(gameView, gamePlayManager, xWing, this));
-        gameView.playSound("laser.wav", false);
+        if (currentState == State.STANDARD) {
+
+            gamePlayManager.spawnGameObject(new AlienShot(gameView, gamePlayManager, xWing, this));
+            gameView.playSound("laser.wav", false);
+        }
     }
 
     private void switchToExplosion() {

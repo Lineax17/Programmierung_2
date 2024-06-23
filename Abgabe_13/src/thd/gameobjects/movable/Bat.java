@@ -54,8 +54,11 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof XWingShot) {
-            switchToExplosion();
+        if (currentState == State.STANDARD) {
+
+            if (other instanceof XWingShot) {
+                switchToExplosion();
+            }
         }
     }
 
@@ -163,11 +166,11 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return position.getY() > - 100;
+        return position.getY() > -100;
     }
 
     private void shoot() {
-        if(gameView.timer(4000, this)) {
+        if (gameView.timer(4000, this)) {
             ShotUpwards shotUpwards = new ShotUpwards(gameView, gamePlayManager, this);
             shotUpwards.setShotSpeed(4);
             gamePlayManager.spawnGameObject(shotUpwards);

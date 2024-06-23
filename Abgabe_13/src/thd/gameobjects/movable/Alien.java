@@ -53,8 +53,11 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof XWingShot) {
-            switchToExplosion();
+        if (currentState == State.STANDARD) {
+
+            if (other instanceof XWingShot) {
+                switchToExplosion();
+            }
         }
     }
 
@@ -150,8 +153,11 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
     }
 
     private void shoot() {
-        gamePlayManager.spawnGameObject(new AlienShot(gameView, gamePlayManager, xWing, this));
-        gameView.playSound("laser.wav", false);
+        if (currentState == State.STANDARD) {
+
+            gamePlayManager.spawnGameObject(new AlienShot(gameView, gamePlayManager, xWing, this));
+            gameView.playSound("laser.wav", false);
+        }
     }
 
     private void switchToExplosion() {

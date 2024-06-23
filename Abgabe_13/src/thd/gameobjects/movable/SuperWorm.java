@@ -13,7 +13,6 @@ public class SuperWorm extends CollidingGameObject implements ShiftableGameObjec
     private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
 
 
-
     private enum State {
         STANDARD, EXPLODING
     }
@@ -27,8 +26,8 @@ public class SuperWorm extends CollidingGameObject implements ShiftableGameObjec
     /**
      * Initializes a new alien.
      *
-     * @param gameView        Instance of {@link GameView}.
-     * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @param gameView                            Instance of {@link GameView}.
+     * @param gamePlayManager                     Instance of {@link GamePlayManager}.
      * @param collidingGameObjectsForPathDecision The list needed for collision detection.
      * @see GameView
      * @see GamePlayManager
@@ -52,8 +51,11 @@ public class SuperWorm extends CollidingGameObject implements ShiftableGameObjec
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof XWingShot) {
-            switchToExplosion();
+        if (currentState == State.STANDARD) {
+
+            if (other instanceof XWingShot) {
+                switchToExplosion();
+            }
         }
     }
 
@@ -185,7 +187,7 @@ public class SuperWorm extends CollidingGameObject implements ShiftableGameObjec
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return position.getY() > - 100;
+        return position.getY() > -100;
     }
 
     private void shoot() {

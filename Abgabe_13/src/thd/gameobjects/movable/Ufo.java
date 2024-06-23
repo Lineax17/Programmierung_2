@@ -49,8 +49,11 @@ public class Ufo extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof XWingShot) {
-            switchToExplosion();
+        if (currentState == State.STANDARD) {
+
+            if (other instanceof XWingShot) {
+                switchToExplosion();
+            }
         }
     }
 
@@ -134,12 +137,15 @@ public class Ufo extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return position.getY() > - 100;
+        return position.getY() > -100;
     }
 
     private void shoot() {
-        gamePlayManager.spawnGameObject(new ShotDownwards(gameView, gamePlayManager, this));
-        gameView.playSound("blaster.wav", false);
+        if (currentState == State.STANDARD) {
+
+            gamePlayManager.spawnGameObject(new ShotDownwards(gameView, gamePlayManager, this));
+            gameView.playSound("blaster.wav", false);
+        }
     }
 
 

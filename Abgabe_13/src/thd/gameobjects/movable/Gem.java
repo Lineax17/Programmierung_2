@@ -59,8 +59,11 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof XWingShot) {
-            switchToExplosion();
+        if (currentState == State.STANDARD) {
+
+            if (other instanceof XWingShot) {
+                switchToExplosion();
+            }
         }
     }
 
@@ -183,7 +186,7 @@ public class Gem extends CollidingGameObject implements ShiftableGameObject, Act
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return position.getY() > - 100;
+        return position.getY() > -100;
     }
 
 }
