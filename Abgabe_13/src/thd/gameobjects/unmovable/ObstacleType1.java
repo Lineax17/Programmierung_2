@@ -125,10 +125,6 @@ public class ObstacleType1 extends CollidingGameObject implements ShiftableGameO
         gameView.playSound("explosion.wav", false);
     }
 
-    private void switchToNextStandardState() {
-        int nextState = (standardState.ordinal() + 1) % StandardState.values().length;
-        standardState = StandardState.values()[nextState];
-    }
 
     private void switchToNextExplosionState() {
         int nextState = (explodingState.ordinal() + 1);

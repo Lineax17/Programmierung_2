@@ -372,13 +372,13 @@ public class TestLevel extends Level{
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW        11                    WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                             RWWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW          22                  WWWWW\s
                 WWWWWL                             WWWWW\s
                 WWWWW                    a         WWWWW\s
                 WWWWW                              WWWWW\s
@@ -406,7 +406,7 @@ public class TestLevel extends Level{
                 WWWWW                              WWWWW\s
                 WWWWW        F           A         WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                             RWWWWW\s
+                WWWWW           HH                RWWWWW\s
                 WWWWW  +                           WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                    #         WWWWW\s

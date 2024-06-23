@@ -58,7 +58,7 @@ public class XWingShot extends CollidingGameObject {
 
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
-        if (other instanceof Wall) {
+        if (!(other instanceof XWing || other instanceof XWingShot || other instanceof ShotDownwards || other instanceof ShotLeftwards || other instanceof ShotRightwards || other instanceof AlienShot)) {
             gamePlayManager.destroyGameObject(this);
         }
     }
