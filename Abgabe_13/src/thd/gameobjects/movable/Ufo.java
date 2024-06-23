@@ -51,7 +51,7 @@ public class Ufo extends CollidingGameObject implements ShiftableGameObject, Act
     public void reactToCollisionWith(CollidingGameObject other) {
         if (currentState == State.STANDARD) {
 
-            if (other instanceof XWingShot) {
+            if (other instanceof XWingShot || other instanceof XWing) {
                 switchToExplosion();
             }
         }

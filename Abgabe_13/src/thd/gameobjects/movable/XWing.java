@@ -104,24 +104,15 @@ public class XWing extends CollidingGameObject implements MainCharacter {
             if (other instanceof Wall || other instanceof AlienShot || other instanceof ShotDownwards || other instanceof ShotUpwards || other instanceof ShotRightwards || other instanceof ShotLeftwards) {
                 switchToExplosion();
                 gamePlayManager.decreaseLive();
-                //respawn();
+            }
+
+            if (other instanceof Gem || other instanceof Ufo || other instanceof Alien || other instanceof SuperAlien || other instanceof SpaceFrog || other instanceof SuperFrog || other instanceof Worm || other instanceof SuperWorm) {
+                switchToExplosion();
+                gamePlayManager.decreaseLive();
             }
         }
     }
 
-    private void respawn() {
-        position.updateCoordinates((double) GameView.WIDTH / 2, 600);
-        /*
-        for (int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
-            if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
-                position.updateCoordinates((double) GameView.WIDTH / 4, 600);
-                break;
-            }
-        }
-
-         */
-
-    }
 
     @Override
     public void updateStatus() {

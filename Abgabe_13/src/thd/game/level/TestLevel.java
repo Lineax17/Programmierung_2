@@ -340,30 +340,30 @@ public class TestLevel extends Level{
                 WWWWWWWWWW                    WWWWWWWWWW\s
                 WWWWWWWWWWW                   WWWWWWWWWW\s
                 WWWWWWWWWWWW                 WWWWWWWWWWW\s
-                WWWWWWWWWWWWW               WWWWWWWWWWWW\s
+                WWWWWWWWWWWWW              AWWWWWWWWWWWW\s
                 WWWWWWWWWWWWW              WWWWWWWWWWWWW\s
                 WWWWWWWWWWWW              WWWWWWWWWWWWWW\s
                 WWWWWWWWWWW               WWWWWWWWWWWWWW\s
                 WWWWWWWWWW                 WWWWWWWWWWWWW\s
                 WWWWWWWWWW           F      WWWWWWWWWWWW\s
                 WWWWWWWWWW                   WWWWWWWWWWW\s
-                WWWWWWWWW                    WWWWWWWWWWW\s
-                WWWWWWWWWL                    WWWWWWWWWW\s
-                WWWWWWWWW      F               WWWWWWWWW\s
+                WWWWWWWWW  A                 WWWWWWWWWWW\s
+                WWWWWWWWWL           WW       WWWWWWWWWW\s
+                WWWWWWWWW      F     WW        WWWWWWWWW\s
                 WWWWWWWWW                       WWWWWWWW\s
                 WWWWWWWW                       RWWWWWWWW\s
-                WWWWWWWW                        WWWWWWWW\s
-                WWWWWWW                          WWWWWWW\s
-                WWWWWW                            WWWWWW\s
+                WWWWWWWW          WW            WWWWWWWW\s
+                WWWWWWW         B WW             WWWWWWW\s
+                WWWWWW           A  B             WWWWWW\s
+                WWWWW                      B       WWWWW\s
+                WWWWW          WW                  WWWWW\s
+                WWWWW          WW   A              WWWWW\s
                 WWWWW                              WWWWW\s
+                WWWWW        B   A   WW            WWWWW\s
+                WWWWW                WW            WWWWW\s
                 WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
-                WWWWW                              WWWWW\s
+                WWWWW          WW                  WWWWW\s
+                WWWWW          WW   A              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s
                 WWWWW                              WWWWW\s

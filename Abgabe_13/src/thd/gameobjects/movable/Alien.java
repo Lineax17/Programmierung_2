@@ -5,6 +5,7 @@ import thd.game.utilities.GameView;
 import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
+import thd.gameobjects.unmovable.Wall;
 
 /**
  * Describing a moving enemy that looks like an alien.
@@ -55,8 +56,20 @@ public class Alien extends CollidingGameObject implements ShiftableGameObject, A
     public void reactToCollisionWith(CollidingGameObject other) {
         if (currentState == State.STANDARD) {
 
-            if (other instanceof XWingShot) {
+            if (other instanceof XWingShot || other instanceof XWing) {
                 switchToExplosion();
+            }
+
+            if (other instanceof Wall) {
+                if (position.getY() < other.getPosition().getY()) {
+                    position.up(2);
+                } else if (position.getX() > other.getPosition().getX()){
+                    position.right(3);
+                } else if (position.getY() > other.getPosition().getY()) {
+                    position.down(2);
+                } else if (position.getX() < other.getPosition().getX()){
+                    position.left(3);
+                }
             }
         }
     }

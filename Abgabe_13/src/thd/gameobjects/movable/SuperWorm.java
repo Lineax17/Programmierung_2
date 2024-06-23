@@ -53,7 +53,7 @@ public class SuperWorm extends CollidingGameObject implements ShiftableGameObjec
     public void reactToCollisionWith(CollidingGameObject other) {
         if (currentState == State.STANDARD) {
 
-            if (other instanceof XWingShot) {
+            if (other instanceof XWingShot || other instanceof XWing) {
                 switchToExplosion();
             }
         }

@@ -56,7 +56,7 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
     public void reactToCollisionWith(CollidingGameObject other) {
         if (currentState == State.STANDARD) {
 
-            if (other instanceof XWingShot) {
+            if (other instanceof XWingShot || other instanceof XWing) {
                 switchToExplosion();
             }
         }

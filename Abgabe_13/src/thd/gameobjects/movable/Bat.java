@@ -5,6 +5,7 @@ import thd.game.utilities.GameView;
 import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
+import thd.gameobjects.unmovable.Wall;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -55,9 +56,20 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     @Override
     public void reactToCollisionWith(CollidingGameObject other) {
         if (currentState == State.STANDARD) {
-
-            if (other instanceof XWingShot) {
+            if (other instanceof XWingShot || other instanceof XWing) {
                 switchToExplosion();
+            }
+
+            if (other instanceof Wall) {
+                if (position.getY() < other.getPosition().getY()) {
+                    position.up(2);
+                } else if (position.getX() > other.getPosition().getX()){
+                    position.right(3);
+                } else if (position.getY() > other.getPosition().getY()) {
+                    position.down(2);
+                } else if (position.getX() < other.getPosition().getX()){
+                    position.left(3);
+                }
             }
         }
     }
@@ -79,23 +91,28 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
             position.moveToPosition(batMovementPattern.nextTargetPosition(), speedInPixel);
         }
 
-        /*
+
         for (int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
+            /*
             if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
-                if (position.getX() < 640) {
-                    position.right(3);
-                    position.down();
-                    break;
+                if (position.getX() < collidingGameObjectsForPathDecision.get(i).getPosition().getX()) {
+                    position.right(5);
+
                 } else {
-                    position.left(3);
-                    position.down();
-                    break;
+                    position.left(5);
+
                 }
+                if (position.getY() < collidingGameObjectsForPathDecision.get(i).getPosition().getY()) {
+                    position.up(5);
 
+                } else {
+                    position.down(5);
+                }
+            break;
             }
-        }
 
-         */
+             */
+        }
 
 
         if (position.getY() > 720) {
@@ -104,10 +121,7 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     }
 
     private enum ExplodingState {
-        EXPLODING_1("explosion_1.png"),
-        EXPLODING_2("explosion_2.png"),
-        EXPLODING_3("explosion_3.png"),
-        EXPLODING_4("explosion_4.png");
+        EXPLODING_1("explosion_1.png"), EXPLODING_2("explosion_2.png"), EXPLODING_3("explosion_3.png"), EXPLODING_4("explosion_4.png");
 
 
         private final String display;
@@ -118,10 +132,7 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     }
 
     private enum StandardState {
-        STANDARD_1("bat_1.png"),
-        STANDARD_2("bat_2.png"),
-        STANDARD_3("bat_3.png"),
-        STANDARD_4("bat_2.png");
+        STANDARD_1("bat_1.png"), STANDARD_2("bat_2.png"), STANDARD_3("bat_3.png"), STANDARD_4("bat_2.png");
 
 
         private final String display;
