@@ -34,7 +34,6 @@ class LevelManager extends GameWorldManager {
     }
 
     protected void switchToNextLevel() {
-        System.out.println(hasNextLevel());
         if (hasNextLevel()) {
             index++;
             super.level = levels.get(index);

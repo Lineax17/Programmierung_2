@@ -42,7 +42,7 @@ class AlienShot extends CollidingGameObject {
         hitBoxOffsets(0, 0, 0, 0);
     }
 
-    public void calculateTargetPosition() {
+    private void calculateTargetPosition() {
         double x;
         double y;
 

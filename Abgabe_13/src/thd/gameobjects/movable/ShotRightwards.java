@@ -7,6 +7,9 @@ import thd.gameobjects.base.GameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.unmovable.Wall;
 
+/**
+ * A shot going from left to right.
+ */
 public class ShotRightwards extends CollidingGameObject implements ShiftableGameObject {
     private final GameObject gameObject;
 
@@ -15,7 +18,7 @@ public class ShotRightwards extends CollidingGameObject implements ShiftableGame
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
-     * @param gameObject       Instance of {@link GameObject}.
+     * @param gameObject      Instance of {@link GameObject}.
      * @see GameView
      * @see GamePlayManager
      * @see SpaceFrog
@@ -61,7 +64,4 @@ public class ShotRightwards extends CollidingGameObject implements ShiftableGame
         }
     }
 
-    public void setShotSpeed(int speed) {
-        this.speedInPixel = speed;
-    }
 }

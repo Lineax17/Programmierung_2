@@ -10,6 +10,9 @@ import thd.gameobjects.unmovable.Wall;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Describes a game object looking like a bat.
+ */
 public class SuperBat extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private final BatMovementPattern batMovementPattern;
     private boolean stop;
@@ -61,11 +64,11 @@ public class SuperBat extends CollidingGameObject implements ShiftableGameObject
             if (other instanceof Wall) {
                 if (position.getY() < other.getPosition().getY()) {
                     position.up(3);
-                } else if (position.getX() > other.getPosition().getX()){
+                } else if (position.getX() > other.getPosition().getX()) {
                     position.right(3);
                 } else if (position.getY() > other.getPosition().getY()) {
                     position.down(3);
-                } else if (position.getX() < other.getPosition().getX()){
+                } else if (position.getX() < other.getPosition().getX()) {
                     position.left(3);
                 }
             }
@@ -88,24 +91,6 @@ public class SuperBat extends CollidingGameObject implements ShiftableGameObject
         if (position.similarTo(targetPosition)) {
             position.moveToPosition(batMovementPattern.nextTargetPosition(), speedInPixel);
         }
-
-        /*
-        for (int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
-            if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
-                if (position.getX() < 640) {
-                    position.right(3);
-                    position.down();
-                    break;
-                } else {
-                    position.left(3);
-                    position.down();
-                    break;
-                }
-
-            }
-        }
-
-         */
 
 
         if (position.getY() > 720) {
@@ -182,7 +167,7 @@ public class SuperBat extends CollidingGameObject implements ShiftableGameObject
     private void shoot() {
         if (gameView.timer(4000, this)) {
             ShotUpwards shotUpwards = new ShotUpwards(gameView, gamePlayManager, this);
-            shotUpwards.setShotSpeed(4);
+            shotUpwards.setSpeedInPixel(4);
             gamePlayManager.spawnGameObject(shotUpwards);
 
         }

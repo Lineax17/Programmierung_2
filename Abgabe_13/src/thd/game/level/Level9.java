@@ -1,5 +1,8 @@
 package thd.game.level;
 
+/**
+ * The ninth level of the game.
+ */
 public class Level9 extends Level {
     /**
      * Initializes the level.

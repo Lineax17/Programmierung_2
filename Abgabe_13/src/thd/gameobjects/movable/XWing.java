@@ -32,9 +32,11 @@ public class XWing extends CollidingGameObject implements MainCharacter {
 
     /**
      * Initializes a new XWing.
+     * ""The Force is strong with this one"".
      *
-     * @param gameView        Instance of {@link GameView}.
-     * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @param gameView                            Instance of {@link GameView}.
+     * @param gamePlayManager                     Instance of {@link GamePlayManager}.
+     * @param collidingGameObjectsForPathDecision Objects needed for path decision.
      * @see GameView
      * @see GamePlayManager
      */
@@ -186,7 +188,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
     @Override
     public void addToCanvas() {
         gameView.addImageToCanvas(imageName, position.getX(), position.getY(), size, rotation);
-        gameView.addTextToCanvas("state: "+currentState, position.getX(), position.getY(), 10, false, Color.WHITE, 0);
+        gameView.addTextToCanvas("state: " + currentState, position.getX(), position.getY(), 10, false, Color.WHITE, 0);
     }
 
     /**
@@ -226,6 +228,9 @@ public class XWing extends CollidingGameObject implements MainCharacter {
         }
     }
 
+    /**
+     * Applies temporary boost to xwing.
+     */
     public void applyBoost() {
         boostIsApplied = true;
         shotDurationInMilliseconds = 150;

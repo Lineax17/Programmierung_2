@@ -1,7 +1,5 @@
 package thd.game.managers;
 
-import thd.game.level.Difficulty;
-import thd.game.level.Level;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
 
@@ -74,6 +72,11 @@ public class GamePlayManager extends WorldShiftManager {
         moveWorldDown(speedInPixel);
     }
 
+    /**
+     * Returns the current lives.
+     *
+     * @return The lives.
+     */
     public int getLives() {
         return lives;
     }

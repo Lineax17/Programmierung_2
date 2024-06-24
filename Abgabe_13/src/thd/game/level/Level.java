@@ -11,7 +11,7 @@ public class Level {
     /**
      * The number of the level.
      */
-    public int number;
+    int number;
     /**
      * The String representation of the element in the level.
      */

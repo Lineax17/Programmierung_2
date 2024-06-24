@@ -1,7 +1,5 @@
 package thd.gameobjects.base;
 
-import thd.gameobjects.movable.XWing;
-
 /**
  * Is the interface for game objects which activate only if needed.
  *

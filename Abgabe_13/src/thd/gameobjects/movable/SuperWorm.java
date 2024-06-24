@@ -8,6 +8,9 @@ import thd.gameobjects.base.ShiftableGameObject;
 
 import java.util.List;
 
+/**
+ * Describes a game object looking like a worm.
+ */
 public class SuperWorm extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private boolean stop;
     private final List<CollidingGameObject> collidingGameObjectsForPathDecision;

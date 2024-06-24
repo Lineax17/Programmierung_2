@@ -3,10 +3,10 @@ package thd.gameobjects.unmovable;
 import thd.game.managers.GamePlayManager;
 import thd.game.utilities.GameView;
 import thd.gameobjects.base.GameObject;
-import thd.gameobjects.movable.SpaceFrog;
 
-import javax.swing.plaf.nimbus.State;
-
+/**
+ * Handles the display of the background image.
+ */
 public class Background extends GameObject {
     private String imageName;
     private StandardState standardState;

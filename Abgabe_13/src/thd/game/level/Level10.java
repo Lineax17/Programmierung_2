@@ -1,5 +1,8 @@
 package thd.game.level;
 
+/**
+ * The tenth level of the game.
+ */
 public class Level10 extends Level {
     /**
      * Initializes the level.

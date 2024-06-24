@@ -6,6 +6,9 @@ import thd.gameobjects.base.GameObject;
 
 import java.awt.*;
 
+/**
+ * Handles the display of current lives.
+ */
 public class LiveCounter extends GameObject {
     private int lives;
 

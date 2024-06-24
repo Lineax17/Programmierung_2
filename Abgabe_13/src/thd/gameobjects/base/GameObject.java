@@ -111,4 +111,13 @@ public abstract class GameObject {
     public int hashCode() {
         return Objects.hash(rotation, height, width, size, speedInPixel, position, targetPosition, distanceToBackground);
     }
+
+    /**
+     * Returns the speed of the game object.
+     *
+     * @param speedInPixel The speed.
+     */
+    public void setSpeedInPixel(int speedInPixel) {
+        this.speedInPixel = speedInPixel;
+    }
 }

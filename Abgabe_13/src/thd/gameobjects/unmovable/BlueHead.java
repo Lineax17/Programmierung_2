@@ -8,6 +8,9 @@ import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.movable.XWing;
 import thd.gameobjects.movable.XWingShot;
 
+/**
+ * Describes a game object looking like a head.
+ */
 public class BlueHead extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private enum State {
         STANDARD, EXPLODING
@@ -22,7 +25,7 @@ public class BlueHead extends CollidingGameObject implements ShiftableGameObject
     /**
      * Initializes a new head.
      *
-     * @param gameView Instance of {@link GameView}.
+     * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
      * @see GameView
      * @see GamePlayManager

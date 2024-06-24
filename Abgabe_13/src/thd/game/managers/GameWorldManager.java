@@ -1,8 +1,6 @@
 package thd.game.managers;
 
-import org.w3c.dom.css.Counter;
 import thd.game.utilities.GameView;
-import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.GameObject;
 import thd.gameobjects.movable.*;

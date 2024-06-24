@@ -6,7 +6,6 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.movable.ShotLeftwards;
-import thd.gameobjects.movable.ShotRightwards;
 import thd.gameobjects.movable.XWingShot;
 import thd.gameobjects.movable.XWing;
 

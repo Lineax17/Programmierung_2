@@ -63,11 +63,11 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
             if (other instanceof Wall) {
                 if (position.getY() < other.getPosition().getY()) {
                     position.up(2);
-                } else if (position.getX() > other.getPosition().getX()){
+                } else if (position.getX() > other.getPosition().getX()) {
                     position.right(3);
                 } else if (position.getY() > other.getPosition().getY()) {
                     position.down(2);
-                } else if (position.getX() < other.getPosition().getX()){
+                } else if (position.getX() < other.getPosition().getX()) {
                     position.left(3);
                 }
             }
@@ -89,29 +89,6 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
         position.moveToPosition(targetPosition, speedInPixel);
         if (position.similarTo(targetPosition)) {
             position.moveToPosition(batMovementPattern.nextTargetPosition(), speedInPixel);
-        }
-
-
-        for (int i = 0; i < collidingGameObjectsForPathDecision.size(); i++) {
-            /*
-            if (collidesWith(collidingGameObjectsForPathDecision.get(i))) {
-                if (position.getX() < collidingGameObjectsForPathDecision.get(i).getPosition().getX()) {
-                    position.right(5);
-
-                } else {
-                    position.left(5);
-
-                }
-                if (position.getY() < collidingGameObjectsForPathDecision.get(i).getPosition().getY()) {
-                    position.up(5);
-
-                } else {
-                    position.down(5);
-                }
-            break;
-            }
-
-             */
         }
 
 
@@ -183,7 +160,7 @@ public class Bat extends CollidingGameObject implements ShiftableGameObject, Act
     private void shoot() {
         if (gameView.timer(4000, this)) {
             ShotUpwards shotUpwards = new ShotUpwards(gameView, gamePlayManager, this);
-            shotUpwards.setShotSpeed(4);
+            shotUpwards.setSpeedInPixel(4);
             gamePlayManager.spawnGameObject(shotUpwards);
 
         }

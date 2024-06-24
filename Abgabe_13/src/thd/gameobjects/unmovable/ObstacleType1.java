@@ -5,7 +5,6 @@ import thd.game.utilities.GameView;
 import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
-import thd.gameobjects.movable.SpaceFrog;
 import thd.gameobjects.movable.XWingShot;
 import thd.gameobjects.movable.XWing;
 

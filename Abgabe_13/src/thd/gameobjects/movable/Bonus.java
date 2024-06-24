@@ -6,8 +6,9 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
-import java.awt.*;
-
+/**
+ * Describes a game objects that gives a bonus in points.
+ */
 public class Bonus extends CollidingGameObject implements ActivatableGameObject<XWing>, ShiftableGameObject {
 
 

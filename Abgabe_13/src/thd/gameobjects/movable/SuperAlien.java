@@ -7,6 +7,9 @@ import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.unmovable.Wall;
 
+/**
+ * Describes a game object looking like an alien.
+ */
 public class SuperAlien extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private final XWing xWing;
     private final AlienMovementPattern alienMovementPattern;
@@ -60,11 +63,11 @@ public class SuperAlien extends CollidingGameObject implements ShiftableGameObje
             if (other instanceof Wall) {
                 if (position.getY() < other.getPosition().getY()) {
                     position.up(3);
-                } else if (position.getX() > other.getPosition().getX()){
+                } else if (position.getX() > other.getPosition().getX()) {
                     position.right(3);
                 } else if (position.getY() > other.getPosition().getY()) {
                     position.down(3);
-                } else if (position.getX() < other.getPosition().getX()){
+                } else if (position.getX() < other.getPosition().getX()) {
                     position.left(3);
                 }
             }

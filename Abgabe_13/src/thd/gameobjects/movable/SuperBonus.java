@@ -6,6 +6,9 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
+/**
+ * Describes a game objects that gives a bonus in points.
+ */
 public class SuperBonus extends CollidingGameObject implements ActivatableGameObject<XWing>, ShiftableGameObject {
     /**
      * Initializes a new bonus.

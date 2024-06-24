@@ -8,6 +8,9 @@ import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.movable.XWing;
 import thd.gameobjects.movable.XWingShot;
 
+/**
+ * A obstacle game object.
+ */
 public class ObstacleType4 extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private enum State {
         STANDARD, EXPLODING

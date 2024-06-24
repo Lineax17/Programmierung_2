@@ -7,7 +7,7 @@ import thd.gameobjects.base.GameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.unmovable.Wall;
 
-public class ShotUpwards extends CollidingGameObject implements ShiftableGameObject {
+class ShotUpwards extends CollidingGameObject implements ShiftableGameObject {
     private final GameObject gameObject;
 
     /**
@@ -15,7 +15,7 @@ public class ShotUpwards extends CollidingGameObject implements ShiftableGameObj
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
-     * @param gameObject       Instance of {@link GameObject}.
+     * @param gameObject      Instance of {@link GameObject}.
      * @see GameView
      * @see GamePlayManager
      * @see SpaceFrog
@@ -61,7 +61,4 @@ public class ShotUpwards extends CollidingGameObject implements ShiftableGameObj
         }
     }
 
-    public void setShotSpeed(int speed) {
-        this.speedInPixel = speed;
-    }
 }

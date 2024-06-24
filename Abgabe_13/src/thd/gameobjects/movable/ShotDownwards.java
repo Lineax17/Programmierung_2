@@ -16,7 +16,7 @@ class ShotDownwards extends CollidingGameObject implements ShiftableGameObject {
      *
      * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
-     * @param gameObject       Instance of {@link GameObject}.
+     * @param gameObject      Instance of {@link GameObject}.
      * @see GameView
      * @see GamePlayManager
      * @see SpaceFrog
@@ -62,7 +62,4 @@ class ShotDownwards extends CollidingGameObject implements ShiftableGameObject {
         }
     }
 
-    public void setShotSpeed(int speed) {
-        this.speedInPixel = speed;
-    }
 }

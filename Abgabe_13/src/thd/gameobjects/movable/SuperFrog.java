@@ -6,6 +6,9 @@ import thd.gameobjects.base.ActivatableGameObject;
 import thd.gameobjects.base.CollidingGameObject;
 import thd.gameobjects.base.ShiftableGameObject;
 
+/**
+ * Describes a game object looking like a frog.
+ */
 public class SuperFrog extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
     private enum State {
         STANDARD, EXPLODING

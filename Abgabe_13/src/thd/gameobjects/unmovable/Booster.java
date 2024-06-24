@@ -8,13 +8,18 @@ import thd.gameobjects.base.ShiftableGameObject;
 import thd.gameobjects.movable.XWing;
 import thd.gameobjects.movable.XWingShot;
 
+/**
+ * Describes a game object that gives a boost to main character.
+ */
 public class Booster extends CollidingGameObject implements ShiftableGameObject, ActivatableGameObject<XWing> {
-    XWing xWing;
+    private XWing xWing;
+
     /**
      * Initializes a new booster.
      *
-     * @param gameView Instance of {@link GameView}.
+     * @param gameView        Instance of {@link GameView}.
      * @param gamePlayManager Instance of {@link GamePlayManager}.
+     * @param xWing           The main charakter.
      * @see GameView
      * @see GamePlayManager
      */
@@ -60,6 +65,6 @@ public class Booster extends CollidingGameObject implements ShiftableGameObject,
 
     @Override
     public boolean tryToActivate(XWing xWing) {
-        return position.getY() > - 100;
+        return position.getY() > -100;
     }
 }

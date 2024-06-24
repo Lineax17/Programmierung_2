@@ -19,7 +19,7 @@ public class GameViewManager extends GameView {
         changeBackgroundColor(Color.decode("#2f1088"));
         gameManager = new GameManager(this);
         gameManager.startNewGame();
-        showStatistic(true);
+        showStatistic(false);
     }
 
     @Override
