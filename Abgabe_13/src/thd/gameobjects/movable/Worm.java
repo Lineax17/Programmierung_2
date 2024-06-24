@@ -198,6 +198,7 @@ public class Worm extends CollidingGameObject implements ShiftableGameObject, Ac
 
     private void switchToExplosion() {
         currentState = State.EXPLODING;
+        gameView.playSound("explosion.wav", false);
     }
 
     private void switchToNextStandardState() {

@@ -198,6 +198,7 @@ public class SuperWorm extends CollidingGameObject implements ShiftableGameObjec
 
     private void switchToExplosion() {
         currentState = State.EXPLODING;
+        gameView.playSound("explosion.wav", false);
     }
 
     private void switchToNextStandardState() {

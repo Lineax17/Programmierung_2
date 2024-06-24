@@ -169,12 +169,14 @@ public class SuperBat extends CollidingGameObject implements ShiftableGameObject
             ShotUpwards shotUpwards = new ShotUpwards(gameView, gamePlayManager, this);
             shotUpwards.setSpeedInPixel(4);
             gamePlayManager.spawnGameObject(shotUpwards);
+            gameView.playSound("laser2.wav", false);
 
         }
     }
 
     private void switchToExplosion() {
         currentState = State.EXPLODING;
+        gameView.playSound("explosion.wav", false);
     }
 
     private void switchToNextStandardState() {

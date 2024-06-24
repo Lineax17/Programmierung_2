@@ -77,6 +77,7 @@ public class TurretRight extends CollidingGameObject implements ShiftableGameObj
     private void shoot() {
         if (gameView.timer(3000, this)) {
             gamePlayManager.spawnGameObject(new ShotLeftwards(gameView, gamePlayManager, this));
+            gameView.playSound("laser.wav", false);
         }
     }
 
