@@ -7,7 +7,6 @@ import thd.gameobjects.base.MainCharacter;
 import thd.gameobjects.unmovable.Wall;
 
 import java.awt.*;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -24,6 +23,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
     private String imageName;
     private boolean boostIsApplied;
     private final List<CollidingGameObject> collidingGameObjectsForPathDecision;
+    private boolean alreadyShot;
 
 
     private enum State {
@@ -53,7 +53,8 @@ public class XWing extends CollidingGameObject implements MainCharacter {
         currentState = State.STANDARD;
         standardState = StandardState.STANDARD_1;
         explodingState = ExplodingState.EXPLODING_1;
-        blinkingState = BlinkingState.BLinking_1;
+        blinkingState = BlinkingState.BLINKING_1;
+        alreadyShot = false;
         hitBoxOffsets(0, 0, -120, 0);
     }
 
@@ -82,13 +83,8 @@ public class XWing extends CollidingGameObject implements MainCharacter {
     }
 
     private enum BlinkingState {
-        BLinking_1("xwing.png"),
-        BLINKING_2("xwing_blinking.png"),
-        BLINKING_3("xwing.png"),
-        BLINKING_4("xwing_blinking.png"),
-        BLINKING_5("xwing.png"),
-        BLINKING_6("xwing_blinking.png"),
-        BLINKING_7("xwing.png");
+        BLINKING_1("xwing.png"),
+        BLINKING_2("xwing_blinking.png");
 
         private final String display;
 
@@ -170,7 +166,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
     }
 
     private void switchToNextBlinkingState() {
-        int nextState = (blinkingState.ordinal() + 1);
+        int nextState = (blinkingState.ordinal() + 1) % BlinkingState.values().length;
         if (nextState < BlinkingState.values().length) {
             blinkingState = BlinkingState.values()[nextState];
         }
@@ -190,7 +186,7 @@ public class XWing extends CollidingGameObject implements MainCharacter {
     @Override
     public void addToCanvas() {
         gameView.addImageToCanvas(imageName, position.getX(), position.getY(), size, rotation);
-        //gameView.addTextToCanvas(toString(), position.getX(), position.getY(), 10, false, Color.WHITE, 0);
+        gameView.addTextToCanvas("state: "+currentState, position.getX(), position.getY(), 10, false, Color.WHITE, 0);
     }
 
     /**
@@ -223,7 +219,8 @@ public class XWing extends CollidingGameObject implements MainCharacter {
 
     @Override
     public void shoot() {
-        if (gameView.timer(shotDurationInMilliseconds, this)) {
+        if (!alreadyShot || gameView.timer(shotDurationInMilliseconds, this)) {
+            alreadyShot = true;
             gamePlayManager.spawnGameObject(new XWingShot(gameView, gamePlayManager, this));
             gameView.playSound("shot.wav", false);
         }
