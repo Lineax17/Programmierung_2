@@ -23,6 +23,8 @@ public class EndScreen {
      * @param score The score to be displayed.
      */
     public void showEndScreen(int score) {
-        this.gameView.showEndScreen("You have " + score + " Points!");
+        this.gameView.showEndScreen(
+                "Game Over! " +
+                "You have " + score + " Points!");
     }
 }

@@ -35,31 +35,10 @@ class GameManager extends LevelManager {
 
     private void gameManagement() {
         if (endOfGame()) {
-
-            /*
-            if (!overlay.isMessageShown()) {
-                overlay.showMessage("Game Over");
-            }
-            if (gameView.timer(2000, this)) {
-                overlay.stopShowing();
-                EndScreen endScreen = new EndScreen(gameView);
-                points = score.getScore();
-                endScreen.showEndScreen(points);
-                startNewGame();
-            }
-
-             */
-
-            overlay.showMessage("GAME OVER", 2);
-            if (gameView.timer(2000, this)) {
-                EndScreen endScreen = new EndScreen(gameView);
-                points = score.getScore();
-                endScreen.showEndScreen(points);
-                startNewGame();
-
-            }
-
-
+            EndScreen endScreen = new EndScreen(gameView);
+            points = score.getScore();
+            endScreen.showEndScreen(points);
+            startNewGame();
         } else if (endOfLevel()) {
             if (!endOfGame()) {
                 switchToNextLevel();
